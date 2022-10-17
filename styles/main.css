@@ -1,0 +1,700 @@
+body {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    margin:0;
+}
+
+
+::-webkit-scrollbar {
+    width: 1em;
+    border-radius: 23.03px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border:0;
+    box-shadow: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(190, 190, 190);
+    border-radius: 23.03px;
+    border:0;
+}
+
+.fade-enter-active {
+  transition: all 0.3s ease;
+}
+
+.fade-leave-active {
+  transition: all 0.4s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.mainbg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -100;
+    margin:0;
+    top:0;
+    left:0;
+    pointer-events: none;
+}
+
+#companyname {
+    display: inline-flex;
+    margin-left:30px;
+    margin-top:15px;
+}
+
+#companyname img {
+    width: 200px;
+    pointer-events: none;
+}
+
+
+.headertext-mobile {
+    display: none;
+    color:rgb(0, 0, 0);
+    font-family: nexa;
+    text-transform:uppercase;
+    font-size: 40px;
+}
+
+#logodiv {
+    position: relative;
+    width: 200px;
+    height: auto;
+    margin: 0;
+    margin-left:40px;
+    top:20px;
+    transition-duration: 0.3s;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+#logo {
+    position: relative;
+    width: 100%;
+    transition-duration: 0.3s;
+    pointer-events: none;
+}
+
+#logodiv:hover #logo{
+    filter: brightness(70%);
+    transition-duration: 0.3s;
+}
+
+#header {
+    position: sticky;
+    z-index: 10;
+    transition-duration: 0.5s;
+    width: 100%;
+    height: 80px;
+}
+
+#header-menu {
+    padding: 0 20px;
+    position: absolute;
+    right: 20px;
+    top:20px;
+}
+
+
+
+#header-menu a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    line-height: 50px;
+    padding: 0 15px;
+    font-family: gilroy-medium;
+    transition: 0.5s;
+}
+#header-menu a:hover {
+    color: rgb(123, 123, 123);
+    transition: 0.5s;
+}
+
+
+
+
+/*      Home       */
+
+
+#page {
+    margin:0;
+}
+
+#page section {
+    margin: 0;
+    padding: 0;
+    gap:0;
+}
+
+#section-transition {
+    width: 100%;
+    height: 100px;
+    transform: rotate(180deg);
+    margin:0;
+    padding: 0;
+    margin-bottom: -10px;
+    pointer-events: none;
+}
+
+#page #section1 {
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    height: 450px;
+    margin:0;
+}
+
+#page #section1 #nadpis {
+    margin:0;
+    margin-top:80px;
+    font-size:80px;
+    font-family: gilroy-medium;
+}
+
+#page #section1 #podnadpis {
+    margin:0;
+    margin-top:10px;
+    font-size:30px;
+    font-family: gilroy;
+    color: rgb(104, 104, 104);
+}
+
+#page #section1  .p {
+    font-size: 20px;
+    width: 50%;
+    margin-left:25%;
+}
+
+#page #section1 .p2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #00d30b;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#page #section1 #oteviracidoba {
+    margin:0;
+    margin-top:50px;
+}
+
+#page #section1 #oteviracidoba p {
+    margin:0;
+    font-size:30px;
+    font-family:gilroy;
+}
+
+
+#page #section1 #telefon {
+    margin:0;
+    margin-top:23px;
+}
+
+#page #section1 #telefon p {
+    position: relative;
+    margin:0;
+    font-size:30px;
+    font-family:gilroy-medium;
+    color: rgb(104, 104, 104);
+}
+
+#page #section1 #odkazy{
+    position: relative;
+    margin-top:50px;
+}
+
+#page #section1 #odkazy img {
+    width: 200px;
+    position: relative;
+    cursor: pointer;
+    filter: hue-rotate(240deg) brightness(150%);
+}
+
+
+
+
+
+
+
+
+#page #section2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin:0;
+    background-color: rgb(255, 255, 255);
+}
+
+#page #section2 #info-parent {
+    display: flex;
+    position: relative;
+    gap:25px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#page #section2 #info-child {
+    display: flex;
+    width: 400px;
+    height: 450px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 50px;
+    border:rgb(196, 196, 196) solid 1px;
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.1 );  
+}
+
+#page #section2 #info-child img {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    border-radius: 50px 50px 0 0;
+    pointer-events: none;
+}
+
+
+#page #section2 #info-child #text {
+    margin: 0;
+}
+
+#page #section2 #info-child #text p {
+    position: relative;
+    font-size:15px;
+    width: auto;
+    font-family: gilroy-medium;
+    top:260px;
+    text-align: center;
+    padding: 0 15px 0 15px;
+    margin:0;
+    margin-top:20px;
+}
+
+#page #section2 #info-child #text h1 {
+    margin:0;
+    margin-top:20px;
+    position: relative;
+    font-size:20px;
+    width: auto;
+    font-family: gilroy-medium;
+    top:260px;
+    padding: 0 15px 0 15px;
+    text-align: center;
+}
+
+#page #section2 #info-child a {
+    position: absolute;
+    font-size:20px;
+    width: auto;
+    font-family: gilroy-medium;
+    text-decoration: none;
+    color:#00d30b;
+    text-align: center;
+    padding: 0 15px 0 15px;
+    margin:0;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    margin-top:415px;
+    margin-left:125px;
+}
+
+#page #section2 #info-child a:hover {
+    font-size:20px;
+    color:#00a708;
+    transition-duration: 0.3s;
+}
+
+#map-parent {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 150px;
+    padding: 100px 0 100px 0;
+}
+
+#page #section2 #map-parent #map { 
+    border-radius: 50px;
+    border: solid 5px #00d30b;
+    background-color: rgb(233, 233, 233);
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.3 );
+}
+
+#page #section2 #map-parent #maptextdiv { 
+    --maptextdiv: 500px;
+    width: var(--maptextdiv);
+}
+
+#page #section2 #map-parent #maptextdiv .p { 
+    font-size: 20px;
+}
+
+#page #section2 #map-parent #maptextdiv div { 
+    border-radius: 50px;
+    pointer-events: none;
+    height: 300px;
+    background-color: rgb(245, 245, 245);
+    background-image: url(../images/photo_front.png);
+    background-position: 50%;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: auto;
+}
+
+#page #section2 #map-parent #maptextdiv .h { 
+    text-align: center;
+    font-size: 50px;
+    margin:0;
+}
+
+#page #section2 #map-parent #maptextdiv .p {
+    text-align: center;
+}
+
+#page #section2 #map-parent #maptextdiv .p2, #page #section2 #map-parent #maptextdiv .p2 a {
+    margin:0;
+    font-family: gilroy-medium, arial;
+    text-align: center;
+    text-anchor: middle;
+    color: #00d30b;
+    top:25px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+
+
+
+
+/*?      Tým     */
+#page2 #section1 {
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    height: 100px;
+    margin:0;
+}
+
+#page2 #section1 #nadpis {
+    margin:0;
+    margin-top:80px;
+    font-size:80px;
+    font-family: gilroy-medium;
+}
+
+#page2 #section1 .p {
+    font-size: 23.03px;
+}
+
+#page2 #section2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin:0;
+    background-color: rgb(255, 255, 255);
+}
+
+#page2 #section2 #team-parent {
+    display: flex;
+    position: relative;
+    gap:25px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:50px 0 50px 0;
+    width: 80%;
+    margin-left:10%;
+}
+
+#page2 #section2 #team-child {
+    width: 400px;
+    height: auto;
+    background-color: rgb(245, 245, 245);
+    border-radius: 50px;
+    padding:30px;
+}
+
+#page2 #section2 #team-child h1 {
+    margin:0;
+    width: auto;
+    height: auto;
+    color:#00d30b;
+    text-anchor: middle;
+    text-align: center;
+    position: relative;
+    font-family: gilroy-extrabold;
+    font-size: 40px;
+}
+
+#page2 #section2 #team-child h6 {
+    margin:0;
+    width: auto;
+    height: auto;
+    color:rgb(0, 0, 0);
+    text-anchor: middle;
+    text-align: center;
+    position: relative;
+    font-family: gilroy;
+    font-size:20px;
+    margin-bottom: 30px;
+}
+
+#page2 #section2 #team-child p {
+    margin:0;
+    color:black;
+    position: relative;
+    font-family: gilroy;
+}
+
+
+#page2 #section2 #team-child img {
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.1 );
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 200px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+/*  FOTKY   */
+#page3 #section1 {
+    position: relative;
+    width: 100%;
+    margin:0;
+}
+
+#page3 #footer {
+    position: relative;
+    margin:0;
+    margin-top:300px;
+}
+
+
+#page3 #section1 #photos-parent {
+    top:100px;
+    display: flex;
+    position: relative;
+    gap:25px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#page3 #section1 #photos-child {
+    position: relative;
+    width: 430px;
+    height: 281.25px;
+    border-radius: 50px;
+    border:rgb(196, 196, 196) solid 1px;
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.1 ); 
+}
+
+#page3 #section1 #photos-child img{
+    position: relative;
+    width: 430px;
+    height: 281.25px;
+    border-radius: 50px;
+}
+
+#page3 #section1 #photos2-parent {
+    width: 90%;
+    height: auto;
+    top:200px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap:25px;
+    text-align: center;
+    justify-content: center;
+    margin-left:5%;
+}
+
+#page3 #section1 #photos2-child {
+    position: relative;
+    border-radius: 50px;
+}
+
+#page3 #section1 #photos2-child img {
+    width: 400px;
+    border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+/*?      Info     */
+#page4 #section1 {
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    height: 150px;
+    margin:0;
+}
+
+#page4 #section1 #nadpis {
+    margin:0;
+    margin-top:80px;
+    font-size:80px;
+    font-family: gilroy-medium;
+}
+
+#page4 #section1 .p {
+    font-size: 23.03px;
+}
+
+#page4 #section2 {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin:0;
+    background-color: rgb(255, 255, 255);
+}
+
+#page4 #section2 #sluzby-parent {
+    position: relative;
+    top:50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom:100px;
+}
+
+#page4 #section2 #sluzby-parent .sluzby-child p{
+    margin:0;
+    font-family: gilroy-medium, gilroy, arial;
+    font-size: 30px;
+    text-align: center;
+}
+
+#page4 #section2 #p1 {
+    font-size: 30px;
+    color: #00d30b;
+}
+
+
+/*      ARTICLES    */
+#page-article #section1 {
+    position: relative;
+    width: 100%;
+    margin:0;
+    margin-top:100px;
+}
+
+#page-article #section1 .article-photo {
+    position: relative;
+    width: auto;
+    max-width: 50%;
+    margin: 0;
+    pointer-events: none;
+    margin-top:180px;
+    margin-bottom:-180px;
+    border-radius: 50px;
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.5); 
+}
+
+#page-article #section1 h1 {
+    position: relative;
+    font-family: gilroy-extrabold;
+    font-size:50px;
+    max-width: 80%;
+    margin-left:10%;
+}
+
+#page-article #section1 p {
+    position: relative;
+    font-family: gilroy;
+    font-size:20px;
+    max-width: 80%;
+    margin-left:10%;
+    margin-top:0;
+}
+
+
+
+#footer {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.1 );  
+}
+
+#footer h1 {
+    position: relative;
+    margin:0;
+    text-anchor: middle;
+    text-align: center;
+    height: auto;
+    color: black;
+    font-family: gilroy;
+    padding-top:28px;
+}
+
+
+/* Mobiles */
+@media screen and (max-width: 600px) {
+    #companyname img {
+        position: relative;
+        width: 200px;   
+        pointer-events: none;
+        text-align: center !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    #companyname {
+        display:grid;
+        margin:0;
+    }
+
+    #header-menu {
+        margin: 0;
+        position: relative;
+        text-align: center !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin-top:23px;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 600px) and (max-width: 960px) {}
+
+/* Laptops */
+@media screen and (min-width: 960px) and (max-width: 1264px) {}
+
+/* 4K */
+@media screen and (min-width: 1904px) {}
+
+/* ERR */
+@media screen and (max-width: 300px) {
+    #vueApp {
+        display: none;
+    }
+
+    #badres {
+        display: grid;
+    }
+}

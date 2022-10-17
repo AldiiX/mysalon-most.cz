@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta name="author" content="Admin">
+    <meta name="keywords" content="mysalon-most,mysalon,&quot;kadeřnické studio&quot;,kadernictvi" />
+    <meta name="description" content="MySalon Most - moderní kadeřnické studio pro celou rodinu" />
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=270120221"/>
+    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=270120221"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>MySalon Most • Web</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="shortcut icon" href="./images/logo.png?ver=270120221" type="image/x-icon">
+</head>
+
+
+
+
+
+
+
+
+<body id="body">
+    <div id="vueApp">
+       
+
+        <!--    VŠUDE STEJNÝ    -->
+        <div id="header">
+            
+            <div id="logodiv" v-bind:key="home" v-on:click="onItemClick('home')" v-bind:class="{'text-selected': 'home' == currentPage}" href="#home"><img id="logo" src="PRIVATE/logo -wp_0 -col -sh_0.png" alt="MySalon logo"></div>
+    
+    
+            <div id="header-menu" class="" style="z-index: 10;">
+                <a v-for="(item, index) in visibleMenuItems" v-bind:key="index" v-on:click="onMenuItemClick(item)" v-bind:class="{'text-selected': item.id == currentPage}" v-bind:href="'#' + item.id">{{ item.text }}</a>
+            </div>
+        </div>
+        
+
+
+
+
+
+
+        <transition name="fade">
+
+            <!--    HOME    -->
+            <div class="" v-if="currentPage == 'home'" key="home">
+                <img v-if="company.defWp" v-bind:src="company.defWp" alt="" class="mainbg">
+                <div class="mainbg" style="width: 100%;height: 100%;background-color: rgb(245, 245, 245);"></div>
+
+                <div id="page" style="margin:0;position: relative;">
+                    <div id="section1">
+                        <h1 id="nadpis" class="text-center">My Salon</h1>
+                        <p class="p p2 text-center">Moderní kadeřnické studio pro celou rodinu.</p>
+                        <p class="p text-center">V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají v oblasti nových trendů. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni.</p>
+                        
+                        <div id="oteviracidoba">
+                            <p class="text-center">PO - PÁ: dle objednání</p>
+                        </div>
+
+                        <div id="telefon">
+                            <p class="text-center">Tel: +420 476 108 686</p>
+                        </div>
+
+                        <div id="odkazy">
+                            <img class="page-center" src="./images/logo_facebook.png" alt="" onclick="window.open('https://www.facebook.com/MY-SALON-MOST-1449719641988685/?fref=ts')">
+                        </div>
+                    </div>
+
+                    <img id="section-transition" src="./images/round.svg" alt="">
+
+                    <div id="section2">
+                        <!--
+                        <div id="info-parent" class="">
+                            <div id="info-child" v-for="item in info">
+                                <img v-bind:src="item.photo" alt="">
+                                <div id="text">
+                                    <h1>{{ item.name }}</h1>
+                                    <p>{{ item.desc }}</p>
+                                </div>
+                                <a v-if="item.readMore" v-on:click="onItemClick('article-' + item.readMore)" v-bind:href="'#article-' + item.readMore">Více informací</a>
+                            </div>
+                        </div>
+                        -->
+
+
+                        <div id="map-parent">
+                            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.2743118207901!2d13.638250493644948!3d50.502804903708515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a21cb4bbb95c3%3A0xd235e5d5acd7d809!2sMY%20SALON%20MOST!5e0!3m2!1scs!2scz!4v1652275223749!5m2!1scs!2scz" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div id="maptextdiv">
+                                <p class="h">Kde nás najdete?</p>
+                                <p class="p">Najdete nás v Mostě, na tř. Budovatelů 3068, naproti Centrálu, mezi Čedokem a Bilbem.</p>
+                                <div></div>
+                                <p class="p p2"><a target="_blank" href="https://www.google.com/maps/@50.5027717,13.6392274,3a,19.6y,269.41h,90.36t/data=!3m7!1e1!3m5!1sdw4s66Gb_KFafZvXya2DPQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Ddw4s66Gb_KFafZvXya2DPQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D96.23527%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?hl=cs">Zobrazit 365° pohled</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="footer">
+                        <h1>{{ company.copyright }}</h1>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--    INFO     -->
+            <div class="" v-if="currentPage == 'info'" key="info">
+                <img v-if="company.defWp" v-bind:src="company.defWp" alt="" class="mainbg">
+                <div class="mainbg" style="width: 100%;height: 100%;background-color: rgb(245, 245, 245);"></div>
+
+                <div id="page4" style="margin:0;position: relative;">
+                    <div id="section1">
+                        <h1 id="nadpis" class="text-center">O nás</h1>
+                        <p class="p text-center">My Salon Most - dámské, pánské dětské kadeřnictví nabízí tyto služby:</p>
+                    </div>
+
+                    <img id="section-transition" src="./images/round.svg" alt="">
+
+                    <div id="section2">
+                        <div id="sluzby-parent">
+                            <div class="sluzby-child">
+                                <p>Precizní střihy</p> 
+                                <p>Barvení vlasů dle aktuálních trendů</p>
+                                <p>Melírování vlasů bez poškození vlasů</p>
+                                <p>Balayage, ombre a flamboage a podobné techniky</p>
+                                <p>Blond odstíny šetrnou cestou od šedé a bílé, až po přírodní blond</p>
+                                <p>Stahování a čištění barvy</p>
+                                <p>Společenské a svatební účesy</p>
+                                <p>Horké nůžky</p>
+                                <p>Poradenství</p>
+                                <p>Prodej vlasové kosmetiky </p>
+                            </div>
+                        </div>
+
+                        <p id="p1" class="p text-center font-bold">Při práci používáme výhradně kvalitní a profesionální produkty.</p>
+                    </div>
+
+                    <div id="footer">
+                        <h1>{{ company.copyright }}</h1>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--    TÝM     -->
+            <div class="" v-if="currentPage == 'team'" key="team">
+                <img v-if="company.defWp" v-bind:src="company.defWp" alt="" class="mainbg">
+                <div class="mainbg" style="width: 100%;height: 100%;background-color: rgb(245, 245, 245);"></div>
+
+                <div id="page2" style="margin:0;position: relative;">
+                    <div id="section1">
+                        <h1 id="nadpis" class="text-center">NÁŠ TÝM</h1>
+                    </div>
+
+                    <img id="section-transition" src="./images/round.svg" alt="">
+
+                    <div id="section2">
+                        <div id="team-parent" class="">
+                            <div id="team-child" v-for="item in team">
+                                <img v-if="item.photo" v-bind:src="item.photo" alt="">
+                                <img v-if="!item.photo" src="./images/team/unknown.png" alt="">
+                                <h1>{{ item.name }}</h1>
+                                <h6>{{ item.desc }}</h6>
+                                <p v-for="info in item.info">{{ info.txt }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="footer">
+                        <h1>{{ company.copyright }}</h1>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--    FOTOGRAFIE     -->
+            <div class="" v-if="currentPage == 'photos'" key="photos">
+                <img v-if="company.defWp" v-bind:src="company.defWp" alt="" class="mainbg">
+                <div class="mainbg" style="width: 100%;height: 100%;background-color: rgb(245, 245, 245);"></div>
+
+                <div id="page3" style="margin:0;position: relative;">
+                    <div id="section1">
+                        <h1 class="text-center text-h1">FOTOGRAFIE</h1>
+
+                        <div id="photos-parent">
+                            <div id="photos-child" v-for="item in photos">
+                                <img v-bind:src="item.src" alt="">
+                            </div>
+                        </div>
+
+                        <div id="photos2-parent">
+                            <div id="photos2-child" v-for="item in photos2">
+                                <img v-bind:src="item.src" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <h1>{{ company.copyright }}</h1>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+            <!--    Articles      -->
+            <div class="" v-if="currentPage == 'article-informace-ohledne-chodu-kadernictvi'" key="article-informace-ohledne-chodu-kadernictvi">
+                <img v-if="company.defWp" v-bind:src="company.defWp" alt="" class="mainbg">
+                <div class="mainbg" style="width: 100%;height: 100%;background-color: rgb(245, 245, 245);"></div>
+
+                <div id="page-article" v-for="item in info" v-if="item.id == 1">
+                    <div id="section1">
+                        <img class="article-photo page-center" v-bind:src="item.photo" alt="" v-if="item.showPhoto">
+                        <h1 class="text-center">{{ item.name }} </h1>
+                        <a v-for="text in item.text">
+                            <p class="text-center" v-if="text.text" v-bind:style="articleTextStyle(text)">{{ text.text }}</p>
+                            <p class="text-center" v-if="!text.text">&nbsp;</p>
+                        </a>
+                    </div>
+                    <div id="footer">
+                        <h1>{{ company.copyright }}</h1>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="" v-if="currentPage == 'article-objednavky-pouze-po-telefonu'" key="article-objednavky-pouze-po-telefonu">
+                <img v-if="company.defWp" v-bind:src="company.defWp" alt="" class="mainbg">
+                <div class="mainbg" style="width: 100%;height: 100%;background-color: rgb(245, 245, 245);"></div>
+
+                <div id="page-article" v-for="item in info" v-if="item.id == 2">
+                    <div id="section1">
+                        <img class="article-photo page-center" v-bind:src="item.photo" alt="" v-if="item.showPhoto">
+                        <h1 class="text-center">{{ item.name }} </h1>
+                        <a v-for="text in item.text">
+                            <p class="text-center" v-if="text.text" v-bind:style="articleTextStyle(text)">{{ text.text }}</p>
+                            <p class="text-center" v-if="!text.text">&nbsp;</p>
+                        </a>
+                    </div>
+                    <div id="footer">
+                        <h1>{{ company.copyright }}</h1>
+                    </div>
+                </div>
+            </div>
+        </transition>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--    LIGHTBOXY   -->
+    
+
+
+
+
+
+    </div>
+    <script src="./scripts/script.js?ver=270120221"></script>
+    <script src="./scripts/app.js?ver=270120221"></script>
+</body>
+</html>
+
+<!--    WEB VYTVOŘIL - STANISLAV ŠKUDRNA    -->
