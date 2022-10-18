@@ -35,20 +35,59 @@ body {
   opacity: 0;
 }
 
-.mainbg {
+#mainbg {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: fixed;
-    z-index: -100;
-    margin:0;
-    top:0;
-    left:0;
-    pointer-events: none;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-duration: 0.5s;
+}
+
+#HEADER {
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    border-bottom: solid 5px rgb(24, 24, 24);
+    z-index: 5;
 }
 
 #TOP {
     position: relative;
     width: 100%;
+    height: 92vh;
+    background-color: rgb(15, 15, 15);
+    transition-duration: 0.3s;
+}
+
+#PAGE1 {
+    position: relative;
+    width: 100%;
+    min-height: 8vh;
+    background-color: #0C0C0C;
+    transition-duration: 0.3s;
+}
+
+#FOOTER {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(35, 35, 35);
+    transition-duration: 0.3s;
+}
+
+.page-divider {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    background-image: url(../images/waves.svg);
 }
 
 

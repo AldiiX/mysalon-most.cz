@@ -13,7 +13,7 @@ new Vue({
 
         { // Při načtení stránky se napíše název webu na příslušný název stránky
             const currentPage = this.currentPage;
-            let cp = this.menu.items.find(x => { return x.id === currentPage}) || this.hiddenMenuItems.find(x => { return x.id === currentPage});
+            let cp = this.pages.find(x => { return x.id === currentPage});
             if(cp) cp = cp.text;
             if(!cp) cp = 'Web';
             document.title = `${cp} • My Salon`;
@@ -27,15 +27,9 @@ new Vue({
 
     data: {
         currentPage: null,
-
-
-
-        
-
-        settings: {
-
-            version: "270120221",
-        },
+        webTheme: 'dark',
+        version: "270120221",
+        fsTopPages: ['home'],
 
 
 
@@ -45,7 +39,7 @@ new Vue({
 
         company: {
             name: "MySalon",
-            //defWp: "./images/wp11.png",
+            defWp: { dark: { src: "./images/wallpaper.jpg", filters: 'brightness(70%) grayscale()'}},
             logosource: "./images/logo -sh_1.png",
             copyright: "© My Salon - 2022",
             links: [
@@ -55,15 +49,9 @@ new Vue({
 
         
 
-        menu: {
-            items: [
-                { id: "home", text: "Domů", isVisible: true },
-                { id: "info", text: "Info", isVisible: true },
-                { id: "team", text: "Tým", isVisible: true },
-                { id: "photos", text: "Fotogalerie", isVisible: true },
-            ],
-            isActive: false
-        },
+        pages: [
+            { id: "team", name: "Tým", settings: {} }
+        ],
 
 
         team: [
@@ -201,64 +189,28 @@ new Vue({
 
 
     methods: {
-        toggleMenu: function(){
-            this.menu.isActive = !this.menu.isActive
-        },
-        onMenuItemClick: function(menuItem){
-            this.currentPage = menuItem.id
-            this.menu.isActive = false
-            window.scrollTo(0,0);
+        mainbg: function() {
+            const el = document.getElementById('TOP');
+            let output = {};
+            const theme = this.webTheme;
+            const page = this.pages.find((obj) => {return obj.id === this.currentPage});
 
-            { // Při načtení stránky se napíše název webu na příslušný název stránky
-                const currentPage = this.currentPage;
-                let cp = this.menu.items.find(x => { return x.id === currentPage}) || this.hiddenMenuItems.find(x => { return x.id === currentPage});
-                if(cp) cp = cp.text;
-                if(!cp) cp = 'Web';
-                document.title = `${cp} • My Salon`;
-            }
-        },
 
-        onItemClick: function(id){
-            this.currentPage = id;
-            this.menu.isActive = false;
-            window.scrollTo(0,0);
 
-            { // Při načtení stránky se napíše název webu na příslušný název stránky
-                const currentPage = this.currentPage;
-                let cp = this.menu.items.find(x => { return x.id === currentPage}) || this.hiddenMenuItems.find(x => { return x.id === currentPage});
-                if(cp) cp = cp.text;
-                if(!cp) cp = 'Web';
-                document.title = `${cp} • My Salon`;
-            }
-        },
+            if(page) if(page.bg) if(page.bg[theme]) if(page.bg[theme].src) output['backgroundImage'] = `url(${page.bg[theme].src})`;
+            if(!page || !page.bg || !page.bg[theme] || !page.bg[theme].src) {
+                output['backgroundImage'] = `url(${this.company.defWp[theme].src})`;
+                if(this.webTheme == 'dark') output['backgroundAttachment'] = 'fixed';
+            };
 
-        onNextPageClick: function(){
-            this.currentPage = this.nextPageId;
-            window.scrollTo(0,0);
 
-            { // Při načtení stránky se napíše název webu na příslušný název stránky
-                const currentPage = this.currentPage;
-                let cp = this.menu.items.find(x => { return x.id === currentPage}) || this.hiddenMenuItems.find(x => { return x.id === currentPage});
-                if(cp) cp = cp.text;
-                if(!cp) cp = 'Web';
-                document.title = `${cp} • My Salon`;
-            }
-        },
+            if(page) if(page.bg) if(page.bg[theme]) if(page.bg[theme].filters) output['filter'] = page.bg[theme].filters;
+            if(!page || !page.bg || !page.bg[theme] || !page.bg[theme].filters) output['filter'] = this.company.defWp[theme].filters;
+            if(page && page.bg && page.bg[theme] && page.bg[theme].filters == "none") output['filter'] = null;
 
-        articleTextStyle: function(x){
-            let styleType = {};
 
-            if (x.bold) styleType['font-family'] = "gilroy-medium";
-            if (x.underlined) styleType['text-decoration'] = "underline";
-            if (x.italic) styleType['font-style'] = "italic"; 
-            if (x.selected) { styleType['font-family'] = 'gilroy-medium'; styleType['color'] = "#00d30b"};
-            if (x.fontSize) styleType['font-size'] = x.fontSize;
-            if (x.noMargin) styleType['margin-bottom'] = 0;
-            if (x.marginBottom) styleType['margin-bottom'] = x.marginBottom;
-            if (x.marginTop) styleType['margin-top'] = x.marginTop;
-
-            return styleType;
-        }
+            return output;
+        }, 
     },
 
     computed: {

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g fill="#FFFFFF">
-            <path d="M0,0 C16.6885417,60 33.3552083,90 50,90 C66.6447917,90 83.3114583,60 100,0 L100,100 L0,100 L0,0 Z" transform="translate(50.000000, 50.000000) scale(1, -1) translate(-50.000000, -50.000000) "></path>
-        </g>
-    </g>
-</svg>
