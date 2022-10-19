@@ -69,7 +69,7 @@ new Vue({
 
         company: {
             name: "MySalon",
-            defWp: { dark: { src: "./images/wallpaper.jpg", filters: 'brightness(70%) grayscale()'}},
+            defWp: { dark: { src: "./images/wallpaper.jpg", filters: 'brightness(40%) grayscale()'}},
             logosource: "./images/logo -sh_1.png",
             copyright: "© My Salon - 2022",
             links: [
