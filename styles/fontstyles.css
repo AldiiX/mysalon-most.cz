@@ -40,11 +40,13 @@
 .nadpis, .h {
     font-family: gilroy-extrabold, nexa, arial black, arial, calibri;
     position: relative;
+    margin: 0;
 }
 
 .podnadpis, .p {
     font-family: gilroy, arial, calibri;
     position: relative;
+    margin: 0;
 }
 
 
@@ -143,6 +145,21 @@
   transform: translate(-50%, -50%) !important;
 }
 
+.divflex-center, .flexdiv-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divflex-center p, .flexdiv-center p {
+  width: fit-content;
+} 
+
+.font-p {
+  font-family: "gilroy-extrabold", arial;
+  color: var(--fontp-color) !important;
+}
 
 
 @media screen and (max-width: 600px) {

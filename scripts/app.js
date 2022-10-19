@@ -1,7 +1,7 @@
 
 new Vue({
     el: "#vueApp",   
-    mounted: function(){
+    mounted: async function(){
         if(window.location.hash){
             this.currentPage = window.location.hash.substring(1)
         }
@@ -18,6 +18,36 @@ new Vue({
             if(!cp) cp = 'Web';
             document.title = `${cp} • My Salon`;
         }
+
+
+        { // header scroll
+            var myScrollFunc = function() {
+        
+                const header = document.getElementById("HEADER");
+        
+                var y = window.scrollY;
+                if (y >= 1) {
+                    header.style.position = 'fixed';
+                    header.style.top = '-20px';
+                    header.style.backgroundColor = document.documentElement.style.getPropertyValue('--page1-bg');
+                    /*header.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.75)';*/
+                    header.style.borderBottom = `4px solid ${document.documentElement.style.getPropertyValue('--bg')}`;
+                    ////headerShadow.style.opacity = '90%';
+                } else {
+                    header.style.position = 'absolute';
+                    header.style.top = 0;
+                    header.style.backgroundColor = 'unset';
+                    header.style.backdropFilter = 'unset';
+                    header.style.boxShadow = 'unset';
+                    header.style.borderBottom = 'transparent 4px solid';
+                    ////headerShadow.style.opacity = 0;
+                }
+            };
+        
+            window.addEventListener("scroll", myScrollFunc);
+        }
+
+        await this.alwaysActive();
     },
 
 
@@ -50,7 +80,10 @@ new Vue({
         
 
         pages: [
-            { id: "team", name: "Tým", settings: {} }
+            { id: "team", name: "Tým", settings: { onNavbar: true } },
+            { id: "team", name: "Tým", settings: { onNavbar: true } },
+            { id: "team", name: "Tým", settings: { onNavbar: true } },
+            { id: "team", name: "Tým", settings: { onNavbar: true } },
         ],
 
 
@@ -189,6 +222,96 @@ new Vue({
 
 
     methods: {
+        alwaysActive: function() {
+            this.theme();
+        },
+
+        theme: function() {
+            this.root = document.documentElement;
+            const page = this.pages.find((obj) => {return obj.id === this.currentPage});
+            
+            if(this.webTheme == 'dark') {
+                this.root.style.setProperty('--bg', 'black');
+                this.root.style.setProperty('--body-bg', '#1E2026');
+                this.root.style.setProperty('--text', 'white');
+                this.root.style.setProperty('--page1-bg', '#0D0D14');
+                this.root.style.setProperty('--page2-bg', '#15151E');
+                this.root.style.setProperty('--fontp-color', 'rgb(150, 150, 150)');
+                this.root.style.setProperty('--footer-bg', '#1E2026');
+                this.root.style.setProperty('--text-selected', '#3EFF00');
+                this.root.style.setProperty('--text-selected-darker', '#269A00');
+                this.root.style.setProperty('--font-shadow', '0px 0px 6px #000000');
+                this.root.style.setProperty('--slider-color', 'white');
+                this.root.style.setProperty('--loading-icon', 'url(../images/loading.svg)');
+                this.root.style.setProperty('--mainbg-default', `url(${this.company.defWp[this.webTheme].src}`);
+                this.root.style.setProperty('--button-page-bg', 'linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(204,204,204,0.1) 53%, rgba(91,91,91,0.1) 100%)');
+                this.root.style.setProperty('--button-page-border', 'rgba(60, 60, 60, 1)');
+                this.root.style.setProperty('--element-background-02', 'rgba(255, 255, 255, 0.2)');
+                this.root.style.setProperty('--element-background-01', 'rgba(255, 255, 255, 0.07)');
+                this.root.style.setProperty('--element-background-01-alwaysdark', 'rgba(255, 255, 255, 0.1)');
+                this.root.style.setProperty('--element-background-005', 'rgba(255, 255, 255, 0.05)');
+                this.root.style.setProperty('--element-background-005-alwaysdark', 'rgba(255, 255, 255, 0.05)');
+                this.root.style.setProperty('--element-background-01-col', '#1E1E25');
+                this.root.style.setProperty('--element-background-01-col-page2', '#15151e');
+                this.root.style.setProperty('--element-transparent-background', 'rgba(255, 255, 255, 0.1)');
+                this.root.style.setProperty('--element-transparent-background-02', 'rgba(255, 255, 255, 0.2)');
+                this.root.style.setProperty('--element-transparent-background-hover', 'rgba(255, 255, 255, 0.4)');
+                this.root.style.setProperty('--element-shadow', 'unset');
+                this.root.style.setProperty('--element-border', 'solid 1px transparent');
+                this.root.style.setProperty('--element-grayscale-bg', 'rgb(17,17,17)');
+                this.root.style.setProperty('--dbd-child-bg', '#333640');
+                this.root.style.setProperty('--igpostmaker-accent-color', '#8F00DB');
+                this.root.style.setProperty('--freedombot-status-style-online', '#6bff00');
+                this.root.style.setProperty('--freedombot-status-style-offline', 'red');
+                this.root.style.setProperty('--default-button-background', 'rgb(34,34,34)');
+                this.root.style.setProperty('--pagetransition', 'url(../images/round.svg)');
+                this.root.style.setProperty('--pagetransition-footer', 'url(../images/roundFooter.svg)');
+                this.root.style.setProperty('--companylogo', 'url(../images/logo.webp)');
+                this.root.style.setProperty('--bmshop-oddchild-background', 'rgba(255, 255, 255, 0.05)');
+                if(page) if(page.bg) if(page.bg.gsTheme) {this.root.style.setProperty('--pagetransition', 'url(../images/roundGs.svg)')};
+            } else if(this.webTheme == 'light') {
+                this.root.style.setProperty('--body-bg', 'white');
+                this.root.style.setProperty('--bg', 'white');
+                this.root.style.setProperty('--text', 'black');
+                this.root.style.setProperty('--page1-bg', '#EDF0F2');
+                this.root.style.setProperty('--page2-bg', '#E0E3E5');
+                this.root.style.setProperty('--fontp-color', 'rgb(90, 90, 90)');
+                this.root.style.setProperty('--footer-bg', '#FFFFFF');
+                this.root.style.setProperty('--font-shadow', 'unset');
+                this.root.style.setProperty('--text-selected', '#45C800');
+                this.root.style.setProperty('--text-selected-darker', '#269A00');
+                this.root.style.setProperty('--slider-color', 'gray');
+                this.root.style.setProperty('--loading-icon', 'url(../images/loading-black.svg)');
+                this.root.style.setProperty('--mainbg-default', `url(${this.company.defWp[this.webTheme].src})`);
+                this.root.style.setProperty('--button-page-bg', 'linear-gradient(270deg, rgba(255,255,255,0.1) 0%, rgba(204,204,204,0.1) 53%, rgba(150,150,150,0.1) 100%)');
+                this.root.style.setProperty('--button-page-border', 'rgba(200, 200, 200, 1)');
+                this.root.style.setProperty('--element-background-02', 'rgba(255,255,255)');
+                this.root.style.setProperty('--element-background-005', 'rgba(255, 255, 255)');
+                this.root.style.setProperty('--element-background-005-alwaysdark', 'rgba(0, 0, 0, 0.03)');
+                this.root.style.setProperty('--element-background-01', 'rgba(255,255,255)');
+                this.root.style.setProperty('--element-background-01-alwaysdark', 'rgba(0, 0, 0, 0.1)');
+                this.root.style.setProperty('--element-background-01-col', 'rgba(255,255,255)');
+                this.root.style.setProperty('--element-background-01-col-page2', 'rgba(255,255,255)');
+                this.root.style.setProperty('--element-transparent-background', 'rgba(0,0,0, 0.2)');
+                this.root.style.setProperty('--element-transparent-background-02', 'rgba(0,0,0, 0.2)');
+                this.root.style.setProperty('--element-transparent-background-hover', 'rgba(0,0,0, 0.4)');
+                this.root.style.setProperty('--element-shadow', '1px -1px 10px rgba(0, 0, 0, 0.05 )');
+                this.root.style.setProperty('--element-border', 'solid 1px rgb(233, 233, 233)');
+                this.root.style.setProperty('--element-grayscale-bg', 'rgb(255,255,255)');
+                this.root.style.setProperty('--dbd-child-bg', 'white');
+                this.root.style.setProperty('--igpostmaker-accent-color', '#8F00DB');
+                this.root.style.setProperty('--freedombot-status-style-online', '#53C800');
+                this.root.style.setProperty('--freedombot-status-style-offline', '#b90000');
+                this.root.style.setProperty('--default-button-background', '#EDF0F2');
+                this.root.style.setProperty('--pagetransition', 'url(../images/pagetransition_light/round.svg)');
+                this.root.style.setProperty('--pagetransition-footer', 'url(../images/pagetransition_light/roundFooter.svg)');
+                this.root.style.setProperty('--companylogo', 'url(../images/logowhite.webp)');
+                this.root.style.setProperty('--bmshop-oddchild-background', 'rgba(240, 240, 240)');
+            };
+
+            this.root.style.setProperty('--Ofont-shadow', '0px 0px 3px rgb(0,0,0, 0.8)');
+        },
+
         mainbg: function() {
             const el = document.getElementById('TOP');
             let output = {};

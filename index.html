@@ -23,14 +23,39 @@
 
 <body id="body">
     <div id="vueApp">
+        <!--//LINK - HEADER -->
         <div id="HEADER">
+            <div id="companyname" style="z-index: 1;">
+                <a class="header-logo-pc" title="Zajímavost" v-if="currentPage == 'home'" v-on:click="lightboxOpen({ lightbox: 'lb-zajimavost' })"></a>
+                <a class="header-logo-pc" v-if="currentPage !== 'home'" title="Domů"  href="#home" v-bind:class="{'text-selected': 'home' == currentPage}"></a>
 
+                <a class="logo-mobile" title="Zajímavost" v-if="currentPage == 'home'" v-on:click="lightboxOpen({ lightbox: 'lb-zajimavost' })"></a>
+                <a class="logo-mobile" v-if="currentPage !== 'home'" title="Domů" href="#home" v-bind:class="{'text-selected': 'home' == currentPage}"></a>
+            </div>
+
+            <!--?   NAVBAR PC    -->
+            <div id="header-navbar" class="text-shadow">
+                <a class="a" v-for="(item, index) in pages" v-if="item.settings.onNavbar == true" v-bind:key="index" v-on:click="onMenuItemClick(item)" v-bind:class="{'text-selected': item.id == currentPage}" v-bind:href="'#' + item.id">{{ item.name }}</a>
+            </div>
         </div>
 
+        <!-- //SECTION - TOP -->
         <div id="TOP" v-bind:style="{ height: !fsTopPages.includes(currentPage) ? '92vh' : '100vh'}">
             <div v-bind:style="mainbg()" alt="" id="mainbg"></div>
 
             <transition name="fade">    
+                <div v-if="currentPage == 'home'" key="home" id="toppage-home-text-div">
+                    <div class="page-center">
+                        <div class="home-flex-parent">
+                            <div class="home-text-div">
+                                <p class="h">My Salon</p>
+                                <p class="p p1 font-p">Moderní kadeřnické studio pro celou rodinu</p>
+                            </div>
+                            <div class="biglogo"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div v-if="currentPage == 'team'" key="team">
                     <div class="page-center">
                         <p class="h text-shadow" style="color: white;">NÁŠ TÝM</p>
@@ -39,6 +64,7 @@
                 </div>
             </transition>
         </div>
+        <!-- // !SECTION -->
 
         <div id="PAGE1" v-if="!fsTopPages.includes(currentPage)">
             <div class="page-divider"></div>

@@ -1,8 +1,9 @@
 body {
-    color: rgb(0, 0, 0);
+    color: var(--text);
     background-color: rgb(255, 255, 255);
     margin:0;
 }
+
 
 
 ::-webkit-scrollbar {
@@ -47,12 +48,36 @@ body {
 
 #HEADER {
     width: 100%;
-    height: 75px;
+    height: 90px;
+    margin:0;
+    top:0;
+    z-index: 10;
+    transition-duration: 0.2s;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(3px);
-    border-bottom: solid 5px rgb(24, 24, 24);
-    z-index: 5;
+}
+
+#HEADER #header-navbar {
+    padding: 0 20px;
+    position: absolute;
+    right: 220px;
+    top: 30px;
+    user-select: none;
+    transition-duration: 0.3s;
+}
+
+#HEADER #header-navbar a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    /* color: var(--text); */
+    display: inline-block;
+    line-height: 50px;
+    padding: 0 15px;
+    font-family: gilroy-medium;
+    transition: 0.5s;
+    user-select: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 
 #TOP {
@@ -95,6 +120,69 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*?      HOME      */
+#toppage-home-text-div .home-flex-parent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85vw;
+}
+
+#toppage-home-text-div .biglogo {
+    position: relative;
+    height: 40vw;
+    width: 40vw;
+    background-image: url(../images/logo_white.png), url(../images/blob.svg);
+    background-position: center;
+    background-size: 60%, cover;
+    background-repeat: no-repeat;
+}
+
+#toppage-home-text-div .home-text-div {
+    width: max-content;
+    max-width: 40vw;
+}
+
+
+
+
+#toppage-home-text-div .home-text-div .h {
+    font-size: 90px;
+    color: white;
+    text-align: left;
+}
+
+
+#toppage-home-text-div .home-text-div .p1 {
+    font-size: 23px;
+    text-align: left;
+}
 
 
 
