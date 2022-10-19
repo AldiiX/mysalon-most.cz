@@ -69,7 +69,7 @@ new Vue({
 
         company: {
             name: "MySalon",
-            defWp: { dark: { src: "./images/wallpaper.jpg", filters: 'brightness(40%) grayscale()'}},
+            defWp: { dark: { src: "./images/wallpaper.jpg", filters: 'brightness(55%) grayscale()'}},
             logosource: "./images/logo -sh_1.png",
             copyright: "© My Salon - 2022",
             links: [
@@ -80,10 +80,10 @@ new Vue({
         
 
         pages: [
+            { id: "home", name: "Home", settings: { onNavbar: true } },
             { id: "team", name: "Tým", settings: { onNavbar: true } },
-            { id: "team", name: "Tým", settings: { onNavbar: true } },
-            { id: "team", name: "Tým", settings: { onNavbar: true } },
-            { id: "team", name: "Tým", settings: { onNavbar: true } },
+            { id: "foto", name: "Fotografie", settings: { onNavbar: true } },
+            { id: "test", name: "test", settings: { onNavbar: true } },
         ],
 
 
@@ -234,11 +234,11 @@ new Vue({
                 this.root.style.setProperty('--bg', 'black');
                 this.root.style.setProperty('--body-bg', '#1E2026');
                 this.root.style.setProperty('--text', 'white');
-                this.root.style.setProperty('--page1-bg', '#0D0D14');
+                this.root.style.setProperty('--page1-bg', '#0C0C0C');
                 this.root.style.setProperty('--page2-bg', '#15151E');
                 this.root.style.setProperty('--fontp-color', 'rgb(150, 150, 150)');
                 this.root.style.setProperty('--footer-bg', '#1E2026');
-                this.root.style.setProperty('--text-selected', '#3EFF00');
+                this.root.style.setProperty('--text-selected', '#00d30b');
                 this.root.style.setProperty('--text-selected-darker', '#269A00');
                 this.root.style.setProperty('--font-shadow', '0px 0px 6px #000000');
                 this.root.style.setProperty('--slider-color', 'white');
@@ -278,7 +278,7 @@ new Vue({
                 this.root.style.setProperty('--fontp-color', 'rgb(90, 90, 90)');
                 this.root.style.setProperty('--footer-bg', '#FFFFFF');
                 this.root.style.setProperty('--font-shadow', 'unset');
-                this.root.style.setProperty('--text-selected', '#45C800');
+                this.root.style.setProperty('--text-selected', '#00d30b');
                 this.root.style.setProperty('--text-selected-darker', '#269A00');
                 this.root.style.setProperty('--slider-color', 'gray');
                 this.root.style.setProperty('--loading-icon', 'url(../images/loading-black.svg)');

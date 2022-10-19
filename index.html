@@ -25,13 +25,7 @@
     <div id="vueApp">
         <!--//LINK - HEADER -->
         <div id="HEADER">
-            <div id="companyname" style="z-index: 1;">
-                <a class="header-logo-pc" title="Zajímavost" v-if="currentPage == 'home'" v-on:click="lightboxOpen({ lightbox: 'lb-zajimavost' })"></a>
-                <a class="header-logo-pc" v-if="currentPage !== 'home'" title="Domů"  href="#home" v-bind:class="{'text-selected': 'home' == currentPage}"></a>
-
-                <a class="logo-mobile" title="Zajímavost" v-if="currentPage == 'home'" v-on:click="lightboxOpen({ lightbox: 'lb-zajimavost' })"></a>
-                <a class="logo-mobile" v-if="currentPage !== 'home'" title="Domů" href="#home" v-bind:class="{'text-selected': 'home' == currentPage}"></a>
-            </div>
+            <div class="header-logo"></div>
 
             <!--?   NAVBAR PC    -->
             <div id="header-navbar" class="text-shadow">
@@ -45,11 +39,13 @@
 
             <transition name="fade">    
                 <div v-if="currentPage == 'home'" key="home" id="toppage-home-text-div">
+                    <div id="blob-fullscreen"></div>
                     <div class="page-center">
                         <div class="home-flex-parent">
                             <div class="home-text-div">
                                 <p class="h">My Salon</p>
-                                <p class="p p1 font-p">Moderní kadeřnické studio pro celou rodinu</p>
+                                <p class="p p1 font-p text-selected">Moderní kadeřnické studio pro celou rodinu.</p>
+                                <p class="p p1 font-p">V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají v oblasti nových trendů. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni.</p>
                             </div>
                             <div class="biglogo"></div>
                         </div>

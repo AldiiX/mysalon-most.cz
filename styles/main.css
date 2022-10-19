@@ -5,22 +5,35 @@ body {
 }
 
 
+::selection {
+    background-color: var(--element-background-02) !important;
+    color: white;
+}
+
+:focus-visible {
+    border-radius: 2303px;
+    outline: 4px var(--text-selected) solid;
+}
+
 
 ::-webkit-scrollbar {
-    width: 1em;
+    width: 10px;
     border-radius: 23.03px;
+    transition-duration: 0.3s;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgb(255, 255, 255);
+    background: var(--page1-bg);
     border:0;
     box-shadow: 0;
+    transition-duration: 0.3s;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(190, 190, 190);
+    background: var(--slider-color);
     border-radius: 23.03px;
     border:0;
+    transition-duration: 0.3s;
 }
 
 .fade-enter-active {
@@ -54,12 +67,23 @@ body {
     z-index: 10;
     transition-duration: 0.2s;
     position: absolute;
+    border-color: transparent;
+}
+
+#HEADER .header-logo {
+    position: absolute;
+    background-image: url(../images/logo.png);
+    background-position: center;
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+    left: 7.5vw;
 }
 
 #HEADER #header-navbar {
     padding: 0 20px;
     position: absolute;
-    right: 220px;
+    right: 7.5vw;
     top: 30px;
     user-select: none;
     transition-duration: 0.3s;
@@ -86,6 +110,7 @@ body {
     height: 92vh;
     background-color: rgb(15, 15, 15);
     transition-duration: 0.3s;
+    transition-property: background;
 }
 
 #PAGE1 {
@@ -146,6 +171,19 @@ body {
 
 
 /*?      HOME      */
+
+#toppage-home-text-div #blob-fullscreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/blob_fullscreen.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    right: 0;
+}
+
+
 #toppage-home-text-div .home-flex-parent {
     position: relative;
     display: flex;
@@ -173,14 +211,14 @@ body {
 
 
 #toppage-home-text-div .home-text-div .h {
-    font-size: 90px;
+    font-size: 5vw;
     color: white;
     text-align: left;
 }
 
 
 #toppage-home-text-div .home-text-div .p1 {
-    font-size: 23px;
+    font-size: 1.2vw;
     text-align: left;
 }
 
