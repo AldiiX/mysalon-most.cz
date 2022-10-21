@@ -223,6 +223,33 @@ body {
 }
 
 
+#toppage-home-text-div #home-selectedimg-parent {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 1;
+    width: 40vw;
+    height: auto;
+    min-height: 1.5vw;
+    bottom: 5vw;
+    left: 7.5vw;
+    gap: 15px 0;
+}
+
+
+#toppage-home-text-div .home-selectedimg-child {
+    position: relative;
+    border-radius: 800px;
+    background-color: gray;
+    width: 5.5vw;
+    height: 1.5vw;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    margin-right: -15px;
+    cursor: pointer;
+}
+
+
 
 
 
