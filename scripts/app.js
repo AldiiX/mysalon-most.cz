@@ -62,6 +62,11 @@ new Vue({
         fsTopPages: ['home'],
 
 
+        settings: {
+            homeSelectedSlide: 0,
+        },
+
+
 
 
 

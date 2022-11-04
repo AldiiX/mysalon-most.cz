@@ -247,6 +247,7 @@ body {
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     margin-right: -15px;
     cursor: pointer;
+    transition-duration: 0.18s;
 }
 
 
