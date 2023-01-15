@@ -92,8 +92,7 @@ body {
 #HEADER #header-navbar a {
     font-size: 20px;
     text-decoration: none;
-    color: white;
-    /* color: var(--text); */
+    color: var(--text);
     display: inline-block;
     line-height: 50px;
     padding: 0 15px;
@@ -116,7 +115,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 8vh;
-    background-color: #0C0C0C;
+    background-color: var(--page1-bg);
     transition-duration: 0.3s;
 }
 
@@ -124,7 +123,7 @@ body {
     position: relative;
     width: 100%;
     height: 200px;
-    background-color: rgb(35, 35, 35);
+    background-color: var(--footerbg);
     transition-duration: 0.3s;
 }
 
@@ -136,7 +135,7 @@ body {
     height: 100px;
     overflow: hidden;
     line-height: 0;
-    background-image: url(../images/waves.svg);
+    background-image: var(--waves1);
 }
 
 
@@ -200,6 +199,7 @@ body {
     background-size: 60%, cover;
     background-repeat: no-repeat;
     transition-duration: 0.3s;
+    transition-property: background-image;
 }
 
 #toppage-home .home-text-div {
@@ -212,13 +212,11 @@ body {
 
 #toppage-home .home-text-div .h {
     font-size: 5vw;
-    color: white;
     text-align: left;
 }
 
 #toppage-home .home-text-div .h-smaller {
     font-size: 4vw;
-    color: white;
     text-align: left;
 }
 
@@ -279,12 +277,12 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 150px;
-    padding: 100px 0 100px 0;
+    padding: 50px 0 100px 0;
 }
 
 #page1-home #map-parent #map { 
     border-radius: 50px;
-    border: solid 5px #00d30b;
+    border: solid 5px var(--text-selected);
     background-color: rgb(233, 233, 233);
     box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.3 );
 }
@@ -324,9 +322,10 @@ body {
 #page1-home #map-parent #maptextdiv .p2, #page1-home #map-parent #maptextdiv .p2 a {
     margin:0;
     font-family: gilroy-medium, arial;
+    font-weight: 600;
     text-align: center;
     text-anchor: middle;
-    color: #00d30b;
+    color: var(--text-selected);
     top:25px;
     text-decoration: none;
     font-size: 25px;

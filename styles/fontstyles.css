@@ -23,6 +23,10 @@
     src: url(../fonts/gilroy-regular.otf);
 }
 
+p, h1, a {
+  color: var(--text);
+}
+
 .hidden {
   display: none !important;
 }
@@ -41,6 +45,7 @@
     font-family: gilroy-extrabold, nexa, arial black, arial, calibri;
     position: relative;
     margin: 0;
+    color: var(--text);
 }
 
 .podnadpis, .p {

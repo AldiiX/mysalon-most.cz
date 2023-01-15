@@ -39,7 +39,7 @@
 
             <transition name="fade">    
                 <div v-if="currentPage == 'home'" key="toppage-home" id="toppage-home">
-                    <div id="blob-fullscreen"></div>
+                    <div id="blob-fullscreen" v-bind:style="{ filter: webTheme == 'light' ? 'invert()' : null}"></div>
                     <div class="page-center">
                         <div class="home-flex-parent">
                             <div class="home-text-div">

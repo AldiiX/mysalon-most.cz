@@ -68,7 +68,7 @@ new Vue({
 
     data: {
         currentPage: null,
-        webTheme: 'dark',
+        webTheme: 'light',
         version: "270120221",
         onlyTopPages: [],
         expandedTopPages: ['home'],
@@ -82,7 +82,7 @@ new Vue({
 
         company: {
             name: "MySalon",
-            defWp: { dark: { src: "./images/wallpaper.jpg", filters: 'brightness(55%) grayscale()'}},
+            defWp: { dark: { src: "./images/wallpaper.jpg", filters: 'brightness(55%) grayscale()'}, light: { src: "./images/wallpaper.jpg", filters: 'brightness(30%) grayscale() invert()'}},
             logosource: "./images/logo -sh_1.png",
             copyright: "© My Salon - 2022",
             links: [
@@ -272,6 +272,7 @@ new Vue({
                 this.root.style.setProperty('--element-shadow', 'unset');
                 this.root.style.setProperty('--element-border', 'solid 1px transparent');
                 this.root.style.setProperty('--element-grayscale-bg', 'rgb(17,17,17)');
+                this.root.style.setProperty('--waves1', 'url(../images/waves/waves.svg)');
                 this.root.style.setProperty('--dbd-child-bg', '#333640');
                 this.root.style.setProperty('--igpostmaker-accent-color', '#8F00DB');
                 this.root.style.setProperty('--freedombot-status-style-online', '#6bff00');
@@ -286,7 +287,7 @@ new Vue({
                 this.root.style.setProperty('--body-bg', 'white');
                 this.root.style.setProperty('--bg', 'white');
                 this.root.style.setProperty('--text', 'black');
-                this.root.style.setProperty('--page1-bg', '#EDF0F2');
+                this.root.style.setProperty('--page1-bg', '#F4F4F4');
                 this.root.style.setProperty('--page2-bg', '#E0E3E5');
                 this.root.style.setProperty('--fontp-color', 'rgb(90, 90, 90)');
                 this.root.style.setProperty('--footer-bg', '#FFFFFF');
@@ -311,6 +312,7 @@ new Vue({
                 this.root.style.setProperty('--element-shadow', '1px -1px 10px rgba(0, 0, 0, 0.05 )');
                 this.root.style.setProperty('--element-border', 'solid 1px rgb(233, 233, 233)');
                 this.root.style.setProperty('--element-grayscale-bg', 'rgb(255,255,255)');
+                this.root.style.setProperty('--waves1', 'url(../images/waves/waves_light.svg)');
                 this.root.style.setProperty('--dbd-child-bg', 'white');
                 this.root.style.setProperty('--igpostmaker-accent-color', '#8F00DB');
                 this.root.style.setProperty('--freedombot-status-style-online', '#53C800');
