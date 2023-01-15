@@ -24,7 +24,6 @@ new Vue({
             window.addEventListener('hashchange', async () => {
                 if(!window.location.hash) location.href="";
                 this.currentPage = window.location.hash.substring(1);
-                if(typeof(this.lightboxOpened) == 'string') this.lightboxOpen({})
 
                 await this.alwaysActive();
             }, false);
@@ -93,7 +92,7 @@ new Vue({
         
 
         pages: [
-            { id: "home", name: "Home", settings: { onNavbar: true } },
+            { id: "home", name: "Domů", settings: { onNavbar: true } },
             { id: "team", name: "Tým", settings: { onNavbar: true } },
             { id: "foto", name: "Fotografie", settings: { onNavbar: true } },
         ],
@@ -235,6 +234,13 @@ new Vue({
 
     methods: {
         alwaysActive: function() {
+            /* Při načtení stránky se napíše název webu na příslušný název stránky */ { 
+                let cp = this.pages.find(x => { return x.id == this.currentPage });
+                if(cp) cp = cp.name;
+                if(!cp) cp = 'Web';
+                document.title = `${cp} • My Salon`;
+            };
+
             this.theme();
             this.topPageHeight();
         },
@@ -350,7 +356,6 @@ new Vue({
             if(page) if(page.bg) if(page.bg[theme]) if(page.bg[theme].src) output['backgroundImage'] = `url(${page.bg[theme].src})`;
             if(!page || !page.bg || !page.bg[theme] || !page.bg[theme].src) {
                 output['backgroundImage'] = `url(${this.company.defWp[theme].src})`;
-                if(this.webTheme == 'dark') output['backgroundAttachment'] = 'fixed';
             };
 
 

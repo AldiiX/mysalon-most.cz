@@ -57,6 +57,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     transition-duration: 0.5s;
+    background-attachment: fixed;
 }
 
 #HEADER {
@@ -284,7 +285,7 @@ body {
     border-radius: 50px;
     border: solid 5px var(--text-selected);
     background-color: rgb(233, 233, 233);
-    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.3 );
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.1 );
 }
 
 #page1-home #map-parent #maptextdiv { 

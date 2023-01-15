@@ -9,8 +9,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>MySalon Most • Web</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>MySalon Most - Moderní kadeřnické studio</title>
     <link rel="shortcut icon" href="./images/logo.png?ver=270120221" type="image/x-icon">
 </head>
 
@@ -81,7 +81,7 @@
             <transition name="fade">    
                 <div v-if="currentPage == 'home'" id="page1-home" key="page1-home">
                     <div id="map-parent">
-                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.2743118207901!2d13.638250493644948!3d50.502804903708515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a21cb4bbb95c3%3A0xd235e5d5acd7d809!2sMY%20SALON%20MOST!5e0!3m2!1scs!2scz!4v1652275223749!5m2!1scs!2scz" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" v-bind:style="{ filter: webTheme == 'dark' ? 'invert(90%) hue-rotate(180deg)' : null, boxShadow: webTheme == 'dark' ? 'none' : unset}"></iframe>
+                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.2743118207901!2d13.638250493644948!3d50.502804903708515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a21cb4bbb95c3%3A0xd235e5d5acd7d809!2sMY%20SALON%20MOST!5e0!3m2!1scs!2scz!4v1652275223749!5m2!1scs!2scz" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" v-bind:style="{ filter: webTheme == 'dark' ? 'invert(90%) hue-rotate(180deg)' : null, boxShadow: webTheme == 'dark' ? 'none' : null}"></iframe>
                         <div id="maptextdiv">
                             <p class="h text-selected">Kde nás najdete?</p>
                             <p class="p font-p">Najdete nás v Mostě, na tř. Budovatelů 3068, naproti Centrálu, mezi Čedokem a Bilbem.</p>
@@ -100,7 +100,6 @@
 
         <div id="FOOTER"></div>
     </div>
-    <script src="./scripts/script.js?ver=270120221"></script>
     <script src="./scripts/app.js?ver=270120221"></script>
 </body>
 </html>
