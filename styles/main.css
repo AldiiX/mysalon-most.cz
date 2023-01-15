@@ -255,6 +255,66 @@ body {
     transition-duration: 0.18s;
 }
 
+#page1-home #map-parent {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 150px;
+    padding: 100px 0 100px 0;
+}
+
+#page1-home #map-parent #map { 
+    border-radius: 50px;
+    border: solid 5px #00d30b;
+    background-color: rgb(233, 233, 233);
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.3 );
+}
+
+#page1-home #map-parent #maptextdiv { 
+    --maptextdiv: 500px;
+    width: var(--maptextdiv);
+}
+
+#page1-home #map-parent #maptextdiv .p { 
+    font-size: 20px;
+}
+
+#page1-home #map-parent #maptextdiv div { 
+    border-radius: 50px;
+    pointer-events: none;
+    height: 300px;
+    background-color: rgb(245, 245, 245);
+    background-image: url(../images/photo_front.png);
+    background-position: 50%;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: auto;
+    margin-top: 25px;
+}
+
+#page1-home #map-parent #maptextdiv .h { 
+    text-align: center;
+    font-size: 50px;
+    margin:0;
+}
+
+#page1-home #map-parent #maptextdiv .p {
+    text-align: center;
+}
+
+#page1-home #map-parent #maptextdiv .p2, #page1-home #map-parent #maptextdiv .p2 a {
+    margin:0;
+    font-family: gilroy-medium, arial;
+    text-align: center;
+    text-anchor: middle;
+    color: #00d30b;
+    top:25px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
 
 
 
