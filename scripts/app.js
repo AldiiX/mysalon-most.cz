@@ -68,7 +68,7 @@ new Vue({
     data: {
         currentPage: null,
         webTheme: 'light',
-        version: "270120221",
+        version: "15-01-2023(1)",
         onlyTopPages: [],
         expandedTopPages: ['home'],
 

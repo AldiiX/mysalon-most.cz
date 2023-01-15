@@ -4,14 +4,14 @@
     <meta name="author" content="Admin">
     <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi" />
     <meta name="description" content="MySalon Most - moderní kadeřnické studio pro celou rodinu" />
-    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=270120221"/>
-    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=270120221"/>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=15-01-2023(1)"/>
+    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=15-01-2023(1)"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>MySalon Most - Moderní kadeřnické studio</title>
-    <link rel="shortcut icon" href="./images/logo.png?ver=270120221" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/logo.png?ver=15-01-2023(1)" type="image/x-icon">
 </head>
 
 
@@ -29,7 +29,7 @@
 
             <!--?   NAVBAR PC    -->
             <div id="header-navbar" class="text-shadow">
-                <a class="a" v-for="(item, index) in pages" v-if="item.settings.onNavbar == true" v-bind:key="index" v-on:click="onMenuItemClick(item)" v-bind:class="{'text-selected': item.id == currentPage}" v-bind:href="'#' + item.id">{{ item.name }}</a>
+                <a class="a" v-for="(item, index) in pages" v-if="item.settings.onNavbar == true" v-bind:key="index" v-bind:class="{'text-selected': item.id == currentPage}" v-bind:href="'#' + item.id">{{ item.name }}</a>
             </div>
         </div>
 
@@ -100,7 +100,7 @@
 
         <div id="FOOTER"></div>
     </div>
-    <script src="./scripts/app.js?ver=270120221"></script>
+    <script src="./scripts/app.js?ver=15-01-2023(1)"></script>
 </body>
 </html>
 
