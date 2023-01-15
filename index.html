@@ -34,11 +34,11 @@
         </div>
 
         <!-- //SECTION - TOP -->
-        <div id="TOP" v-bind:style="{ height: !fsTopPages.includes(currentPage) ? '92vh' : '100vh'}">
+        <div id="TOP">
             <div v-bind:style="mainbg()" alt="" id="mainbg"></div>
 
             <transition name="fade">    
-                <div v-if="currentPage == 'home'" key="home" id="toppage-home-text-div">
+                <div v-if="currentPage == 'home'" key="toppage-home" id="toppage-home-text-div">
                     <div id="blob-fullscreen"></div>
                     <div class="page-center">
                         <div class="home-flex-parent">
@@ -47,18 +47,18 @@
                                 <p class="p p1 font-p text-selected">Moderní kadeřnické studio pro celou rodinu.</p>
                                 <p class="p p1 font-p">V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají v oblasti nových trendů. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni.</p>
                             </div>
-                            <div class="biglogo"></div>
+                            <div id="home-biglogo" class="biglogo"></div>
                         </div>
                     </div>
-                    <div id="home-selectedimg-parent">
-                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 0 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 0"></div>
-                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 1 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 1"></div>
-                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 2 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 2"></div>
-                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 3 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 3"></div>
-                    </div>
+                    <!-- <div id="home-selectedimg-parent">
+                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 0 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 0; homeChangeBlob()"></div>
+                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 1 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 1; homeChangeBlob()"></div>
+                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 2 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 2; homeChangeBlob()"></div>
+                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 3 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 3; homeChangeBlob()"></div>
+                    </div> -->
                 </div>
 
-                <div v-if="currentPage == 'team'" key="team">
+                <div v-if="currentPage == 'team'" key="toppage-team">
                     <div class="page-center">
                         <p class="h text-shadow" style="color: white;">NÁŠ TÝM</p>
                         <p class="p text-shadow font-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est perferendis qui amet quibusdam animi voluptate illum blanditiis tenetur, corporis labore culpa dicta consequatur architecto facere doloremque, doloribus excepturi iusto delectus!</p>
@@ -68,10 +68,25 @@
         </div>
         <!-- // !SECTION -->
 
-        <div id="PAGE1" v-if="!fsTopPages.includes(currentPage)">
+
+
+
+
+        <!-- //SECTION - PAGE1 -->
+        <div id="PAGE1" v-if="!onlyTopPages.includes(currentPage)">
             <div class="page-divider"></div>
 
+            <transition name="fade">    
+                <div v-if="currentPage == 'home'" key="page1-home">
+                    
+                </div>
+
+                <div v-if="currentPage == 'team'" key="page1-team">
+                    
+                </div>
+            </transition>
         </div>
+        <!-- // !SECTION -->
 
         <div id="FOOTER"></div>
     </div>

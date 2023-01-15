@@ -11,12 +11,23 @@ new Vue({
 
 
 
-        { // Při načtení stránky se napíše název webu na příslušný název stránky
-            const currentPage = this.currentPage;
-            let cp = this.pages.find(x => { return x.id === currentPage});
-            if(cp) cp = cp.text;
-            if(!cp) cp = 'Web';
-            document.title = `${cp} • My Salon`;
+        {   //*     SCROLL UP
+            document.addEventListener("keydown", function(event) {
+                if(["Esc", "Escape","escape","esc"].includes(event.key)) {
+
+                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
+                }
+            })
+        }
+
+        {  //*      HASHCHANGE
+            window.addEventListener('hashchange', async () => {
+                if(!window.location.hash) location.href="";
+                this.currentPage = window.location.hash.substring(1);
+                if(typeof(this.lightboxOpened) == 'string') this.lightboxOpen({})
+
+                await this.alwaysActive();
+            }, false);
         }
 
 
@@ -59,12 +70,9 @@ new Vue({
         currentPage: null,
         webTheme: 'dark',
         version: "270120221",
-        fsTopPages: ['home'],
+        onlyTopPages: [],
+        expandedTopPages: ['home'],
 
-
-        settings: {
-            homeSelectedSlide: 0,
-        },
 
 
 
@@ -88,7 +96,6 @@ new Vue({
             { id: "home", name: "Home", settings: { onNavbar: true } },
             { id: "team", name: "Tým", settings: { onNavbar: true } },
             { id: "foto", name: "Fotografie", settings: { onNavbar: true } },
-            { id: "test", name: "test", settings: { onNavbar: true } },
         ],
 
 
@@ -229,6 +236,7 @@ new Vue({
     methods: {
         alwaysActive: function() {
             this.theme();
+            this.topPageHeight();
         },
 
         theme: function() {
@@ -317,6 +325,18 @@ new Vue({
             this.root.style.setProperty('--Ofont-shadow', '0px 0px 3px rgb(0,0,0, 0.8)');
         },
 
+        topPageHeight: function() {
+            const top = document.getElementById("TOP");
+            const mainbg = document.getElementById("mainbg"); 
+            const page1 = document.getElementById("PAGE1");
+
+            top.style.height = '92vh';
+            top.style.marginBottom = '0'; 
+            mainbg.style.height = '100%';
+            if(this.expandedTopPages.includes(this.currentPage)) { top.style.height = '100vh'; top.style.marginBottom = '100px'; mainbg.style.height = 'calc(100% + 100px)'; };
+            if(this.onlyTopPages.includes(this.currentPage)) top.style.height = '100vh';
+        },
+
         mainbg: function() {
             const el = document.getElementById('TOP');
             let output = {};
@@ -339,6 +359,15 @@ new Vue({
 
             return output;
         }, 
+
+        homeChangeBlob: function() {
+            const el = document.getElementById("home-biglogo");
+
+            const blobs = ["../images/blob.svg","../images/blob2.svg","../images/blob3.svg","../images/blob4.svg"]
+            const randomIndex = Math.floor(Math.random() * blobs.length);
+
+            el.style.backgroundImage = `url(../images/logo_white.png), url(${blobs[randomIndex]})`;
+        },
     },
 
     computed: {

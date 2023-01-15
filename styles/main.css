@@ -1,6 +1,6 @@
 body {
     color: var(--text);
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg);
     margin:0;
 }
 
@@ -110,7 +110,6 @@ body {
     height: 92vh;
     background-color: rgb(15, 15, 15);
     transition-duration: 0.3s;
-    transition-property: background;
 }
 
 #PAGE1 {
@@ -200,6 +199,7 @@ body {
     background-position: center;
     background-size: 60%, cover;
     background-repeat: no-repeat;
+    transition-duration: 0.3s;
 }
 
 #toppage-home-text-div .home-text-div {
@@ -216,6 +216,11 @@ body {
     text-align: left;
 }
 
+#toppage-home-text-div .home-text-div .h-smaller {
+    font-size: 4vw;
+    color: white;
+    text-align: left;
+}
 
 #toppage-home-text-div .home-text-div .p1 {
     font-size: 1.2vw;
