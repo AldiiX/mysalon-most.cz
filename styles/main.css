@@ -171,7 +171,7 @@ body {
 
 /*?      HOME      */
 
-#toppage-home-text-div #blob-fullscreen {
+#toppage-home #blob-fullscreen {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -183,7 +183,7 @@ body {
 }
 
 
-#toppage-home-text-div .home-flex-parent {
+#toppage-home .home-flex-parent {
     position: relative;
     display: flex;
     align-items: center;
@@ -191,7 +191,7 @@ body {
     width: 85vw;
 }
 
-#toppage-home-text-div .biglogo {
+#toppage-home .biglogo {
     position: relative;
     height: 40vw;
     width: 40vw;
@@ -202,7 +202,7 @@ body {
     transition-duration: 0.3s;
 }
 
-#toppage-home-text-div .home-text-div {
+#toppage-home .home-text-div {
     width: max-content;
     max-width: 40vw;
 }
@@ -210,25 +210,25 @@ body {
 
 
 
-#toppage-home-text-div .home-text-div .h {
+#toppage-home .home-text-div .h {
     font-size: 5vw;
     color: white;
     text-align: left;
 }
 
-#toppage-home-text-div .home-text-div .h-smaller {
+#toppage-home .home-text-div .h-smaller {
     font-size: 4vw;
     color: white;
     text-align: left;
 }
 
-#toppage-home-text-div .home-text-div .p1 {
+#toppage-home .home-text-div .p1 {
     font-size: 1.2vw;
     text-align: left;
 }
 
 
-#toppage-home-text-div #home-selectedimg-parent {
+#toppage-home #home-selectedimg-parent {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -242,7 +242,7 @@ body {
 }
 
 
-#toppage-home-text-div .home-selectedimg-child {
+#toppage-home .home-selectedimg-child {
     position: relative;
     border-radius: 800px;
     background-color: gray;
@@ -253,6 +253,24 @@ body {
     margin-right: -15px;
     cursor: pointer;
     transition-duration: 0.18s;
+}
+
+#toppage-home .home-text-div .facebook-logo {
+    position: relative;
+    width: 10vw;
+    height: 4vw;
+    background-image: url(../images/logos/facebook_dark.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 2.5vw;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+#toppage-home .home-text-div .facebook-logo:hover {
+    filter: brightness(60%);
+    transition-duration: 0.3s;
 }
 
 #page1-home #map-parent {
@@ -284,7 +302,6 @@ body {
     border-radius: 50px;
     pointer-events: none;
     height: 300px;
-    background-color: rgb(245, 245, 245);
     background-image: url(../images/photo_front.png);
     background-position: 50%;
     background-size: 150%;

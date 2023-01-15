@@ -360,6 +360,10 @@ new Vue({
             return output;
         }, 
 
+        openUrl: function(url) {
+            return window.open(url);
+        },
+
         homeChangeBlob: function() {
             const el = document.getElementById("home-biglogo");
 
