@@ -188,7 +188,7 @@ body {
 }
 
 .footer-content-flex-child .fblogo:hover {
-    filter: invert(60%);
+    filter: invert(70%) !important;
     transition-duration: 0.3s;
 }
 
@@ -206,8 +206,8 @@ body {
 #FOOTER #footer-content .copyright .logo {
     width: 150px;
     height: 100px;
-    background-image: url(../images/logo.png);
-    background-size: cover;
+    background-image: url(../images/logo_nsqr.png);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -225,6 +225,7 @@ body {
     overflow: hidden;
     line-height: 0;
     background-image: var(--waves1);
+    transition-duration: 0.3s;
 }
 
 
