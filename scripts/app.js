@@ -70,7 +70,7 @@ new Vue({
         currentPage: null,
         webTheme: 'light',
         version: "16-01-2023(1)",
-        onlyTopPages: [],
+        onlyTopPages: ["test"],
         expandedTopPages: ['home'],
 
 
@@ -94,6 +94,7 @@ new Vue({
 
         pages: [
             { id: "home", name: "Domů", settings: { onNavbar: true, inFooter: true } },
+            { id: "info", name: "Info", settings: { onNavbar: true, inFooter: true } },
             { id: "team", name: "Tým", settings: { onNavbar: true, inFooter: true } },
             { id: "foto", name: "Fotografie", settings: { onNavbar: true, inFooter: true } },
         ],

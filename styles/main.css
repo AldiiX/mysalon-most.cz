@@ -154,6 +154,7 @@ body {
     margin-bottom: 25px;
     text-align: left;
     text-anchor: start;
+    color: var(--text-selected);
 }
 
 .footer-content-flex-child .p {
@@ -164,7 +165,6 @@ body {
     width: max-content;
     transition-duration: 0.3s;
     text-decoration: none;
-    color: var(--fontp-color);
 }
 
 .footer-content-flex-child .p-clickable {
@@ -172,7 +172,23 @@ body {
 }
 
 .footer-content-flex-child .p-clickable:hover {
-    color: var(--text);
+    color: var(--fontp-color);
+    transition-duration: 0.3s;
+}
+
+.footer-content-flex-child .fblogo {
+    width: 180px;
+    height: 70px;
+    background-image: url(../images/logos/facebook_whitelogo.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.footer-content-flex-child .fblogo:hover {
+    filter: invert(60%);
     transition-duration: 0.3s;
 }
 

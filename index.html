@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta name="author" content="Admin">
+    <meta name="author" content="MySalon Most">
     <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi" />
-    <meta name="description" content="MySalon Most - moderní kadeřnické studio pro celou rodinu" />
+    <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu" />
     <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=16-01-2023(1)"/>
     <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=16-01-2023(1)"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <title>MySalon Most - Moderní kadeřnické studio</title>
+    <title>MYSALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
     <link rel="shortcut icon" href="./images/logo.png?ver=16-01-2023(1)" type="image/x-icon">
+    <meta property="og:title" content="MySalon Most">
+    <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
+    <!-- <meta property="og:image" content="/img/webinar-css-grid.png"> -->
+    <meta property="og:site_name" content="MySalon Most">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:url" content="https://www.mysalon-most.cz/">
 </head>
 
 
@@ -98,9 +105,11 @@
         </div>
         <!-- // !SECTION -->
 
+
+        <!-- //SECTION - FOOTER -->
         <div id="FOOTER" v-bind:style="{ paddingTop: onlyTopPages.includes(currentPage) ? '0' : null}">
             <div class="page-divider" v-if="!onlyTopPages.includes(currentPage)" v-bind:style="{ top: 0, rotate: '180deg'}"></div>
-            <div class="page-divider" v-if="onlyTopPages.includes(currentPage)" style="background-image: url(./images/waves/waves2.svg);"></div>
+            <div class="page-divider" v-if="onlyTopPages.includes(currentPage)" v-bind:style="{ backgroundImage: webTheme == 'dark' ? 'url(./images/waves/waves2.svg)' : 'url(./images/waves/waves2_light.svg)'}"></div>
 
             <div id="footer-content">
                 <div id="footer-content-flex">
@@ -111,17 +120,14 @@
 
                     <div class="footer-content-flex-child mobile-hide">
                         <p class="h">Sledujte nás</p>
-                        <!-- <a class="linkdiv flexdiv-center" v-for="item in company.links" v-on:click="openUrl(item)" v-bind:href="item.url" target="_blank">
-                            <img v-bind:src="item.logo[1]" class="linklogo" v-bind:style="{ filter: (webTheme == 'light' ? 'invert() brightness(0)' : 'brightness(5) grayscale()')}">
-                            <p class="p">{{ item.name }}</p>
-                        </a> -->
+                        <div class="fblogo" v-on:click="openUrl('https://cs-cz.facebook.com/MY-SALON-MOST-1449719641988685/')"></div>
                     </div>
 
-                    <div class="footer-content-flex-child mobile-hide">
+                    <div class="footer-content-flex-child">
                         <p class="h">Kontakt</p>
-                        <p class="p"><a style="color: var(--text)">Adresa:</a> Most, tř. Budovatelů 3068</p>
-                        <p class="p"><a style="color: var(--text)">Telefon:</a> +420 476 108 686</p>
-                        <p class="p"><a style="color: var(--text)">Otevírací doba:</a> PO - PÁ: dle objednání</p>
+                        <p class="p">Adresa: <a style="color: var(--fontp-color)">Most, tř. Budovatelů 3068</a></p>
+                        <p class="p">Telefon: <a style="color: var(--fontp-color)">+420 476 108 686</a></p>
+                        <p class="p">Otevírací doba: <a style="color: var(--fontp-color)">PO - PÁ: dle objednání</a></p>
                     </div>
                 </div>
 
@@ -133,6 +139,9 @@
                 </div>
             </div>
         </div>
+        <!-- // !SECTION -->
+
+
     </div>
     <script src="./scripts/app.js?ver=16-01-2023(1)"></script>
 </body>
