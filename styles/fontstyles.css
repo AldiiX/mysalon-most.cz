@@ -166,6 +166,10 @@ p, h1, a {
   color: var(--fontp-color);
 }
 
+.color-fontp {
+  color: var(--fontp-color);
+}
+
 
 @media screen and (max-width: 600px) {
   .mobile-hide {

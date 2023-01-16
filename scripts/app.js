@@ -24,6 +24,7 @@ new Vue({
             window.addEventListener('hashchange', async () => {
                 if(!window.location.hash) location.href="";
                 this.currentPage = window.location.hash.substring(1);
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
 
                 await this.alwaysActive();
             }, false);
@@ -68,7 +69,7 @@ new Vue({
     data: {
         currentPage: null,
         webTheme: 'light',
-        version: "15-01-2023(1)",
+        version: "16-01-2023(1)",
         onlyTopPages: [],
         expandedTopPages: ['home'],
 
@@ -92,9 +93,9 @@ new Vue({
         
 
         pages: [
-            { id: "home", name: "Domů", settings: { onNavbar: true } },
-            { id: "team", name: "Tým", settings: { onNavbar: true } },
-            { id: "foto", name: "Fotografie", settings: { onNavbar: true } },
+            { id: "home", name: "Domů", settings: { onNavbar: true, inFooter: true } },
+            { id: "team", name: "Tým", settings: { onNavbar: true, inFooter: true } },
+            { id: "foto", name: "Fotografie", settings: { onNavbar: true, inFooter: true } },
         ],
 
 
@@ -246,17 +247,22 @@ new Vue({
         },
 
         theme: function() {
+            this.webTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+
+
             this.root = document.documentElement;
             const page = this.pages.find((obj) => {return obj.id === this.currentPage});
             
             if(this.webTheme == 'dark') {
-                this.root.style.setProperty('--bg', 'black');
-                this.root.style.setProperty('--body-bg', '#1E2026');
+                this.root.style.setProperty('--bg', '#040404');
+                this.root.style.setProperty('--body-bg', '#040404');
                 this.root.style.setProperty('--text', 'white');
                 this.root.style.setProperty('--page1-bg', '#0C0C0C');
                 this.root.style.setProperty('--page2-bg', '#15151E');
                 this.root.style.setProperty('--fontp-color', 'rgb(150, 150, 150)');
-                this.root.style.setProperty('--footer-bg', '#1E2026');
+                this.root.style.setProperty('--footer-bg', '#040404');
+                this.root.style.setProperty('--footer-lines', '#3D3D3D');
                 this.root.style.setProperty('--text-selected', '#00d30b');
                 this.root.style.setProperty('--text-selected-darker', '#269A00');
                 this.root.style.setProperty('--font-shadow', '0px 0px 6px #000000');
@@ -297,6 +303,7 @@ new Vue({
                 this.root.style.setProperty('--page2-bg', '#E0E3E5');
                 this.root.style.setProperty('--fontp-color', 'rgb(90, 90, 90)');
                 this.root.style.setProperty('--footer-bg', '#FFFFFF');
+                this.root.style.setProperty('--footer-lines', '#C5C5C5');
                 this.root.style.setProperty('--font-shadow', 'unset');
                 this.root.style.setProperty('--text-selected', '#00d30b');
                 this.root.style.setProperty('--text-selected-darker', '#269A00');

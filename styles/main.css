@@ -122,10 +122,82 @@ body {
 
 #FOOTER {
     position: relative;
+    padding-top: 150px;
     width: 100%;
-    height: 200px;
-    background-color: var(--footerbg);
+    height: auto;
+    background-color: var(--footer-bg);
     transition-duration: 0.3s;
+}
+
+#FOOTER .p2 {
+    margin-top: 5px;
+    font-size: 15.09px;
+}
+
+#footer-logo {
+    width: 100px;
+}
+
+#footer-content-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    width: 80%;
+    max-width: 1230.3px;
+    margin:auto;
+}
+
+.footer-content-flex-child .h {
+    font-size: 25px;
+    padding-bottom: 10px;
+    border-bottom: solid 3px var(--footer-lines);
+    margin-bottom: 25px;
+    text-align: left;
+    text-anchor: start;
+}
+
+.footer-content-flex-child .p {
+    margin: 10px 0px;
+    text-align: left;
+    text-anchor: start;
+    font-size: 16px;
+    width: max-content;
+    transition-duration: 0.3s;
+    text-decoration: none;
+    color: var(--fontp-color);
+}
+
+.footer-content-flex-child .p-clickable {
+    cursor: pointer;
+}
+
+.footer-content-flex-child .p-clickable:hover {
+    color: var(--text);
+    transition-duration: 0.3s;
+}
+
+
+
+#FOOTER #footer-content .copyright {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+#FOOTER #footer-content .copyright .logo {
+    width: 150px;
+    height: 100px;
+    background-image: url(../images/logo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#FOOTER #footer-content .copyright .p {
+    font-size: 25px;
 }
 
 .page-divider {
