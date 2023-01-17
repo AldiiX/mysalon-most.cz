@@ -118,6 +118,8 @@ body {
     min-height: 8vh;
     background-color: var(--page1-bg);
     transition-duration: 0.3s;
+    padding-top: 25px;
+    padding-bottom: 17px;
 }
 
 #FOOTER {
@@ -427,6 +429,83 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*?     TÝM     */
+#page1-team .members-parent {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+#page1-team .members-parent .members-child {
+    position: relative;
+    width: 400px;
+    min-height: 520px;
+    background-color: var(--element-background-01);
+    border-radius: 50px;
+    padding: 30px;
+}
+
+#page1-team .members-parent .members-child .avatar {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: var(--element-background-02);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto;
+    border-radius: 20px;
+}
+
+#page1-team .members-parent .members-child .p-name {
+    position: relative;
+    font-size: 35px;
+    font-family: gilroy-extrabold;
+    margin: auto;
+    margin-top: 30px;
+    width: fit-content;
+    color: var(--text-selected);
+}
+
+#page1-team .members-parent .members-child .p-desc {
+    position: relative;
+    font-size: 18px;
+    font-family: gilroy-medium;
+    font-weight: 600;
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    width: fit-content;
+}
+
+#page1-team .members-parent .members-child .p-info {
+    position: relative;
+    font-size: 18px;
+    font-family: gilroy-medium;
+    margin: auto;
+    text-align: left;
+    color: var(--fontp-color);
+}
 
 
 

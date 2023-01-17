@@ -24,8 +24,11 @@ new Vue({
             window.addEventListener('hashchange', async () => {
                 if(!window.location.hash) location.href="";
                 this.currentPage = window.location.hash.substring(1);
-                window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
-
+                
+                setTimeout(() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
+                }, 1); 
+                
                 await this.alwaysActive();
             }, false);
         }
@@ -104,11 +107,9 @@ new Vue({
             { 
                 name: "Jana Škudrnová",
                 photo: "./images/team/jana.png",
-                desc: "Praxe v kadeřnickém oboru od roku 1993, certifikovaný kouč (od r. 2021).",
+                desc: "Majitelka a vedoucí My Salonu. Praxe v kadeřnickém oboru od roku 1993.",
                 info: [
-                    { txt: "Několikanásobná mistryně a vicemistryně republiky v účesové tvorbě. Reprezentantka ČR na mistrovství světa a na evropském poháru. Účastnice mnoha kadeřnických soutěží."},
-                    { txt: "Absolventka seminářů a stáží v USA, Itálii, Francii, Rakousku, Německu. Nominována na kadeřnického ,,Oskara\" Hairdressing awards. Hodnotitelka a trenérka na kadeřnických soutěžích."},
-                    { txt: "Technoložka značek Beox, Dusy, Balmain Paris."},
+                    { txt: "Několikanásobná mistryně a vicemistryně republiky v účesové tvorbě. Reprezentantka ČR na mistrovství světa a na evropském poháru. Účastnice mnoha kadeřnických soutěží. Absolventka seminářů a stáží v USA, Itálii, Francii, Rakousku, Německu. Nominována na kadeřnického ,,Oskara\" Hairdressing awards. Hodnotitelka a trenérka na kadeřnických soutěžích. Technoložka značek Beox, Dusy, Balmain Paris."}
                 ]
             },
             {
@@ -200,34 +201,34 @@ new Vue({
 
 
         photos: [
-            { src: "./images/interier/head09.jpg"},
-            { src: "./images/interier/head10.jpg"},
-            { src: "./images/interier/head11.jpg"},
-            { src: "./images/interier/head12.jpg"},
-            { src: "./images/interier/interier05.jpg"},
+            [
+                { src: "./images/interier/head09.jpg"},
+                { src: "./images/interier/head10.jpg"},
+                { src: "./images/interier/head11.jpg"},
+                { src: "./images/interier/head12.jpg"},
+                { src: "./images/interier/interier05.jpg"}
+            ],
+            [
+                { src: "./images/hair/1.jpg"},
+                { src: "./images/hair/2.jpg"},
+                { src: "./images/hair/3.jpg"},
+                { src: "./images/hair/4.jpg"},
+                { src: "./images/hair/5.jpg"},
+                { src: "./images/hair/6.jpg"},
+                { src: "./images/hair/7.jpg"},
+                { src: "./images/hair/8.jpg"},
+                { src: "./images/hair/9.jpg"},
+                { src: "./images/hair/10.jpg"},
+                { src: "./images/hair/11.jpg"},
+                { src: "./images/hair/12.jpg"},
+                { src: "./images/hair/13.jpg"},
+                { src: "./images/hair/14.jpg"},
+                { src: "./images/hair/15.jpg"},
+                { src: "./images/hair/16.jpg"},
+                { src: "./images/hair/17.jpg"},
+                { src: "./images/hair/18.jpg"},
+            ],
         ],
-
-
-        photos2: [
-            { src: "./images/hair/1.jpg"},
-            { src: "./images/hair/2.jpg"},
-            { src: "./images/hair/3.jpg"},
-            { src: "./images/hair/4.jpg"},
-            { src: "./images/hair/5.jpg"},
-            { src: "./images/hair/6.jpg"},
-            { src: "./images/hair/7.jpg"},
-            { src: "./images/hair/8.jpg"},
-            { src: "./images/hair/9.jpg"},
-            { src: "./images/hair/10.jpg"},
-            { src: "./images/hair/11.jpg"},
-            { src: "./images/hair/12.jpg"},
-            { src: "./images/hair/13.jpg"},
-            { src: "./images/hair/14.jpg"},
-            { src: "./images/hair/15.jpg"},
-            { src: "./images/hair/16.jpg"},
-            { src: "./images/hair/17.jpg"},
-            { src: "./images/hair/18.jpg"},
-        ]
     },
 
 

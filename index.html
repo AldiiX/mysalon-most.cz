@@ -45,6 +45,7 @@
             <div v-bind:style="mainbg()" alt="" id="mainbg"></div>
 
             <transition name="fade">    
+                <!--- //LINK - Home -->
                 <div v-if="currentPage == 'home'" key="toppage-home" id="toppage-home">
                     <div id="blob-fullscreen" v-bind:style="{ filter: webTheme == 'light' ? 'invert()' : null}"></div>
                     <div class="page-center">
@@ -67,10 +68,11 @@
                     </div> -->
                 </div>
 
+                <!--- //LINK - Team -->
                 <div v-if="currentPage == 'team'" key="toppage-team">
                     <div class="page-center">
-                        <p class="h text-shadow" style="color: white;">NÁŠ TÝM</p>
-                        <p class="p text-shadow font-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est perferendis qui amet quibusdam animi voluptate illum blanditiis tenetur, corporis labore culpa dicta consequatur architecto facere doloremque, doloribus excepturi iusto delectus!</p>
+                        <p class="h text-shadow toppage-h">NÁŠ TÝM</p>
+                        <!-- <p class="p text-shadow font-p toppage-p-min">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est perferendis qui amet quibusdam animi voluptate illum blanditiis tenetur, corporis labore culpa dicta consequatur architecto facere doloremque, doloribus excepturi iusto delectus!</p> -->
                     </div>
                 </div>
             </transition>
@@ -86,6 +88,7 @@
             <div class="page-divider"></div>
 
             <transition name="fade">    
+                <!--- //LINK - Home -->
                 <div v-if="currentPage == 'home'" id="page1-home" key="page1-home">
                     <div id="map-parent">
                         <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.2743118207901!2d13.638250493644948!3d50.502804903708515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a21cb4bbb95c3%3A0xd235e5d5acd7d809!2sMY%20SALON%20MOST!5e0!3m2!1scs!2scz!4v1652275223749!5m2!1scs!2scz" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" v-bind:style="{ filter: webTheme == 'dark' ? 'invert(90%) hue-rotate(180deg)' : null, boxShadow: webTheme == 'dark' ? 'none' : null}"></iframe>
@@ -98,12 +101,25 @@
                     </div>
                 </div>
 
-                <div v-if="currentPage == 'team'" key="page1-team">
-                    
+                <!--- //LINK - Team -->
+                <div v-if="currentPage == 'team'" id="page1-team" key="page1-team">
+                    <div class="members-parent">
+                        <div class="members-child" v-for="member in team">
+                            <div class="avatar" v-bind:style="{ backgroundImage: member.photo ? `url(${member.photo})` : 'url(../images/team/unknown.png)'}"></div>
+
+                            <p class="p p-name">{{ member.name }}</p>
+                            <p class="p p-desc">{{ member.desc }}</p>
+                            <p class="p p-info" v-for="i in member.info">{{ i.txt }}</p>
+                        </div>
+                    </div>
                 </div>
             </transition>
         </div>
         <!-- // !SECTION -->
+
+
+
+
 
 
         <!-- //SECTION - FOOTER -->
