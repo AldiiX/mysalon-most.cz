@@ -453,6 +453,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    width: 90%;
+    margin:auto;
 }
 
 
