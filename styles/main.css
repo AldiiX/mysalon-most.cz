@@ -2,6 +2,12 @@ body {
     color: var(--text);
     background-color: var(--bg);
     margin:0;
+    --mobile-maxw: 600px;
+    --tablet-minw: 600px;
+    --tablet-maxw: 960px;
+    --laptop-minw: 960px;
+    --laptop-maxw: 1264px;
+    --fourk-minw: 1904px;
 }
 
 
@@ -199,6 +205,7 @@ body {
 #FOOTER #footer-content .copyright {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
