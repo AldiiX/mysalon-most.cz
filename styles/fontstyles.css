@@ -116,6 +116,7 @@ p, h1, a {
 
 .page-center {
   position: absolute;
+  width: 85vw;
   z-index: 1;
   text-align: center;
   top: 50%;
@@ -209,6 +210,21 @@ p, h1, a {
 
 
 @media screen and (max-width: 600px) {
+  .toppage-h {
+    font-size: 40px !important;
+  }
+  .toppage-p {
+      font-size: 18px !important;
+      width: 100% !important;
+  }
+  .toppage-h-min {
+      font-size: 30px !important;
+  }
+  .toppage-p-min {
+      font-size: 13px !important;
+      width: 100% !important;
+  }
+
   .mobile-hide {
     display: none !important;
   }
