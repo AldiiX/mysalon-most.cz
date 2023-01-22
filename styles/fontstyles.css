@@ -171,21 +171,21 @@ p, h1, a {
 }
 
 .toppage-h {
-  font-size: 3.8vw !important;
+  font-size: 5vw !important;
 }
 
 .toppage-p {
-  font-size: 1.35vw !important;
+  font-size: 1.6vw !important;
   width: 50vw !important;
   margin: auto !important;
 }
 
 .toppage-h-min {
-  font-size: 3vw !important;
+  font-size: 3.8vw !important;
 }
 
 .toppage-p-min {
-  font-size: 1.1vw !important;
+  font-size: 1.25vw !important;
   width: 50vw !important;
   margin: auto !important;
 }

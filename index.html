@@ -4,14 +4,14 @@
     <meta name="author" content="MySalon Most - Jana Škudrnová">
     <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna" />
     <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu" />
-    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=16-01-2023(1)"/>
-    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=16-01-2023(1)"/>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=22-01-2023(1)"/>
+    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=22-01-2023(1)"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>MYSALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
-    <link rel="shortcut icon" href="./images/logo.png?ver=16-01-2023(1)" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/logo.png?ver=22-01-2023(1)" type="image/x-icon">
     <meta property="og:title" content="MySalon Most">
     <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
     <!-- <meta property="og:image" content="/img/webinar-css-grid.png"> -->
@@ -68,11 +68,32 @@
                     </div> -->
                 </div>
 
+
+
                 <!--- //LINK - Team -->
                 <div v-if="currentPage == 'team'" key="toppage-team">
                     <div class="page-center">
                         <p class="h text-shadow toppage-h">NÁŠ TÝM</p>
-                        <!-- <p class="p text-shadow font-p toppage-p-min">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est perferendis qui amet quibusdam animi voluptate illum blanditiis tenetur, corporis labore culpa dicta consequatur architecto facere doloremque, doloribus excepturi iusto delectus!</p> -->
+                        <!-- <p class="p text-shadow font-p toppage-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est perferendis qui amet quibusdam animi voluptate illum blanditiis tenetur, corporis labore culpa dicta consequatur architecto facere doloremque, doloribus excepturi iusto delectus!</p> -->
+                    </div>
+                </div>
+
+
+
+                <!--- //LINK - Fotografie -->
+                <div v-if="currentPage == 'foto'" key="toppage-fotografie">
+                    <div class="page-center">
+                        <p class="h text-shadow toppage-h">FOTOGRAFIE</p>
+                    </div>
+                </div>
+
+
+
+                <!--- //LINK - Info -->
+                <div v-if="currentPage == 'info'" key="toppage-info">
+                    <div class="page-center">
+                        <p class="h text-shadow toppage-h">O NÁS</p>
+                        <p class="p text-shadow font-p toppage-p">My Salon Most - dámské, pánské dětské kadeřnictví</p>
                     </div>
                 </div>
             </transition>
@@ -101,6 +122,8 @@
                     </div>
                 </div>
 
+
+
                 <!--- //LINK - Team -->
                 <div v-if="currentPage == 'team'" id="page1-team" key="page1-team">
                     <div class="members-parent">
@@ -112,6 +135,41 @@
                             <p class="p p-info" v-for="i in member.info">{{ i.txt }}</p>
                         </div>
                     </div>
+                </div>
+
+
+
+                <!--- //LINK - Fotografie -->
+                <div v-if="currentPage == 'foto'" id="page1-foto" key="page1-foto">
+                    <div class="photos-parent1">
+                        <img class="photos-child" v-for="img in photos[0]" v-bind:src="img.src"></img>
+                    </div>
+
+                    <div class="photos-parent2">
+                        <img class="photos-child" v-for="img in photos[1]" v-bind:src="img.src"></img>
+                    </div>
+                </div>
+
+
+
+                <!--- //LINK - Info -->
+                <div v-if="currentPage == 'info'" id="page1-info" key="page1-info">
+                    <p class="p p1">Nabízíme tyto služby:</p>
+                    
+                    <div class="sluzby-parent">
+                        <p class="sluzby-child">Precizní střihy</p>
+                        <p class="sluzby-child">Barvení vlasů dle aktuálních trendů </p>
+                        <p class="sluzby-child">Melírování vlasů bez poškození vlasů</p>
+                        <p class="sluzby-child">Balayage, ombre a flamboage a podobné techniky</p>
+                        <p class="sluzby-child">Blond odstíny šetrnou cestou od šedé a bílé, až po přírodní blond</p>
+                        <p class="sluzby-child">Stahování a čištění barvy</p>
+                        <p class="sluzby-child">Společenské a svatební účesy</p>
+                        <p class="sluzby-child">Horké nůžky</p>
+                        <p class="sluzby-child">Poradenství</p>
+                        <p class="sluzby-child">Prodej vlasové kosmetiky</p>
+                    </div>
+
+                    <p class="p p2">Při práci používáme výhradně kvalitní a profesionální produkty.</p>
                 </div>
             </transition>
         </div>
@@ -159,6 +217,6 @@
 
 
     </div>
-    <script src="./scripts/app.js?ver=16-01-2023(1)"></script>
+    <script src="./scripts/app.js?ver=22-01-2023(1)"></script>
 </body>
 </html>
