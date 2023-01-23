@@ -252,6 +252,10 @@ new Vue({
             this.topPageHeight();
         },
 
+        onItemClick: function(id) {
+            location.href= `#${id}`;
+        },
+
         theme: function() {
             this.webTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 

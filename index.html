@@ -59,7 +59,7 @@
             <div id="header-menu-icon" v-on:click="menuOpen()"></div>
 
             <div id="header-menu" v-if="temp.menuOpened == true">
-                <div v-for="(item, index) in pages" v-if="item.settings.onNavbar == true" v-bind:key="index" id="header-menu-flexdiv" v-bind:href="'#' + item.id">
+                <div v-for="(item, index) in pages" v-if="item.settings.onNavbar == true" v-bind:key="index" id="header-menu-flexdiv" v-on:click="onItemClick(item.id); menuOpen()">
                     <!-- <img v-bind:src="item.icon" v-bind:style="{ filter: (webTheme == 'dark' ? 'invert() grayscale() brightness(200%)' : 'invert() grayscale() brightness(00%)')}"> -->
                     <a v-bind:class="{'text-selected': item.id == currentPage}">{{ item.name }}</a>
                 </div>
