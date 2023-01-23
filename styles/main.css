@@ -710,6 +710,7 @@ body {
     margin: auto;
     margin-top: 50px;
     color: var(--fontp-color);
+    font-size: 30px;
 }
 
 #page1-info .sluzby-parent {
@@ -878,6 +879,11 @@ body {
 
 
     /*? INFO */
+
+    #page1-info .p2 {
+        font-size: unset;
+    }
+
     #page1-info .sluzby-parent {
         width: 90vw;
         max-width: none;
