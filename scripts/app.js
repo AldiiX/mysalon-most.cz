@@ -72,9 +72,13 @@ new Vue({
     data: {
         currentPage: null,
         webTheme: 'light',
-        version: "22-01-2023(1)",
+        version: "23-01-2023(1)",
         onlyTopPages: ["test"],
         expandedTopPages: ['home'],
+        temp: {
+            menuOpened: false,
+            lightboxOpened: null,
+        },
 
 
 
@@ -387,6 +391,24 @@ new Vue({
             const randomIndex = Math.floor(Math.random() * blobs.length);
 
             el.style.backgroundImage = `url(../images/logo_white.png), url(${blobs[randomIndex]})`;
+        },
+
+        menuOpen: function() {
+            let opened = this.temp.menuOpened;
+            const menu = document.getElementById('menu-opened');
+
+            switch(opened) {
+                case false: {
+                    body.style.overflowY = "hidden";
+                    this.temp.menuOpened = true;
+                } break;
+
+                case true: {
+                    body.style.overflowY = "visible";
+                    this.temp.menuOpened = false;
+                } break;
+            }
+            
         },
     },
 

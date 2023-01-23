@@ -110,6 +110,88 @@ body {
     transition-duration: 0.3s;
 }
 
+#header-menu {
+    right: 7.5vw;
+    top: 100px;
+    position: absolute;
+    width: auto;
+    height: auto;
+    background-color: var(--page1-bg);
+    padding: 10px;
+    border-radius: 20px;
+    display: none;
+    z-index: 4;
+    animation-name: opp_on;
+    animation-duration: 0.3s;
+    animation-iteration-count: start;
+}
+
+#header-menu-flexdiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 10px;
+    cursor: pointer;
+}
+
+#header-menu-flexdiv img {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    filter: invert() grayscale() brightness(200%);
+    margin-right: 20px;
+}
+
+#header-menu-flexdiv a, #header-menu-flexdiv span {
+    font-family: gilroy-medium;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 30px;
+    transition-duration: 0.5s;
+    user-select: none;
+}
+
+#header-menu-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 7.5vw;
+    top: 30px;
+    cursor: pointer;
+    z-index: 3;
+    background-image: url(../images/menu.webp);
+    background-size: cover;
+    background-position: center;
+    image-rendering:optimizeQuality;
+    display: none;
+}
+
+.header-menu-flexdiv-more .morediv {
+    position: absolute;
+    visibility: hidden;
+    width: auto;
+    height: auto;
+    background-color: var(--page1-bg);
+    padding: 10px;
+    border-radius: 20px;
+    animation-name: opp_on;
+    animation-duration: 0.3s;
+    animation-iteration-count: start;
+    transition-duration: 0s !important;
+    display:grid;
+    right: 0;
+    top: 90%;
+}
+
+.header-menu-flexdiv-more:hover .morediv {
+    visibility: visible;
+}
+.header-menu-flexdiv-more .morediv a {
+    margin:5px;
+    transition-duration: 0s !important;
+    font-size: 23px !important;
+}
+
 #TOP {
     position: relative;
     width: 100%;
@@ -208,8 +290,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 0 20px;
+    max-width: 80vw;
+    margin: auto;
     margin-bottom: 30px;
-    gap: 20px;
 }
 
 #FOOTER #footer-content .copyright .logo {
@@ -235,6 +319,18 @@ body {
     line-height: 0;
     background-image: var(--waves1);
     transition-duration: 0.3s;
+}
+
+.lightbox-blurdiv {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(236, 228, 228, 0);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(4px) brightness(70%);
+    z-index: 3;
 }
 
 
@@ -390,17 +486,13 @@ body {
     width: var(--maptextdiv);
 }
 
-#page1-home #map-parent #maptextdiv .p { 
-    font-size: 20px;
-}
-
 #page1-home #map-parent #maptextdiv div { 
     border-radius: 50px;
     pointer-events: none;
     height: 300px;
     background-image: url(../images/photo_front.png);
     background-position: 50%;
-    background-size: 150%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
     width: auto;
@@ -409,7 +501,6 @@ body {
 
 #page1-home #map-parent #maptextdiv .h { 
     text-align: center;
-    font-size: 50px;
     margin:0;
 }
 
@@ -426,7 +517,6 @@ body {
     color: var(--text-selected);
     top:25px;
     text-decoration: none;
-    font-size: 25px;
 }
 
 
@@ -607,7 +697,6 @@ body {
 /*? INFO */
 
 #page1-info .p1 {
-    font-size: 40px;
     font-family: gilroy-extrabold;
     text-align: center;
     margin-bottom: 15px;
@@ -615,9 +704,10 @@ body {
 }
 
 #page1-info .p2 {
-    font-size: 30px;
+    max-width: 80%;
     font-weight: 600;
     text-align: center;
+    margin: auto;
     margin-top: 50px;
     color: var(--fontp-color);
 }
@@ -682,12 +772,155 @@ body {
     #header-navbar {
         display: none;
     }
+
+    #header-menu-icon,
+    #header-menu {
+        display: unset;
+    }
+
+
+
+
+    /*? HOME */
+    #toppage-home .home-flex-parent {
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+
+    #toppage-home .biglogo  {
+        display: none;
+    }
+
+    #toppage-home .home-text-div {
+        width: max-content;
+        max-width: 90vw;
+    }
+
+    #toppage-home .home-text-div .h {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    #toppage-home .home-text-div .p1 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #toppage-home .home-text-div .facebook-logo {
+        width: 120px;
+        height: 50px;
+        margin: auto;
+        margin-top: 5px;
+    }
+
+    #page1-home #map-parent {
+        padding-top:0;
+    }
+
+    #page1-home #map-parent #map {
+        display: none;
+    }
+
+    #page1-home #map-parent #maptextdiv div {
+        width: 80vw;
+        margin: 20px auto;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    #page1-home #map-parent #maptextdiv .p2, #page1-home #map-parent #maptextdiv .p2 a {
+        top: 0;
+    }
+
+    #page1-home #map-parent #maptextdiv .p1 {
+        width: 80vw;
+        margin:auto;
+    }
+
+
+
+
+
+    /*? TÝM */
+
+    #page1-team .members-parent {
+        display: grid;
+        margin: auto;
+        width: 90vw;
+        gap: 50px;
+    }
+
+    #page1-team .members-parent .members-child {
+        position: relative;
+        width: fit-content;
+        margin: auto;
+        min-height: 0;
+    }
+
+    #page1-team .members-parent .members-child .avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    #page1-team .members-parent .members-child .p-name {
+        font-size: 30px;
+    }
+
+    #page1-team .members-parent .members-child .p-desc,
+    #page1-team .members-parent .members-child .p-info {
+        font-size: 16px;
+    }
+
+
+
+
+
+
+    /*? INFO */
+    #page1-info .sluzby-parent {
+        width: 90vw;
+        max-width: none;
+        margin: auto;
+        gap: 15px;
+    }
+
+    #page1-info .sluzby-parent .sluzby-child {
+        font-size: 16px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /*?     FOTO    */ 
+    #page1-foto .photos-parent1,
+    #page1-foto .photos-parent2 {
+        display: grid;
+        width: 90vw;
+    }
+
+    #page1-foto .photos-parent1 img,
+    #page1-foto .photos-parent2 img {
+        width: 100%; 
+    }
 }
 
 /* Tablets */
 @media screen and (min-width: 600px) and (max-width: 960px) {
     #header-navbar {
         display: none;
+    }
+
+    #header-menu-icon,
+    #header-menu {
+        display: unset;
     }
 }
 

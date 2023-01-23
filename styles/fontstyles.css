@@ -46,12 +46,14 @@ p, h1, a {
     position: relative;
     margin: 0;
     color: var(--text);
+    font-size: 50px;
 }
 
 .podnadpis, .p {
     font-family: gilroy-medium, arial, calibri;
     position: relative;
     margin: 0;
+    font-size: 20px;
 }
 
 
@@ -231,6 +233,14 @@ p, h1, a {
 
   .mobile-show {
     display: unset !important;
+  }
+
+  .nadpis, .h {
+    font-size: 32px;
+  }
+
+  .podnadpis, .p {
+      font-size: 16px;
   }
 }
 
