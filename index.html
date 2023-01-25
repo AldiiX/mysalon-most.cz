@@ -4,14 +4,15 @@
     <meta name="author" content="MySalon Most - Jana Škudrnová">
     <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna, my salon, my salon most, mysalon most, moderní kadeřnické studio, kadeřnictví most, kadeřnice, kadeřnice most, kadeřnictví mysalon, kadeřnictví my salon, kadeřnictví škudrnová" />
     <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu" />
-    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=23-01-2023(1)"/>
-    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=23-01-2023(1)"/>
+    <meta content="#00d30b" data-react-helmet="true" name="theme-color"/>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=25-01-2023(1)"/>
+    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=25-01-2023(1)"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <title>MYSALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
-    <link rel="shortcut icon" href="./images/logo.png?ver=23-01-2023(1)" type="image/x-icon">
+    <title>MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
+    <link rel="shortcut icon" href="./images/logo.png?ver=25-01-2023(1)" type="image/x-icon">
     <meta property="og:title" content="MySalon Most">
     <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
     <!-- <meta property="og:image" content="/img/webinar-css-grid.png"> -->
@@ -160,6 +161,7 @@
                         <div class="members-child" v-for="member in team">
                             <div class="avatar" v-bind:style="{ backgroundImage: member.photo ? `url(${member.photo})` : 'url(../images/team/unknown.png)'}"></div>
 
+                            <p class="p p-name" v-if="!vueLoaded">Jana Škudrnová</p>
                             <p class="p p-name">{{ member.name }}</p>
                             <p class="p p-desc">{{ member.desc }}</p>
                             <p class="p p-info" v-for="i in member.info">{{ i.txt }}</p>
@@ -247,6 +249,6 @@
 
 
     </div>
-    <script src="./scripts/app.js?ver=23-01-2023(1)"></script>
+    <script src="./scripts/app.js?ver=25-01-2023(1)"></script>
 </body>
 </html>
