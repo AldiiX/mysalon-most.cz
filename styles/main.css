@@ -785,7 +785,7 @@ body {
     /*? HOME */
     #toppage-home .home-flex-parent {
         justify-content: center;
-        margin-top: 50px;
+        margin-top: 5vh;
     }
 
 
