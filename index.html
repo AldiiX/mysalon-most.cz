@@ -5,14 +5,14 @@
     <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna, my salon, my salon most, mysalon most, moderní kadeřnické studio, kadeřnictví most, kadeřnice, kadeřnice most, kadeřnictví mysalon, kadeřnictví my salon, kadeřnictví škudrnová" />
     <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu" />
     <meta content="#00d30b" data-react-helmet="true" name="theme-color"/>
-    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=29-01-2023(1)"/>
-    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=29-01-2023(1)"/>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=30-01-2023(1)"/>
+    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=30-01-2023(1)"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
-    <link rel="shortcut icon" href="./images/logo.png?ver=29-01-2023(1)" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/logo.png?ver=30-01-2023(1)" type="image/x-icon">
     <meta property="og:title" content="MySalon Most">
     <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
     <!-- <meta property="og:image" content="/img/webinar-css-grid.png"> -->
@@ -29,7 +29,7 @@
 
 
 
-<body id="body">
+<body id="body" oncontextmenu="return false">
     <div id="vueApp">
 
 
@@ -48,8 +48,12 @@
         <!--//SECTION - HEADER -->
         <div id="HEADER">
             <div v-if="temp.menuOpened" class="lightbox-blurdiv" v-on:click="menuOpen()"></div>
-            <div class="header-logo"></div>
-
+            <div class="header-logo" v-on:click="onItemClick('home')" v-bind:style="{ 
+                    '--headerlogo-hover': (currentPage != 'home' ? 'brightness(60%)' : null), 
+                    cursor: (currentPage != 'home' ? 'pointer' : 'default')
+                }">
+            </div>
+            
             <!--?   NAVBAR PC    -->
             <div id="header-navbar" class="text-shadow">
                 <a class="a" v-for="(item, index) in pages" v-if="item.settings.onNavbar == true" v-bind:key="index" v-bind:class="{'text-selected': item.id == currentPage}" v-bind:href="'#' + item.id">{{ item.name }}</a>
@@ -82,10 +86,14 @@
                     <div class="page-center">
                         <div class="home-flex-parent">
                             <div class="home-text-div">
-                                <p class="h">My Salon</p>
+                                <h2 class="h">My Salon</h2>
                                 <p class="p p1 font-p text-selected">Moderní kadeřnické studio pro celou rodinu.</p>
                                 <p class="p p1 font-p">V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají v oblasti nových trendů. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni.</p>
-                                <div class="facebook-logo" v-on:click="openUrl('https://cs-cz.facebook.com/MY-SALON-MOST-1449719641988685/')"></div>
+                                <!-- <div class="facebook-logo" v-on:click="openUrl('https://cs-cz.facebook.com/MY-SALON-MOST-1449719641988685/')"></div> -->
+                                <div class="objednavky-texts">
+                                    <a class="p1">Objednávky:</a>
+                                    <a class="p2">+420 476 108 686</a>
+                                </div>
                             </div>
                             <div id="home-biglogo" class="biglogo"></div>
                         </div>
@@ -104,7 +112,7 @@
                 <!--- //LINK - Team -->
                 <div v-if="currentPage == 'team'" key="toppage-team">
                     <div class="page-center">
-                        <p class="h text-shadow toppage-h">NÁŠ TÝM</p>
+                        <h1 class="h text-shadow toppage-h">NÁŠ TÝM</h1>
                         <!-- <p class="p text-shadow font-p toppage-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est perferendis qui amet quibusdam animi voluptate illum blanditiis tenetur, corporis labore culpa dicta consequatur architecto facere doloremque, doloribus excepturi iusto delectus!</p> -->
                     </div>
                 </div>
@@ -114,7 +122,7 @@
                 <!--- //LINK - Fotografie -->
                 <div v-if="currentPage == 'foto'" key="toppage-fotografie">
                     <div class="page-center">
-                        <p class="h text-shadow toppage-h">FOTOGRAFIE</p>
+                        <h1 class="h text-shadow toppage-h">FOTOGRAFIE</h1>
                     </div>
                 </div>
 
@@ -123,7 +131,7 @@
                 <!--- //LINK - Info -->
                 <div v-if="currentPage == 'info'" key="toppage-info">
                     <div class="page-center">
-                        <p class="h text-shadow toppage-h">O NÁS</p>
+                        <h1 class="h text-shadow toppage-h">O NÁS</h1>
                         <p class="p text-shadow font-p toppage-p">My Salon Most - dámské, pánské dětské kadeřnictví</p>
                     </div>
                 </div>
@@ -145,7 +153,7 @@
                     <div id="map-parent">
                         <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.2743118207901!2d13.638250493644948!3d50.502804903708515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a21cb4bbb95c3%3A0xd235e5d5acd7d809!2sMY%20SALON%20MOST!5e0!3m2!1scs!2scz!4v1652275223749!5m2!1scs!2scz" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" v-bind:style="{ filter: webTheme == 'dark' ? 'invert(90%) hue-rotate(180deg)' : null, boxShadow: webTheme == 'dark' ? 'none' : null}"></iframe>
                         <div id="maptextdiv">
-                            <p class="h text-selected">Kde nás najdete?</p>
+                            <h2 class="h text-selected">Kde nás najdete?</h2>
                             <p class="p p1 font-p">Najdete nás v Mostě, na tř. Budovatelů 3068, naproti Centrálu, mezi Čedokem a Bilbem.</p>
                             <div></div>
                             <p class="p p2"><a target="_blank" href="https://www.google.com/maps/@50.5027717,13.6392274,3a,19.6y,269.41h,90.36t/data=!3m7!1e1!3m5!1sdw4s66Gb_KFafZvXya2DPQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Ddw4s66Gb_KFafZvXya2DPQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D96.23527%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?hl=cs">Zobrazit 365° pohled</a></p>
@@ -186,7 +194,7 @@
 
                 <!--- //LINK - Info -->
                 <div v-if="currentPage == 'info'" id="page1-info" key="page1-info">
-                    <p class="h p1">Nabízíme tyto služby:</p>
+                    <h2 class="h p1">Nabízíme tyto služby:</h2>
                     
                     <div class="sluzby-parent">
                         <p class="sluzby-child">Precizní střihy</p>
@@ -249,6 +257,6 @@
 
 
     </div>
-    <script src="./scripts/app.js?ver=29-01-2023(1)"></script>
+    <script src="./scripts/app.js?ver=30-01-2023(1)"></script>
 </body>
 </html>

@@ -85,6 +85,14 @@ body {
     width: 120px;
     height: 120px;
     left: 7.5vw;
+    transition-duration: 0.3s;
+    transition-property: filter;
+    cursor: pointer;
+}
+
+#HEADER .header-logo:hover {
+    transition-duration: 0.3s;
+    filter: var(--headerlogo-hover);
 }
 
 #HEADER #header-navbar {
@@ -417,6 +425,28 @@ body {
 #toppage-home .home-text-div .p1 {
     font-size: 1.2vw;
     text-align: left;
+}
+
+#toppage-home .home-text-div .objednavky-texts {
+    margin-top: 2.5vw;
+    gap: 25px;
+    width: fit-content;
+    align-items: center;
+}
+
+
+#toppage-home .home-text-div .objednavky-texts .p1 {
+    font-size: 1.5vw;
+    font-family: gilroy-extrabold;
+    border-bottom: 3px var(--text-selected) solid;
+    cursor:default;
+}
+
+#toppage-home .home-text-div .objednavky-texts .p2 {
+    color: var(--text-selected);
+    font-size: 1.8vw;
+    font-family: gilroy-extrabold;
+    margin-left: 1vw;
 }
 
 
@@ -785,7 +815,7 @@ body {
     /*? HOME */
     #toppage-home .home-flex-parent {
         justify-content: center;
-        margin-top: 5vh;
+        margin-top: 4vw;
     }
 
 
@@ -813,6 +843,27 @@ body {
         height: 50px;
         margin: auto;
         margin-top: 5px;
+    }
+
+    #toppage-home .home-text-div .objednavky-texts {
+        display: grid;
+        gap: 0;
+        margin:auto;
+        margin-top: 20px;
+    }
+    
+    
+    #toppage-home .home-text-div .objednavky-texts .p1 {
+        font-size: 20px;
+        font-family: gilroy-extrabold;
+        border-bottom: 3px var(--fontp-color) solid;
+    }
+    
+    #toppage-home .home-text-div .objednavky-texts .p2 {
+        color: var(--text-selected);
+        font-size: 24px;
+        font-family: gilroy-extrabold;
+        margin-left: 1vw;
     }
 
     #page1-home #map-parent {
