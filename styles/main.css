@@ -809,6 +809,11 @@ body {
         display: unset;
     }
 
+    #footer-content-flex {
+        display: grid;
+        gap: 75px;
+    }
+
 
 
 
