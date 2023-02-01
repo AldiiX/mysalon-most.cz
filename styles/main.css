@@ -826,7 +826,7 @@ body {
     /*? HOME */
     #toppage-home .home-flex-parent {
         justify-content: center;
-        margin-top: 4vw;
+        margin-top: 0vw;
     }
 
 
