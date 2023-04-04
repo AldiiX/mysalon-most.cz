@@ -2,17 +2,17 @@
 <html lang="cs">
 <head>
     <meta name="author" content="MySalon Most - Jana Škudrnová">
-    <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna, my salon, my salon most, mysalon most, moderní kadeřnické studio, kadeřnictví most, kadeřnice, kadeřnice most, kadeřnictví mysalon, kadeřnictví my salon, kadeřnictví škudrnová" />
-    <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu" />
+    <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna, my salon, my salon most, mysalon most, moderní kadeřnické studio, kadeřnictví most, kadeřnice, kadeřnice most, kadeřnictví mysalon, kadeřnictví my salon, kadeřnictví škudrnová, škudrnová jana, holičství most, holičství" />
+    <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu. V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni." />
     <meta content="#00d30b" data-react-helmet="true" name="theme-color"/>
-    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=01-02-2023(2)"/>
-    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=01-02-2023(2)"/>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css?ver=04-04-2023(2)"/>
+    <link rel="stylesheet" type="text/css" href="./styles/fontstyles.css?ver=04-04-2023(2)"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
-    <link rel="shortcut icon" href="./images/logo.png?ver=01-02-2023(2)" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/logo.png?ver=04-04-2023(2)" type="image/x-icon">
     <meta property="og:title" content="MySalon Most">
     <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
     <!-- <meta property="og:image" content="/img/webinar-css-grid.png"> -->
@@ -169,7 +169,9 @@
                         <div class="members-child" v-for="member in team">
                             <div class="avatar" v-bind:style="{ backgroundImage: member.photo ? `url(${member.photo})` : 'url(../images/team/unknown.png)'}"></div>
 
-                            <p class="p p-name" v-if="!vueLoaded">Jana Škudrnová</p>
+                            <h2 class="p p-name" v-if="!vueLoaded">Jana Škudrnová</h2>
+                            <p class="p p-name" v-if="!vueLoaded">Jana Škudrnová je majitelka a vedoucí My Salonu. Praxe v kadeřnickém oboru od roku 1993. Několikanásobná mistryně a vicemistryně republiky v účesové tvorbě. Reprezentantka ČR na mistrovství světa a na evropském poháru. Účastnice mnoha kadeřnických soutěží. Absolventka seminářů a stáží v USA, Itálii, Francii, Rakousku, Německu. Nominována na kadeřnického ,,Oskara\" Hairdressing awards. Hodnotitelka a trenérka na kadeřnických soutěžích. Technoložka značek Beox, Dusy, Balmain Paris.</p>
+                            <img src="./images/team/jana.png" alt="Jana Škudrnová" v-if="!vueLoaded">
                             <p class="p p-name">{{ member.name }}</p>
                             <p class="p p-desc">{{ member.desc }}</p>
                             <p class="p p-info" v-for="i in member.info">{{ i.txt }}</p>
@@ -257,6 +259,6 @@
 
 
     </div>
-    <script src="./scripts/app.js?ver=01-02-2023(2)"></script>
+    <script src="./scripts/app.js?ver=04-04-2023(2)"></script>
 </body>
 </html>
