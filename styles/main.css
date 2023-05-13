@@ -526,7 +526,7 @@ body {
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
+    background-position: 37%, center;
     width: auto;
     margin-top: 25px;
 }

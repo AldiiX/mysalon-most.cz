@@ -73,7 +73,7 @@ new Vue({
         currentPage: null,
         vueLoaded: true,
         webTheme: 'light',
-        version: "04-04-2023(2)",
+        version: "13-05-2023(1)",
         onlyTopPages: ["test"],
         expandedTopPages: ['home'],
         temp: {
@@ -210,6 +210,7 @@ new Vue({
                 { src: "./images/interier/interier05.jpg"}
             ],
             [
+                { src: "./images/hair/30.jpg"},
                 { src: "./images/hair/29.jpg"},
                 { src: "./images/hair/28.jpg"},
                 { src: "./images/hair/27.jpg"},
