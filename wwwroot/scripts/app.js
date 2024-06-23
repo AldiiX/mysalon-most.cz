@@ -90,8 +90,8 @@ new Vue({
 
         company: {
             name: "MySalon",
-            defWp: { dark: { src: "./images/wallpaper.jpg", filters: 'brightness(55%) grayscale()'}, light: { src: "./images/wallpaper.jpg", filters: 'brightness(30%) grayscale() invert()'}},
-            logosource: "./images/logo -sh_1.png",
+            defWp: { dark: { src: "/images/wallpaper.jpg", filters: 'brightness(55%) grayscale()'}, light: { src: "/images/wallpaper.jpg", filters: 'brightness(30%) grayscale() invert()'}},
+            logosource: "/images/logo -sh_1.png",
         },
 
         
@@ -107,7 +107,7 @@ new Vue({
         team: [
             { 
                 name: "Jana Škudrnová",
-                photo: "./images/team/jana.png",
+                photo: "/images/team/jana.png",
                 desc: "Majitelka a vedoucí My Salonu. Praxe v kadeřnickém oboru od roku 1993.",
                 info: [
                     { txt: "Několikanásobná mistryně a vicemistryně republiky v účesové tvorbě. Reprezentantka ČR na mistrovství světa a na evropském poháru. Účastnice mnoha kadeřnických soutěží. Absolventka seminářů a stáží v USA, Itálii, Francii, Rakousku, Německu. Nominována na kadeřnického ,,Oskara\" Hairdressing awards. Hodnotitelka a trenérka na kadeřnických soutěžích. Technoložka značek Beox, Dusy, Balmain Paris."}
@@ -171,7 +171,7 @@ new Vue({
                     { bold:true, text: "VELMI SI VÁŽÍME VAŠÍ DŮVĚRY A DĚKUJEME, ŽE VYUŽÍVÁTE NAŠE SLUŽBY :)"},
                     { text: ""},
                 ],
-                photo: "./images/info/covid.png",
+                photo: "/images/info/covid.png",
                 showPhoto: true,
                 readMore: 'informace-ohledne-chodu-kadernictvi',
             },
@@ -193,7 +193,7 @@ new Vue({
                     { text: ""},
                     { text: ""},
                 ],
-                photo: "./images/info/2.png",
+                photo: "/images/info/2.png",
                 showPhoto: true,
                 readMore: 'objednavky-pouze-po-telefonu',
             },
@@ -203,43 +203,43 @@ new Vue({
 
         photos: [
             [
-                { src: "./images/interier/head09.jpg"},
-                { src: "./images/interier/head10.jpg"},
-                { src: "./images/interier/head11.jpg"},
-                { src: "./images/interier/head12.jpg"},
-                { src: "./images/interier/interier05.jpg"}
+                { src: "/images/interier/head09.jpg"},
+                { src: "/images/interier/head10.jpg"},
+                { src: "/images/interier/head11.jpg"},
+                { src: "/images/interier/head12.jpg"},
+                { src: "/images/interier/interier05.jpg"}
             ],
             [
-                { src: "./images/hair/30.jpg"},
-                { src: "./images/hair/29.jpg"},
-                { src: "./images/hair/28.jpg"},
-                { src: "./images/hair/27.jpg"},
-                { src: "./images/hair/26.jpg"},
-                { src: "./images/hair/25.jpg"},
-                { src: "./images/hair/24.jpg"},
-                { src: "./images/hair/23.jpg"},
-                { src: "./images/hair/22.jpg"},
-                { src: "./images/hair/21.jpg"},
-                { src: "./images/hair/20.jpg"},
-                { src: "./images/hair/19.jpg"},
-                { src: "./images/hair/18.jpg"},
-                { src: "./images/hair/17.jpg"},
-                { src: "./images/hair/16.jpg"},
-                { src: "./images/hair/15.jpg"},
-                { src: "./images/hair/14.jpg"},
-                { src: "./images/hair/13.jpg"},
-                { src: "./images/hair/12.jpg"},
-                { src: "./images/hair/11.jpg"},
-                { src: "./images/hair/10.jpg"},
-                { src: "./images/hair/9.jpg"},
-                { src: "./images/hair/8.jpg"},
-                { src: "./images/hair/7.jpg"},
-                { src: "./images/hair/6.jpg"},
-                { src: "./images/hair/5.jpg"},
-                { src: "./images/hair/4.jpg"},
-                { src: "./images/hair/3.jpg"},
-                { src: "./images/hair/2.jpg"},
-                { src: "./images/hair/1.jpg"},
+                { src: "/images/hair/30.jpg"},
+                { src: "/images/hair/29.jpg"},
+                { src: "/images/hair/28.jpg"},
+                { src: "/images/hair/27.jpg"},
+                { src: "/images/hair/26.jpg"},
+                { src: "/images/hair/25.jpg"},
+                { src: "/images/hair/24.jpg"},
+                { src: "/images/hair/23.jpg"},
+                { src: "/images/hair/22.jpg"},
+                { src: "/images/hair/21.jpg"},
+                { src: "/images/hair/20.jpg"},
+                { src: "/images/hair/19.jpg"},
+                { src: "/images/hair/18.jpg"},
+                { src: "/images/hair/17.jpg"},
+                { src: "/images/hair/16.jpg"},
+                { src: "/images/hair/15.jpg"},
+                { src: "/images/hair/14.jpg"},
+                { src: "/images/hair/13.jpg"},
+                { src: "/images/hair/12.jpg"},
+                { src: "/images/hair/11.jpg"},
+                { src: "/images/hair/10.jpg"},
+                { src: "/images/hair/9.jpg"},
+                { src: "/images/hair/8.jpg"},
+                { src: "/images/hair/7.jpg"},
+                { src: "/images/hair/6.jpg"},
+                { src: "/images/hair/5.jpg"},
+                { src: "/images/hair/4.jpg"},
+                { src: "/images/hair/3.jpg"},
+                { src: "/images/hair/2.jpg"},
+                { src: "/images/hair/1.jpg"},
             ],
         ],
     },
@@ -286,7 +286,7 @@ new Vue({
                 this.root.style.setProperty('--text-selected-darker', '#269A00');
                 this.root.style.setProperty('--font-shadow', '0px 0px 6px #000000');
                 this.root.style.setProperty('--slider-color', 'white');
-                this.root.style.setProperty('--loading-icon', 'url(../images/loading.svg)');
+                this.root.style.setProperty('--loading-icon', 'url(/images/loading.svg)');
                 this.root.style.setProperty('--mainbg-default', `url(${this.company.defWp[this.webTheme].src}`);
                 this.root.style.setProperty('--button-page-bg', 'linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(204,204,204,0.1) 53%, rgba(91,91,91,0.1) 100%)');
                 this.root.style.setProperty('--button-page-border', 'rgba(60, 60, 60, 1)');
@@ -303,17 +303,17 @@ new Vue({
                 this.root.style.setProperty('--element-shadow', 'unset');
                 this.root.style.setProperty('--element-border', 'solid 1px transparent');
                 this.root.style.setProperty('--element-grayscale-bg', 'rgb(17,17,17)');
-                this.root.style.setProperty('--waves1', 'url(../images/waves/waves.svg)');
+                this.root.style.setProperty('--waves1', 'url(/images/waves/waves.svg)');
                 this.root.style.setProperty('--dbd-child-bg', '#333640');
                 this.root.style.setProperty('--igpostmaker-accent-color', '#8F00DB');
                 this.root.style.setProperty('--freedombot-status-style-online', '#6bff00');
                 this.root.style.setProperty('--freedombot-status-style-offline', 'red');
                 this.root.style.setProperty('--default-button-background', 'rgb(34,34,34)');
-                this.root.style.setProperty('--pagetransition', 'url(../images/round.svg)');
-                this.root.style.setProperty('--pagetransition-footer', 'url(../images/roundFooter.svg)');
-                this.root.style.setProperty('--companylogo', 'url(../images/logo.webp)');
+                this.root.style.setProperty('--pagetransition', 'url(/images/round.svg)');
+                this.root.style.setProperty('--pagetransition-footer', 'url(/images/roundFooter.svg)');
+                this.root.style.setProperty('--companylogo', 'url(/images/logo.webp)');
                 this.root.style.setProperty('--bmshop-oddchild-background', 'rgba(255, 255, 255, 0.05)');
-                if(page) if(page.bg) if(page.bg.gsTheme) {this.root.style.setProperty('--pagetransition', 'url(../images/roundGs.svg)')};
+                if(page) if(page.bg) if(page.bg.gsTheme) {this.root.style.setProperty('--pagetransition', 'url(/images/roundGs.svg)')};
             } else if(this.webTheme == 'light') {
                 this.root.style.setProperty('--body-bg', 'white');
                 this.root.style.setProperty('--bg', 'white');
@@ -327,7 +327,7 @@ new Vue({
                 this.root.style.setProperty('--text-selected', '#00d30b');
                 this.root.style.setProperty('--text-selected-darker', '#269A00');
                 this.root.style.setProperty('--slider-color', 'gray');
-                this.root.style.setProperty('--loading-icon', 'url(../images/loading-black.svg)');
+                this.root.style.setProperty('--loading-icon', 'url(/images/loading-black.svg)');
                 this.root.style.setProperty('--mainbg-default', `url(${this.company.defWp[this.webTheme].src})`);
                 this.root.style.setProperty('--button-page-bg', 'linear-gradient(270deg, rgba(255,255,255,0.1) 0%, rgba(204,204,204,0.1) 53%, rgba(150,150,150,0.1) 100%)');
                 this.root.style.setProperty('--button-page-border', 'rgba(200, 200, 200, 1)');
@@ -344,15 +344,15 @@ new Vue({
                 this.root.style.setProperty('--element-shadow', '1px -1px 10px rgba(0, 0, 0, 0.05 )');
                 this.root.style.setProperty('--element-border', 'solid 1px rgb(233, 233, 233)');
                 this.root.style.setProperty('--element-grayscale-bg', 'rgb(255,255,255)');
-                this.root.style.setProperty('--waves1', 'url(../images/waves/waves_light.svg)');
+                this.root.style.setProperty('--waves1', 'url(/images/waves/waves_light.svg)');
                 this.root.style.setProperty('--dbd-child-bg', 'white');
                 this.root.style.setProperty('--igpostmaker-accent-color', '#8F00DB');
                 this.root.style.setProperty('--freedombot-status-style-online', '#53C800');
                 this.root.style.setProperty('--freedombot-status-style-offline', '#b90000');
                 this.root.style.setProperty('--default-button-background', '#EDF0F2');
-                this.root.style.setProperty('--pagetransition', 'url(../images/pagetransition_light/round.svg)');
-                this.root.style.setProperty('--pagetransition-footer', 'url(../images/pagetransition_light/roundFooter.svg)');
-                this.root.style.setProperty('--companylogo', 'url(../images/logowhite.webp)');
+                this.root.style.setProperty('--pagetransition', 'url(/images/pagetransition_light/round.svg)');
+                this.root.style.setProperty('--pagetransition-footer', 'url(/images/pagetransition_light/roundFooter.svg)');
+                this.root.style.setProperty('--companylogo', 'url(/images/logowhite.webp)');
                 this.root.style.setProperty('--bmshop-oddchild-background', 'rgba(240, 240, 240)');
             };
 
@@ -400,10 +400,10 @@ new Vue({
         homeChangeBlob: function() {
             const el = document.getElementById("home-biglogo");
 
-            const blobs = ["../images/blob.svg","../images/blob2.svg","../images/blob3.svg","../images/blob4.svg"]
+            const blobs = ["/images/blob.svg","/images/blob2.svg","/images/blob3.svg","/images/blob4.svg"]
             const randomIndex = Math.floor(Math.random() * blobs.length);
 
-            el.style.backgroundImage = `url(../images/logo_white.png), url(${blobs[randomIndex]})`;
+            el.style.backgroundImage = `url(/images/logo_white.png), url(${blobs[randomIndex]})`;
         },
 
         menuOpen: function() {

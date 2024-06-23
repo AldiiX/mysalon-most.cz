@@ -1,0 +1,32 @@
+﻿<footer id="FOOTER" v-bind:style="{ paddingTop: onlyTopPages.includes(currentPage) ? '0' : null}">
+    <div class="page-divider" v-if="!onlyTopPages.includes(currentPage)" v-bind:style="{ top: 0, rotate: '180deg'}"></div>
+    <div class="page-divider" v-if="onlyTopPages.includes(currentPage)" v-bind:style="{ backgroundImage: webTheme == 'dark' ? 'url(/images/waves/waves2.svg)' : 'url(/images/waves/waves2_light.svg)'}"></div>
+
+    <div id="footer-content">
+        <div id="footer-content-flex">
+            <div class="footer-content-flex-child mobile-hide">
+                <p class="h">My Salon</p>
+                <p v-for="item in pages" v-if="item.settings.inFooter === true" style="margin:10px 0;"><a class="p p-clickable"  v-bind:class="{'text-selected': item.id == currentPage}" v-bind:href="'#' + item.id">{{ item.name }}</a></p>
+            </div>
+
+            <div class="footer-content-flex-child">
+                <p class="h">Sledujte nás</p>
+                <div class="fblogo" v-on:click="openUrl('https://cs-cz.facebook.com/MY-SALON-MOST-1449719641988685/')" v-bind:style="{ filter: webTheme == 'light' ? 'invert()' : null}"></div>
+            </div>
+
+            <div class="footer-content-flex-child">
+                <p class="h">Kontakt</p>
+                <p class="p">Adresa: <a style="color: var(--fontp-color)">Most, tř. Budovatelů 3068</a></p>
+                <p class="p">Telefon: <a style="color: var(--fontp-color)">+420 476 108 686</a></p>
+                <p class="p">Otevírací doba: <a style="color: var(--fontp-color)">PO - PÁ: dle objednání</a></p>
+            </div>
+        </div>
+
+        <div style="width: 50%; margin:auto; height: 1px; background-color: var(--footer-lines);margin-bottom: 40px;margin-top:50px;"></div>
+
+        <div class="copyright">
+            <div class="logo"></div>
+            <p class="p">Salon Most&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-selected">@Model.Year</a></p>
+        </div>
+    </div>
+</footer>

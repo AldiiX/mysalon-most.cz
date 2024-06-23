@@ -79,7 +79,7 @@ body {
 
 #HEADER .header-logo {
     position: absolute;
-    background-image: url(../images/logo.png);
+    background-image: url(/images/logo.png);
     background-position: center;
     background-size: cover;
     width: 120px;
@@ -167,7 +167,7 @@ body {
     top: 30px;
     cursor: pointer;
     z-index: 3;
-    background-image: url(../images/menu.webp);
+    background-image: url(/images/menu.webp);
     background-size: cover;
     background-position: center;
     image-rendering:optimizeQuality;
@@ -277,7 +277,7 @@ body {
 .footer-content-flex-child .fblogo {
     width: 180px;
     height: 70px;
-    background-image: url(../images/logos/facebook_whitelogo.png);
+    background-image: url(/images/logos/facebook_whitelogo.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -307,7 +307,7 @@ body {
 #FOOTER #footer-content .copyright .logo {
     width: 150px;
     height: 100px;
-    background-image: url(../images/logo_nsqr.png);
+    background-image: url(/images/logo_nsqr.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -378,7 +378,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(../images/blob_fullscreen.png);
+    background-image: url(/images/blob_fullscreen.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -398,7 +398,7 @@ body {
     position: relative;
     height: 40vw;
     width: 40vw;
-    background-image: url(../images/logo_white.png), url(../images/blob.svg);
+    background-image: url(/images/logo_white.png), url(/images/blob.svg);
     background-position: center;
     background-size: 60%, cover;
     background-repeat: no-repeat;
@@ -483,7 +483,7 @@ body {
     position: relative;
     width: 10vw;
     height: 4vw;
-    background-image: url(../images/logos/facebook_dark.png);
+    background-image: url(/images/logos/facebook_dark.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -522,7 +522,7 @@ body {
     border-radius: 50px;
     pointer-events: none;
     height: 300px;
-    background-image: url(../images/photo_front.png);
+    background-image: url(/images/photo_front.png);
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat;
