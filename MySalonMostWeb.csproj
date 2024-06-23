@@ -18,9 +18,9 @@
 
     <ItemGroup>
       <None Remove=".env" />
-      <Resource Include=".env">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Resource>
+      <Content Include=".env">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

@@ -4,9 +4,7 @@ using MySalonMostWeb.Models;
 
 namespace MySalonMostWeb.Controllers;
 
-public class HomeController(ILogger<HomeController> logger) : Controller {
-
-    private readonly ILogger<HomeController> logger = logger;
+public class HomeController : Controller {
 
 
 

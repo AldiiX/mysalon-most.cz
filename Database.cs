@@ -13,9 +13,14 @@ public static class Database {
 
             try {
                 conn = new MySqlConnection(
-                    $"server={DotEnv.Read()["DATABASE_IP"]};userid=mysalonmost;password={DotEnv.Read()["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=false");
+                    $"server={Program.Env["DATABASE_IP"]};userid=mysalonmost;password={Program.Env["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=false");
                 conn.Open();
-            } catch { return null; }
+            } catch (Exception e) {
+                conn?.Close();
+
+                Program.Logger.Log(LogLevel.Error, e, "Database connection error.");
+                return null;
+            }
 
             return conn;
         }
