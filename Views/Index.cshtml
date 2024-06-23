@@ -7,12 +7,12 @@
     <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna, my salon, my salon most, mysalon most, moderní kadeřnické studio, kadeřnictví most, kadeřnice, kadeřnice most, kadeřnictví mysalon, kadeřnictví my salon, kadeřnictví škudrnová, škudrnová jana, holičství most, holičství" />
     <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu. V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni." />
     <meta content="#00d30b" data-react-helmet="true" name="theme-color"/>
-    <link rel="stylesheet" type="text/css" href="/styles/main.css?ver=13-05-2023(1)"/>
-    <link rel="stylesheet" type="text/css" href="/styles/fontstyles.css?ver=13-05-2023(1)"/>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css?ver=@Model.CacheVersion"/>
+    <link rel="stylesheet" type="text/css" href="/styles/fontstyles.css?ver=@Model.CacheVersion"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="/lib/vue.js"></script>
     <title>MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
     <link rel="shortcut icon" href="/images/logo.png?ver=13-05-2023(1)" type="image/x-icon">
     <meta property="og:title" content="MySalon Most">
@@ -35,49 +35,14 @@
     <div id="vueApp">
 
 
-
-        <!-- //SECTION - LIGHTBOXY -->
-        <!-- // !SECTION -->
         
-        
-        
-        
-        
-        
-        
-        
-        
-        <!--//SECTION - HEADER -->
-        <div id="HEADER">
-            <div v-if="temp.menuOpened" class="lightbox-blurdiv" v-on:click="menuOpen()"></div>
-            <div class="header-logo" v-on:click="onItemClick('home')" v-bind:style="{ 
-                    '--headerlogo-hover': (currentPage != 'home' ? 'brightness(60%)' : null), 
-                    cursor: (currentPage !== 'home' ? 'pointer' : 'default')
-                }">
-            </div>
-            
-            <!--?   NAVBAR PC    -->
-            <div id="header-navbar" class="text-shadow">
-                <a class="a" v-for="(item, index) in pages" v-if="item.settings.onNavbar == true" v-bind:key="index" v-bind:class="{'text-selected': item.id == currentPage}" v-bind:href="'#' + item.id">{{ item.name }}</a>
-            </div>
-
-
-            <!--?   NAVBAR MOBILE/TABLET    -->
-            <div id="header-menu-icon" v-on:click="menuOpen()"></div>
-
-            <div id="header-menu" v-if="temp.menuOpened === true">
-                <div v-for="(item, index) in pages" v-if="item.settings.onNavbar === true" v-bind:key="index" id="header-menu-flexdiv" v-on:click="onItemClick(item.id); menuOpen()">
-                    <!-- <img v-bind:src="item.icon" v-bind:style="{ filter: (webTheme == 'dark' ? 'invert() grayscale() brightness(200%)' : 'invert() grayscale() brightness(00%)')}"> -->
-                    <a v-bind:class="{'text-selected': item.id === currentPage}">{{ item.name }}</a>
-                </div>
-            </div>
-        </div>
-        <!-- // !SECTION -->
+        @* --------- HEADER --------- *@
+        @await Html.PartialAsync("/Views/Shared/Header.cshtml", Model, null)
 
 
 
 
-        <!-- //SECTION - TOP -->
+        @* --------- TOP --------- *@
         <div id="TOP">
             <div v-bind:style="mainbg()" alt="" id="mainbg"></div>
 
@@ -139,13 +104,10 @@
                 </div>
             </transition>
         </div>
-        <!-- // !SECTION -->
 
 
 
-
-
-        <!-- //SECTION - PAGE1 -->
+        @* --------- PAGE 1 --------- *@
         <div id="PAGE1" v-if="!onlyTopPages.includes(currentPage)">
             <div class="page-divider"></div>
 
@@ -217,19 +179,12 @@
                 </div>
             </transition>
         </div>
-        <!-- // !SECTION -->
 
 
 
-
-
-
-        <!-- //SECTION - FOOTER -->
+        @* --------- FOOTER --------- *@
         @await Html.PartialAsync("/Views/Shared/Footer.cshtml", Model, null)
-        <!-- // !SECTION -->
-
-
     </div>
-    <script src="/scripts/app.js?ver=13-05-2023(1)"></script>
+    <script src="/scripts/app.js?ver=@Model.CacheVersion"></script>
 </body>
 </html>

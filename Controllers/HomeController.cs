@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using dotenv.net;
 using Microsoft.AspNetCore.Mvc;
 using MySalonMostWeb.Models;
 
@@ -15,7 +16,8 @@ public class HomeController(ILogger<HomeController> logger) : Controller {
 
         var model = new {
             MobileNumber = "+420 476 108 686",
-            Year = DateTime.Now.Year
+            Year = DateTime.Now.Year,
+            CacheVersion = "23-06-2024-1"
         };
 
         return View("/Views/Index.cshtml", model);

@@ -1,0 +1,24 @@
+﻿<header id="HEADER">
+    <div v-if="temp.menuOpened" class="lightbox-blurdiv" v-on:click="menuOpen()"></div>
+    <div class="header-logo" v-on:click="onItemClick('home')" v-bind:style="{
+            '--headerlogo-hover': (currentPage != 'home' ? 'brightness(60%)' : null),
+            cursor: (currentPage !== 'home' ? 'pointer' : 'default')
+        }">
+    </div>
+
+    <!--?   NAVBAR PC    -->
+    <div id="header-navbar" class="text-shadow">
+        <a class="a" v-for="(item, index) in pages" v-if="item.settings.onNavbar == true" v-bind:key="index" v-bind:class="{'text-selected': item.id == currentPage}" v-bind:href="'#' + item.id">{{ item.name }}</a>
+    </div>
+
+
+    <!--?   NAVBAR MOBILE/TABLET    -->
+    <div id="header-menu-icon" v-on:click="menuOpen()"></div>
+
+    <div id="header-menu" v-if="temp.menuOpened === true">
+        <div v-for="(item, index) in pages" v-if="item.settings.onNavbar === true" v-bind:key="index" id="header-menu-flexdiv" v-on:click="onItemClick(item.id); menuOpen()">
+            <!-- <img v-bind:src="item.icon" v-bind:style="{ filter: (webTheme == 'dark' ? 'invert() grayscale() brightness(200%)' : 'invert() grayscale() brightness(00%)')}"> -->
+            <a v-bind:class="{'text-selected': item.id === currentPage}">{{ item.name }}</a>
+        </div>
+    </div>
+</header>
