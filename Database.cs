@@ -12,9 +12,10 @@ public static class Database {
             MySqlConnection? conn = null;
 
             try {
-                conn = new MySqlConnection($"server={DotEnv.Read()["DATABASE_IP"]};userid=mysalonmost;password={DotEnv.Read()["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=false");
+                conn = new MySqlConnection(
+                    $"server={DotEnv.Read()["DATABASE_IP"]};userid=mysalonmost;password={DotEnv.Read()["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=false");
                 conn.Open();
-            } catch { /**/ }
+            } catch { return null; }
 
             return conn;
         }

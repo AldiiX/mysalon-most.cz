@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using dotenv.net;
 using Microsoft.AspNetCore.Mvc;
 using MySalonMostWeb.Models;
 
