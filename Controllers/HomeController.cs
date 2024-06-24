@@ -14,7 +14,7 @@ public class HomeController : Controller {
         var model = new {
             MobileNumber = "+420 476 108 686",
             Year = DateTime.Now.Year,
-            CacheVersion = "23-06-2024-1"
+            CacheVersion = "23-06-2024-1",
         };
 
         return View("/Views/Index.cshtml", model);

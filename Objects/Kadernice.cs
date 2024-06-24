@@ -9,6 +9,8 @@ public sealed class Kadernice {
         Description = description;
         Info = info;
         Avatar = avatar;
+
+        Console.WriteLine(info);
     }
 
     public string UUID { get; private set; }
@@ -39,7 +41,7 @@ public sealed class Kadernice {
             string uuid = reader.GetString(reader.GetOrdinal("uuid")); // Název sloupce "uuid"
             string name = reader.GetString(reader.GetOrdinal("name")); // Název sloupce "name"
             string? description = reader.IsDBNull(reader.GetOrdinal("description")) ? null : reader.GetString(reader.GetOrdinal("description")); // Název sloupce "description"
-            List<string>? info = reader.IsDBNull(reader.GetOrdinal("info")) ? null : reader.GetString(reader.GetOrdinal("info")).Split(";;").ToList(); // Název sloupce "info"
+            List<string>? info = reader.IsDBNull(reader.GetOrdinal("info")) ? null : reader.GetString(reader.GetOrdinal("info")).Split("<br>").ToList(); // Název sloupce "info"
             string? avatar = reader.IsDBNull(reader.GetOrdinal("avatar")) ? null : reader.GetString(reader.GetOrdinal("avatar")); // Název sloupce "avatar"
 
             kadernice.Add(new Kadernice(uuid, name, description, info, avatar));

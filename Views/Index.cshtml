@@ -1,3 +1,4 @@
+@using MySalonMostWeb.Objects
 @model dynamic
 <!DOCTYPE html>
 <!--suppress CssUnresolvedCustomProperty -->
@@ -14,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="/lib/vue.js"></script>
     <title>MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
-    <link rel="shortcut icon" href="/images/logo.png?ver=13-05-2023(1)" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/logo.png?ver=@Model.CacheVersion" type="image/x-icon">
     <meta property="og:title" content="MySalon Most">
     <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
     <!-- <meta property="og:image" content="/img/webinar-css-grid.png"> -->
@@ -133,9 +134,21 @@
                         <div class="members-child" v-for="member in team">
                             <div class="avatar" v-bind:style="{ backgroundImage: member.photo ? `url(${member.photo})` : 'url(/images/team/unknown.png)'}"></div>
 
-                            <h2 class="p p-name" v-if="!vueLoaded">Jana Škudrnová</h2>
-                            <p class="p p-name" v-if="!vueLoaded">Jana Škudrnová je majitelka a vedoucí My Salonu. Praxe v kadeřnickém oboru od roku 1993. Několikanásobná mistryně a vicemistryně republiky v účesové tvorbě. Reprezentantka ČR na mistrovství světa a na evropském poháru. Účastnice mnoha kadeřnických soutěží. Absolventka seminářů a stáží v USA, Itálii, Francii, Rakousku, Německu. Nominována na kadeřnického ,,Oskara\" Hairdressing awards. Hodnotitelka a trenérka na kadeřnických soutěžích. Technoložka značek Beox, Dusy, Balmain Paris.</p>
-                            <img src="/images/team/jana.png" alt="Jana Škudrnová" v-if="!vueLoaded">
+                            <div v-if="!vueLoaded">
+                                @foreach(Kadernice kadernice in Kadernice.GetAll()) {
+
+                                    string info = kadernice.Info != null ? string.Join("<br>", kadernice.Info) : "";
+
+                                    <div>
+                                        <h1>@Html.Raw(kadernice.Name)</h1>
+                                        <p>@Html.Raw(kadernice.Description) @Html.Raw(info)</p>
+                                        @if (kadernice.Avatar != null) {
+                                            <img src="/images/team/@kadernice.Avatar" alt="@Html.Raw(@kadernice.Name)" >
+                                        }
+                                    </div>
+                                }
+                            </div>
+
                             <p class="p p-name">{{ member.name }}</p>
                             <p class="p p-desc">{{ member.desc }}</p>
                             <p class="p p-info" v-for="i in member.info">{{ i.txt }}</p>

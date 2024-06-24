@@ -30,7 +30,7 @@ body {
 ::-webkit-scrollbar-track {
   background: var(--page1-bg);
   border: 0;
-  box-shadow: 0;
+  box-shadow: none;
   transition-duration: 0.3s;
 }
 
@@ -130,7 +130,7 @@ body {
   z-index: 4;
   animation-name: opp_on;
   animation-duration: 0.3s;
-  animation-iteration-count: start;
+  animation-iteration-count: 1;
 }
 
 #header-menu-flexdiv {
@@ -183,7 +183,7 @@ body {
   border-radius: 20px;
   animation-name: opp_on;
   animation-duration: 0.3s;
-  animation-iteration-count: start;
+  animation-iteration-count: 1;
   transition-duration: 0s !important;
   display: grid;
   right: 0;

@@ -29,7 +29,7 @@ new Vue({
                     window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
                 }, 1); 
                 
-                await this.alwaysActive();
+                await this.main();
             }, false);
         }
 
@@ -61,7 +61,7 @@ new Vue({
             window.addEventListener("scroll", myScrollFunc);
         }
 
-        await this.alwaysActive();
+        await this.main();
     },
 
 
@@ -249,13 +249,13 @@ new Vue({
 
 
     methods: {
-        alwaysActive: function() {
+        main: function() {
             /* Při načtení stránky se napíše název webu na příslušný název stránky */ { 
-                let cp = this.pages.find(x => { return x.id == this.currentPage });
+                let cp = this.pages.find(x => { return x.id === this.currentPage });
                 if(cp) cp = cp.name;
                 if(!cp) cp = 'Web';
                 document.title = `${cp} • My Salon`;
-            };
+            }
 
             this.theme();
             this.topPageHeight();
