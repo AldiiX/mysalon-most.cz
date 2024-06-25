@@ -132,7 +132,7 @@
                 <div v-if="currentPage === 'team'" id="page1-team" key="page1-team">
                     <div class="members-parent">
                         <div class="members-child" v-for="member in team">
-                            <div class="avatar" v-bind:style="{ backgroundImage: member.photo ? `url(${member.photo})` : 'url(/images/team/unknown.png)'}"></div>
+                            <div class="avatar" v-bind:style="{ backgroundImage: member?.avatar ? `url(/images/team/${member.avatar})` : 'url(/images/team/unknown.png)'}"></div>
 
                             <div v-if="!vueLoaded">
                                 @foreach(Kadernice kadernice in Kadernice.GetAll()) {
@@ -149,9 +149,9 @@
                                 }
                             </div>
 
-                            <p class="p p-name">{{ member.name }}</p>
-                            <p class="p p-desc">{{ member.desc }}</p>
-                            <p class="p p-info" v-for="i in member.info">{{ i.txt }}</p>
+                            <p class="p p-name">{{ member.name ?? "" }}</p>
+                            <p class="p p-desc">{{ member.description ?? "" }}</p>
+                            <p class="p p-info" v-for="i in member.info">{{ i }}</p>
                         </div>
                     </div>
                 </div>

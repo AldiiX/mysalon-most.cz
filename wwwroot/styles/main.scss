@@ -79,9 +79,10 @@ body {
 
 #HEADER .header-logo {
     position: absolute;
-    background-image: url(/images/logo.png);
+    background-image: url(/images/logos/mysalon_logo_colored.svg);
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 120px;
     height: 120px;
     left: 7.5vw;
@@ -277,7 +278,7 @@ body {
 .footer-content-flex-child .fblogo {
     width: 180px;
     height: 70px;
-    background-image: url(/images/logos/facebook_whitelogo.png);
+    background-image: url(/images/logos/facebook_white.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -307,7 +308,7 @@ body {
 #FOOTER #footer-content .copyright .logo {
     width: 150px;
     height: 100px;
-    background-image: url(/images/logo_nsqr.png);
+    background-image: url(/images/logos/mysalon_logo_colored.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -398,7 +399,7 @@ body {
     position: relative;
     height: 40vw;
     width: 40vw;
-    background-image: url(/images/logo_white.png), url(/images/blob.svg);
+    background-image: url(/images/logos/mysalon_logo_white.svg), url(/images/blob.svg);
     background-position: center;
     background-size: 60%, cover;
     background-repeat: no-repeat;

@@ -9,8 +9,6 @@ public sealed class Kadernice {
         Description = description;
         Info = info;
         Avatar = avatar;
-
-        Console.WriteLine(info);
     }
 
     public string UUID { get; private set; }
@@ -21,7 +19,22 @@ public sealed class Kadernice {
 
 
     public static Kadernice? Get(string uuid) {
-        return null;
+        using var conn = Database.Connection;
+        if (conn == null) return null;
+
+        using var cmd = new MySqlCommand("SELECT * FROM kadernice WHERE uuid = @uuid", conn);
+        cmd.Parameters.AddWithValue("@uuid", uuid);
+
+        using var reader = cmd.ExecuteReader();
+        if (!reader.HasRows) return null;
+        reader.Read();
+
+        string name = reader.GetString(reader.GetOrdinal("name"));
+        string? description = reader.IsDBNull(reader.GetOrdinal("description")) ? null : reader.GetString(reader.GetOrdinal("description"));
+        List<string>? info = reader.IsDBNull(reader.GetOrdinal("info")) ? null : reader.GetString(reader.GetOrdinal("info")).Split("<br>").ToList();
+        string? avatar = reader.IsDBNull(reader.GetOrdinal("avatar")) ? null : reader.GetString(reader.GetOrdinal("avatar"));
+
+        return new Kadernice(uuid, name, description, info, avatar);
     }
 
     public static List<Kadernice> GetAll() {

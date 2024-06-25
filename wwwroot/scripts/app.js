@@ -7,7 +7,7 @@ new Vue({
         }
         else{
             this.currentPage = "home"
-        };
+        }
 
 
 
@@ -39,7 +39,7 @@ new Vue({
         
                 const header = document.getElementById("HEADER");
         
-                var y = window.scrollY;
+                let y = window.scrollY;
                 if (y >= 1) {
                     header.style.position = 'fixed';
                     header.style.top = '-20px';
@@ -104,41 +104,7 @@ new Vue({
         ],
 
 
-        team: [
-            { 
-                name: "Jana Škudrnová",
-                photo: "/images/team/jana.png",
-                desc: "Majitelka a vedoucí My Salonu. Praxe v kadeřnickém oboru od roku 1993.",
-                info: [
-                    { txt: "Několikanásobná mistryně a vicemistryně republiky v účesové tvorbě. Reprezentantka ČR na mistrovství světa a na evropském poháru. Účastnice mnoha kadeřnických soutěží. Absolventka seminářů a stáží v USA, Itálii, Francii, Rakousku, Německu. Nominována na kadeřnického ,,Oskara\" Hairdressing awards. Hodnotitelka a trenérka na kadeřnických soutěžích. Technoložka značek Beox, Dusy, Balmain Paris."}
-                ]
-            },
-            {
-                name: "Flavie Rippelová",
-                desc: "Praxe v kadeřnickém oboru od roku 2018.",
-                info: [
-                    { txt: "Absolventka seminářů:"},
-                    { txt: " • Dusy - módní barvení a melír"},
-                    { txt: " • nové techniky střihu"},
-                    { txt: " • pánské módní trendy a střihy"},
-                    { txt: " • balayage"},
-                    { txt: " • blond odstíny"},
-                    { txt: " • tónování vlasů"},
-                ]
-            },
-            {
-                name: "Lýdie Horynová",
-                desc: "Praxe v kadeřnickém oboru od roku 2020. Nejmladší v týmu, v roce 2019 – 2020 jako studentka, byla v My Salonu na praxi.",
-                info: [
-                    { txt: "Absolventka seminářů:"},
-                    { txt: " • Dusy - módní barvení a melír"},
-                    { txt: " • nové techniky střihu"},
-                    { txt: " • pánské módní trendy a střihy"},
-                    { txt: " • blond odstíny"},
-                    { txt: " • tónování vlasů"},
-                ]
-            },
-        ],
+        team: [],
 
 
 
@@ -249,7 +215,7 @@ new Vue({
 
 
     methods: {
-        main: function() {
+        main: async function() {
             /* Při načtení stránky se napíše název webu na příslušný název stránky */ { 
                 let cp = this.pages.find(x => { return x.id === this.currentPage });
                 if(cp) cp = cp.name;
@@ -257,8 +223,10 @@ new Vue({
                 document.title = `${cp} • My Salon`;
             }
 
+
             this.theme();
             this.topPageHeight();
+            await fetch('/api/kadernice', { method: 'GET' }).then(response => response.json()).then(data => { this.team = data; });
         },
 
         onItemClick: function(id) {

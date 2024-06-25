@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MySalonMostWeb.Models;
+using MySalonMostWeb.Objects;
 
 namespace MySalonMostWeb.Controllers;
 
@@ -13,9 +14,9 @@ public class HomeController : Controller {
 
         var model = new {
             MobileNumber = "+420 476 108 686",
-            Year = DateTime.Now.Year,
             CacheVersion = "23-06-2024-1",
         };
+
 
         return View("/Views/Index.cshtml", model);
     }
