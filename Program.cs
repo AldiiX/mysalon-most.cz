@@ -12,6 +12,16 @@ public static class Program {
     public static IDictionary<string, string> ENV { get; private set; } = null!;
     public static ILogger Logger => App.Logger;
 
+
+    #if DEBUG || TESTING
+        public const bool DEVELOPMENT_MODE = true;
+    #else
+        public const bool DEVELOPMENT_MODE = false;
+    #endif
+
+
+
+
     public static void Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
 
