@@ -1,0 +1,28 @@
+body {
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+}
+
+#TOP {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-primary);
+}
+
+/* Mobiles */
+/* Tablets */
+/* Laptops */
+/* 4K */
+/* ERR */
+@media screen and (max-width: 300px) {
+  #vueApp {
+    display: none;
+  }
+  #badres {
+    display: grid;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

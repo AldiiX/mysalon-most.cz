@@ -1,28 +1,43 @@
 ﻿
 using dotenv.net;
+using MySalonMostWeb.Classes;
 using MySql.Data.MySqlClient;
 
 namespace MySalonMostWeb;
 
 public static class Database {
 
+    // vlastnosti
+    #if RELEASE || TESTING
+        private static string DatabaseIP => "localhost";
+    #else
+        private static string? DatabaseIP => Program.ENV.GetValueOrNull("DATABASE_IP");
+    #endif
 
-    public static MySqlConnection? Connection {
-        get {
-            MySqlConnection? conn = null;
+    private const int MaxPoolSize = 300;
 
-            try {
-                conn = new MySqlConnection(
-                    $"server={Program.Env["DATABASE_IP"]};userid=mysalonmost;password={Program.Env["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=false");
-                conn.Open();
-            } catch (Exception e) {
-                conn?.Close();
+    [Obsolete("Use GetConnection() instead.")]
+    public static MySqlConnection? Connection => GetConnection();
 
-                Program.Logger.Log(LogLevel.Error, e, "Database connection error.");
-                return null;
-            }
 
-            return conn;
+
+
+
+    // metody
+    public static MySqlConnection? GetConnection() {
+        MySqlConnection? conn = null;
+
+        try {
+            conn = new MySqlConnection(
+                $"server={Program.ENV["DATABASE_IP"]};userid=mysalonmost;password={Program.ENV["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=true;Max Pool Size={MaxPoolSize};");
+            conn.Open();
+        } catch (Exception e) {
+            conn?.Close();
+
+            Program.Logger.Log(LogLevel.Error, e, "Database connection error.");
+            return null;
         }
+
+        return conn;
     }
 }

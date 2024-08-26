@@ -1,5 +1,4 @@
-@using MySalonMostWeb.Objects
-@model dynamic
+@using MySalonMostWeb.Classes
 <!DOCTYPE html>
 <!--suppress CssUnresolvedCustomProperty -->
 <html lang="cs">
@@ -8,14 +7,15 @@
     <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna, my salon, my salon most, mysalon most, moderní kadeřnické studio, kadeřnictví most, kadeřnice, kadeřnice most, kadeřnictví mysalon, kadeřnictví my salon, kadeřnictví škudrnová, škudrnová jana, holičství most, holičství" />
     <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu. V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni." />
     <meta content="#00d30b" data-react-helmet="true" name="theme-color"/>
-    <link rel="stylesheet" type="text/css" href="/styles/main.css?ver=@Model.CacheVersion"/>
-    <link rel="stylesheet" type="text/css" href="/styles/fontstyles.css?ver=@Model.CacheVersion"/>
+    <link rel="stylesheet" type="text/css" href="/styles/home.css?ver=@ViewBag.CacheVersion"/>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css?ver=@ViewBag.CacheVersion"/>
+    <link rel="stylesheet" type="text/css" href="@Utilities.WebTheme.GetCSSFile()"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="/lib/vue.js"></script>
     <title>MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
-    <link rel="shortcut icon" href="/images/logo.png?ver=@Model.CacheVersion" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="MySalon Most">
     <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
     <!-- <meta property="og:image" content="/img/webinar-css-grid.png"> -->
@@ -32,172 +32,16 @@
 
 
 
-<body id="body" oncontextmenu="return false">
+<body id="body" >
     <div id="vueApp">
+        <section id="TOP">
+            <div style="width: 30vw; aspect-ratio: 1/1; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: url('/images/logo_bricks_black.svg') center; background-size: contain">
 
-
-        
-        @* --------- HEADER --------- *@
-        @await Html.PartialAsync("/Views/Shared/Header.cshtml", Model, null)
-
-
-
-
-        @* --------- TOP --------- *@
-        <div id="TOP">
-            <div v-bind:style="mainbg()" alt="" id="mainbg"></div>
-
-            <transition name="fade">    
-                <!--- //LINK - Home -->
-                <div v-if="currentPage === 'home'" key="toppage-home" id="toppage-home">
-                    <div id="blob-fullscreen" v-bind:style="{ filter: webTheme === 'light' ? 'invert()' : null}"></div>
-                    <div class="page-center">
-                        <div class="home-flex-parent">
-                            <div class="home-text-div">
-                                <h2 class="h">My Salon</h2>
-                                <p class="p p1 font-p text-selected">Moderní kadeřnické studio pro celou rodinu.</p>
-                                <p class="p p1 font-p">V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají v oblasti nových trendů. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni.</p>
-                                <!-- <div class="facebook-logo" v-on:click="openUrl('https://cs-cz.facebook.com/MY-SALON-MOST-1449719641988685/')"></div> -->
-                                <div class="objednavky-texts">
-                                    <a class="p1">Objednávky:</a>
-                                    <a class="p2">@Model.MobileNumber</a>
-                                </div>
-                            </div>
-                            <div id="home-biglogo" class="biglogo"></div>
-                        </div>
-                    </div>
-
-                    <!-- <div id="home-selectedimg-parent">
-                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 0 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 0; homeChangeBlob()"></div>
-                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 1 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 1; homeChangeBlob()"></div>
-                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 2 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 2; homeChangeBlob()"></div>
-                        <div class="home-selectedimg-child" v-bind:style="{ backgroundColor: settings.homeSelectedSlide == 3 ? 'var(--text-selected)' : null}" v-on:click="settings.homeSelectedSlide = 3; homeChangeBlob()"></div>
-                    </div> -->
-                </div>
-
-
-
-                <!--- //LINK - Team -->
-                <div v-if="currentPage === 'team'" key="toppage-team">
-                    <div class="page-center">
-                        <h1 class="h text-shadow toppage-h">NÁŠ TÝM</h1>
-                        <!-- <p class="p text-shadow font-p toppage-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est perferendis qui amet quibusdam animi voluptate illum blanditiis tenetur, corporis labore culpa dicta consequatur architecto facere doloremque, doloribus excepturi iusto delectus!</p> -->
-                    </div>
-                </div>
-
-
-
-                <!--- //LINK - Fotografie -->
-                <div v-if="currentPage === 'foto'" key="toppage-fotografie">
-                    <div class="page-center">
-                        <h1 class="h text-shadow toppage-h">FOTOGRAFIE</h1>
-                    </div>
-                </div>
-
-
-
-                <!--- //LINK - Info -->
-                <div v-if="currentPage === 'info'" key="toppage-info">
-                    <div class="page-center">
-                        <h1 class="h text-shadow toppage-h">O NÁS</h1>
-                        <p class="p text-shadow font-p toppage-p">My Salon Most - dámské, pánské dětské kadeřnictví</p>
-                    </div>
-                </div>
-            </transition>
-        </div>
-
-
-
-        @* --------- PAGE 1 --------- *@
-        <div id="PAGE1" v-if="!onlyTopPages.includes(currentPage)">
-            <div class="page-divider"></div>
-
-            <transition name="fade">    
-                <!--- //LINK - Home -->
-                <div v-if="currentPage === 'home'" id="page1-home" key="page1-home">
-                    <div id="map-parent">
-                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.2743118207901!2d13.638250493644948!3d50.502804903708515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a21cb4bbb95c3%3A0xd235e5d5acd7d809!2sMY%20SALON%20MOST!5e0!3m2!1scs!2scz!4v1652275223749!5m2!1scs!2scz" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" v-bind:style="{ filter: webTheme == 'dark' ? 'invert(90%) hue-rotate(180deg)' : null, boxShadow: webTheme == 'dark' ? 'none' : null}"></iframe>
-                        <div id="maptextdiv">
-                            <h2 class="h text-selected">Kde nás najdete?</h2>
-                            <p class="p p1 font-p">Najdete nás v Mostě, na tř. Budovatelů 3068, naproti Centrálu, mezi Čedokem a Bilbem.</p>
-                            <div></div>
-                            <p class="p p2"><a target="_blank" href="https://www.google.com/maps/@@50.5027717,13.6392274,3a,19.6y,269.41h,90.36t/data=!3m7!1e1!3m5!1sdw4s66Gb_KFafZvXya2DPQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Ddw4s66Gb_KFafZvXya2DPQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D96.23527%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?hl=cs">Zobrazit 365° pohled</a></p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <!--- //LINK - Team -->
-                <div v-if="currentPage === 'team'" id="page1-team" key="page1-team">
-                    <div class="members-parent">
-                        <div class="members-child" v-for="member in team">
-                            <div class="avatar" v-bind:style="{ backgroundImage: member?.avatar ? `url(/images/team/${member.avatar})` : 'url(/images/team/unknown.png)'}"></div>
-
-                            <div v-if="!vueLoaded">
-                                @foreach(Kadernice kadernice in Kadernice.GetAll()) {
-
-                                    string info = kadernice.Info != null ? string.Join("<br>", kadernice.Info) : "";
-
-                                    <div>
-                                        <h1>@Html.Raw(kadernice.Name)</h1>
-                                        <p>@Html.Raw(kadernice.Description) @Html.Raw(info)</p>
-                                        @if (kadernice.Avatar != null) {
-                                            <img src="/images/team/@kadernice.Avatar" alt="@Html.Raw(@kadernice.Name)" >
-                                        }
-                                    </div>
-                                }
-                            </div>
-
-                            <p class="p p-name">{{ member.name ?? "" }}</p>
-                            <p class="p p-desc">{{ member.description ?? "" }}</p>
-                            <p class="p p-info" v-for="i in member.info">{{ i }}</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <!--- //LINK - Fotografie -->
-                <div v-if="currentPage === 'foto'" id="page1-foto" key="page1-foto">
-                    <div class="photos-parent1">
-                        <img class="photos-child" v-for="img in photos[0]" v-bind:src="img.src" alt="MySalon Most - Interier"></img>
-                    </div>
-
-                    <div class="photos-parent2">
-                        <img class="photos-child" v-for="img in photos[1]" v-bind:src="img.src"  alt="MySalon Most - Vlasy"></img>
-                    </div>
-                </div>
-
-
-
-                <!--- //LINK - Info -->
-                <div v-if="currentPage === 'info'" id="page1-info" key="page1-info">
-                    <h2 class="h p1">Nabízíme tyto služby:</h2>
-                    
-                    <div class="sluzby-parent">
-                        <p class="sluzby-child">Precizní střihy</p>
-                        <p class="sluzby-child">Barvení vlasů dle aktuálních trendů </p>
-                        <p class="sluzby-child">Melírování vlasů bez poškození vlasů</p>
-                        <p class="sluzby-child">Balayage, ombre a flamboage a podobné techniky</p>
-                        <p class="sluzby-child">Blond odstíny šetrnou cestou od šedé a bílé, až po přírodní blond</p>
-                        <p class="sluzby-child">Stahování a čištění barvy</p>
-                        <p class="sluzby-child">Společenské a svatební účesy</p>
-                        <p class="sluzby-child">Horké nůžky</p>
-                        <p class="sluzby-child">Poradenství</p>
-                        <p class="sluzby-child">Prodej vlasové kosmetiky</p>
-                    </div>
-
-                    <p class="p p2">Při práci používáme výhradně kvalitní a profesionální produkty.</p>
-                </div>
-            </transition>
-        </div>
-
-
-
-        @* --------- FOOTER --------- *@
-        @await Html.PartialAsync("/Views/Shared/Footer.cshtml", Model, null)
+            </div>
+        </section>
     </div>
-    <script src="/scripts/app.js?ver=@Model.CacheVersion"></script>
 </body>
+<script type="module">
+    import {vue} from "/scripts/home.js";
+</script>
 </html>

@@ -1,4 +1,6 @@
+global using HCS = MySalonMostWeb.Services.HttpContextService;
 using dotenv.net;
+using MySalonMostWeb.Middlewares;
 
 namespace MySalonMostWeb;
 
@@ -7,16 +9,53 @@ namespace MySalonMostWeb;
 public static class Program {
 
     public static WebApplication App { get; private set; } = null!;
-    public static IDictionary<string, string> Env { get; private set; } = null!;
+    public static IDictionary<string, string> ENV { get; private set; } = null!;
     public static ILogger Logger => App.Logger;
 
     public static void Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddControllersWithViews();
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddControllersWithViews();
+        builder.Services.AddStackExchangeRedisCache(options => {
+            options.Configuration = "localhost:6379";
+            options.InstanceName = "EnterpriseManagerSoftwareSession";
+        });
+        builder.Services.AddSession(options => {
+            options.IdleTimeout = TimeSpan.FromDays(365);
+            options.Cookie.HttpOnly = true;
+            options.Cookie.IsEssential = true;
+
+            options.Cookie.MaxAge = TimeSpan.FromDays(365); // Trvání cookie na 365 dní
+            //options.Cookie.Expiration = TimeSpan.FromDays(365);
+            options.Cookie.Name = "mysalonmost_session";
+        });
+
+        builder.Configuration
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+        #if DEBUG
+                builder.Configuration.AddJsonFile("appsettings.Debug.json", optional: true, reloadOnChange: true);
+        #elif RELEASE
+                builder.Configuration.AddJsonFile("appsettings.Release.json", optional: true, reloadOnChange: true);
+        #elif TESTING
+                builder.Configuration.AddJsonFile("appsettings.Testing.json", optional: true, reloadOnChange: true);
+        #endif
+
+        builder.Configuration.AddEnvironmentVariables();
 
         App = builder.Build();
-        Env = DotEnv.Read();
+        ENV = DotEnv.Read();
+
+
+
+        // Konfigurace HttpContextService
+        var httpContextAccessor = App.Services.GetRequiredService<IHttpContextAccessor>();
+        HCS.Configure(httpContextAccessor);
+
+
 
         // Configure the HTTP request pipeline.
         if (!App.Environment.IsDevelopment()) {
@@ -27,18 +66,19 @@ public static class Program {
 
         App.UseHttpsRedirection();
         App.UseStaticFiles();
-
+        App.UseSession();
         App.UseRouting();
         App.UseAuthorization();
+        App.UseMiddleware<ErrorHandlingMiddleware>();
 
         App.MapControllerRoute(name: "default", pattern: "/");
 
-        App.Use(async (context, next) => {
+        /*App.Use(async (context, next) => {
             await next();
 
             // Pokud není nalezena žádná odpovídající cesta
             if (context.Response is { StatusCode: 404, HasStarted: false }) context.Response.Redirect("/");
-        });
+        });*/
 
         // Spuštění aplikace
         App.Run();

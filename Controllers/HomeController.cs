@@ -12,13 +12,11 @@ public class HomeController : Controller {
     [Route("/")]
     public IActionResult Index() {
 
-        var model = new {
-            MobileNumber = "+420 476 108 686",
-            CacheVersion = "23-06-2024-1",
-        };
+        ViewBag.MobileNumber = "+420 476 108 686";
+        ViewBag.CacheVersion = "23-06-2024-1";
 
 
-        return View("/Views/Index.cshtml", model);
+        return View("/Views/Index.cshtml");
     }
 
     [Route("/index"), Route("/home")]
