@@ -1,3 +1,7 @@
 html {
     --background-primary: white;
+    --color-gray: #dcdcdc;
+    --text-color-gray: #4b4b4b;
+    --accent-color: #00c80b;
+    --text: black;
 }

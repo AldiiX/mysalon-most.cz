@@ -1,5 +1,9 @@
 @using MySalonMostWeb
 @using MySalonMostWeb.Classes
+@{
+    ViewBag.PageTitleName = "Domů";
+    ViewBag.PageTitleId = "home";
+}
 <!DOCTYPE html>
 <!--suppress CssUnresolvedCustomProperty -->
 <html lang="cs">
@@ -35,14 +39,20 @@
 
 <body id="body" >
     <div id="vueApp">
+
+        @await Html.PartialAsync("Header")
+
         <section id="TOP">
             <div style="width: 30vw; aspect-ratio: 1/1; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: url('/images/logo_bricks_black.svg') center; background-size: contain">
 
             </div>
         </section>
+
+        @await Html.PartialAsync("Footer")
     </div>
 </body>
 <script type="module">
     import {vue} from "/scripts/home.js";
 </script>
+@await Html.PartialAsync("PageTitle")
 </html>
