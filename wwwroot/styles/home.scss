@@ -134,8 +134,9 @@ body {
             position: relative;
             height: 79vh;
             aspect-ratio: 1/1;
-            background: url("/images/hair/20.jpg") no-repeat center center;
+            background: #d7d7d7 url("/images/hair/20.jpg") no-repeat center;
             background-size: cover;
+            transition-duration: 2s;
         }
 
         .texts {

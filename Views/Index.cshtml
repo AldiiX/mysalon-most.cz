@@ -28,6 +28,17 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="cs_CZ">
     <meta property="og:url" content="https://www.mysalon-most.cz/">
+
+
+
+    <!-- Prefetch images -->
+    <link rel="prefetch" href="/images/hair/1.jpg">
+    <link rel="prefetch" href="/images/hair/2.jpg">
+    <link rel="prefetch" href="/images/hair/9.jpg">
+    <link rel="prefetch" href="/images/hair/19.jpg">
+    <link rel="prefetch" href="/images/hair/20.jpg">
+    <link rel="prefetch" href="/images/hair/22.jpg">
+    <link rel="prefetch" href="/images/hair/23.jpg">
 </head>
 
 
@@ -67,7 +78,7 @@
             <div class="img1"></div>
 
             <div class="center">
-                <div class="img2"></div>
+                <div class="img2" id="hairimage"></div>
 
                 <div class="texts">
                     <h1 class="minitext">My Salon&nbsp;&nbsp;&nbsp;<span>────</span></h1>
@@ -88,4 +99,14 @@
     import {vue} from "/scripts/home.js";
 </script>
 @await Html.PartialAsync("PageTitle")
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const hairImage = document.getElementById("hairimage");
+
+        setInterval(() => {
+            const arr = [19,20,1,2,9,22,23];
+            hairImage.style.backgroundImage = `url('/images/hair/${arr[Math.floor(Math.random() * arr.length)]}.jpg')`;
+        }, 5000);
+    });
+</script>
 </html>
