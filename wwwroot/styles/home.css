@@ -9,6 +9,187 @@ body {
   width: 100%;
   height: 100vh;
   background-color: var(--background-primary);
+  overflow-y: hidden;
+}
+#TOP .bg-text {
+  position: absolute;
+  bottom: -2vh;
+  margin: 0;
+  font-size: 10vw;
+  font-family: gilroy;
+  font-weight: bolder;
+  color: var(--text);
+  text-align: center;
+  z-index: 0;
+  opacity: 0.05;
+  /*animation: idle 10s infinite ease-in-out;
+
+  @keyframes idle {
+      0% {
+          transform: translateX(0);
+      }
+      50% {
+          transform: translateX(10vw);
+      }
+      100% {
+          transform: translateX(0);
+      }
+  }*/
+}
+#TOP .flex {
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#TOP .flex .texts {
+  width: 25vw;
+}
+#TOP .flex .texts .h {
+  font-size: 2.5vw;
+  margin: 16px 0;
+}
+#TOP .flex .texts .minitext {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1vw;
+  font-family: gilroy-medium;
+  font-weight: lighter;
+}
+#TOP .flex .texts .minitext span {
+  color: var(--accent-color);
+  font-weight: bolder;
+}
+#TOP .flex .texts button {
+  padding: 10px 40px;
+  margin-top: 24px;
+}
+#TOP .flex .imagediv {
+  position: relative;
+  height: 88vh;
+  filter: sepia(80%) hue-rotate(-10deg);
+  aspect-ratio: 33/40;
+}
+#TOP .flex .imagediv > div {
+  width: 100%;
+  height: 100%;
+  background: url("/images/mainpage_photo.png") no-repeat center center;
+  background-size: contain;
+}
+
+#TOP2 {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-color: #438343;
+  overflow-y: hidden;
+}
+#TOP2 .img1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(143deg, rgba(0, 0, 0, 0.7652310924) 0%, rgba(0, 212, 255, 0) 61%), url("/images/pine.jpg");
+  background-size: cover;
+  transform: scaleX(-1);
+}
+#TOP2 .center {
+  display: flex;
+  position: absolute;
+  height: auto;
+  width: fit-content;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 3vw;
+  z-index: 1;
+}
+#TOP2 .center .img2 {
+  position: relative;
+  height: 79vh;
+  aspect-ratio: 1/1;
+  background: url("/images/hair/20.jpg") no-repeat center center;
+  background-size: cover;
+}
+#TOP2 .center .texts {
+  width: 25vw;
+  position: relative;
+  overflow-x: visible;
+  z-index: 2;
+}
+#TOP2 .center .texts .h {
+  position: relative;
+  font-size: 2.5vw;
+  margin: 16px 0;
+  z-index: 2;
+}
+#TOP2 .center .texts .p {
+  color: black;
+  font-size: 1vw;
+}
+#TOP2 .center .texts .minitext {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1vw;
+  font-family: gilroy-medium;
+  font-weight: lighter;
+  color: white;
+}
+#TOP2 .center .texts .minitext span {
+  color: white;
+  font-weight: bolder;
+}
+#TOP2 .center .texts button {
+  padding: 10px 40px;
+  margin-top: 24px;
+  color: white;
+  border-color: white;
+}
+#TOP2 .center .texts button:hover {
+  background-color: white;
+  color: black;
+}
+#TOP2 .bg-text {
+  position: absolute;
+  bottom: -2vh;
+  margin: 0;
+  right: 0;
+  font-size: 10vw;
+  font-family: gilroy;
+  font-weight: bolder;
+  color: black;
+  text-align: center;
+  z-index: 0;
+  opacity: 0.025;
+  pointer-events: none;
+  user-select: none;
+}
+#TOP2 .sprinkle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  mask: url("/images/sprinkle2.svg") no-repeat center center;
+  mask-size: cover;
+  z-index: 0;
+  opacity: 0.2;
+  pointer-events: none;
+}
+#TOP2 .sprinkle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(196deg, rgba(0, 0, 0, 0.7652310924) 0%, rgba(0, 212, 255, 0) 50%);
 }
 
 /* Mobiles */
