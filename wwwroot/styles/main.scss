@@ -99,12 +99,23 @@
     color: var(--text-color-gray);
 }
 
-.minitext {
+.minitext, .minitext-colored {
     font-family: gilroy;
     letter-spacing: 1px;
     font-size: 16px;
     color: var(--text-color-gray);
+    text-transform: uppercase;
+
+    span {
+        font-weight: bolder;
+    }
 }
+
+.minitext-colored {
+    color: var(--accent-color);
+}
+
+
 
 .button-primary-colored {
     color: var(--accent-color);
