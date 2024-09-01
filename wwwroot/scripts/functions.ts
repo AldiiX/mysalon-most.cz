@@ -102,6 +102,11 @@ export function generateUUID(): string {
         });
 }
 
+export function scrollToElement(elementId: string): void {
+    const element: HTMLElement = document.getElementById(elementId) as HTMLElement;
+    element.scrollIntoView({behavior: "smooth"});
+}
+
 
 
 (window as any).addCookie = addCookie;

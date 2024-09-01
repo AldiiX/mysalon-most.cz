@@ -75,4 +75,8 @@ export function generateUUID() {
         return v.toString(16);
     });
 }
+export function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+    element.scrollIntoView({ behavior: "smooth" });
+}
 window.addCookie = addCookie;

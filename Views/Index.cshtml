@@ -49,80 +49,83 @@
 
 
 <body>
-    <div id="vueApp">
+<div id="vueApp">
 
-        @await Html.PartialAsync("Header")
+    @await Html.PartialAsync("Header")
 
-        @*<section id="TOP">
-            <!--
-            <div style="width: 30vw; aspect-ratio: 1/1; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: url('/images/logo_bricks_black.svg') center; background-size: contain">
-            </div>
-            -->
-
-            <p class="bg-text">my salon</p>
-
-            <div class="flex">
-                <div class="texts">
-                    <h1 class="minitext">My Salon&nbsp;&nbsp;&nbsp;<span>────</span></h1>
-                    <h2 class="h">Moderní kadeřnické studio pro celou rodinu</h2>
-                    <button class="button-primary">VÍCE O NÁS</button>
+    @*<section id="TOP">
+                <!--
+                <div style="width: 30vw; aspect-ratio: 1/1; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: url('/images/logo_bricks_black.svg') center; background-size: contain">
                 </div>
+                -->
 
-                <div class="imagediv">
-                    <div></div>
-                </div>
-            </div>
-        </section>*@
+                <p class="bg-text">my salon</p>
 
-        <section id="TOP2">
-            <div class="img1"></div>
+                <div class="flex">
+                    <div class="texts">
+                        <h1 class="minitext">My Salon&nbsp;&nbsp;&nbsp;<span>────</span></h1>
+                        <h2 class="h">Moderní kadeřnické studio pro celou rodinu</h2>
+                        <button class="button-primary">VÍCE O NÁS</button>
+                    </div>
 
-            <div class="center">
-                <div class="img2" id="hairimage"></div>
-
-                <div class="texts">
-                    <h1 class="minitext">My Salon&nbsp;&nbsp;&nbsp;<span>────</span></h1>
-                    <h2 class="h">Moderní<br>kadeřnické studio<br>pro celou rodinu</h2>
-                    <p class="p">V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají v oblasti nových trendů. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni.</p>
-                    <button class="button-primary">VÍCE O NÁS</button>
-                </div>
-            </div>
-
-            <p class="bg-text">my salon</p>
-            <div class="sprinkle"></div>
-        </section>
-
-        <section id="page1">
-            <div class="flex">
-                <div class="images">
-                    <div></div>
-                    <div></div>
-                </div>
-
-                <div class="texts">
-                    <h1 class="minitext-colored">O NÁS&nbsp;&nbsp;&nbsp;<span>────</span></h1>
-                    <h2 class="h">Jaké služby nabízíme?</h2>
-                    <div class="sluzby">
-                        <div>Precizní střihy</div>
-                        <div>Barvení vlasů dle aktuálních trendů</div>
-                        <div>Melírování vlasů bez poškození vlasů</div>
-                        <div>Balayage, ombre a flamboage a podobné techniky</div>
-                        <div>Poradenství</div>
-                        <div>Blond odstíny šetrnou cestou od šedé a bílé, až po přírodní blond</div>
-                        <div>Horké nůžky</div>
-                        <div>Stahování a čištění barvy</div>
-                        <div>Společenské a svatební účesy</div>
-                        <div>Prodej vlasové kosmetiky</div>
+                    <div class="imagediv">
+                        <div></div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>*@
 
-        @await Html.PartialAsync("Footer")
-    </div>
+    <section id="TOP2">
+        <div class="img1"></div>
+
+        <div class="center">
+            <div class="img2" id="hairimage"></div>
+
+            <div class="texts">
+                <h1 class="minitext">My Salon&nbsp;&nbsp;&nbsp;<span>────</span></h1>
+                <h2 class="h">Moderní<br>kadeřnické studio<br>pro celou rodinu</h2>
+                <p class="p">V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají v oblasti nových trendů. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni.</p>
+                <button class="button-primary" v-on:click="scrollToElement('page1')">VÍCE O NÁS</button>
+            </div>
+        </div>
+
+        <p class="bg-text">my salon</p>
+        <div class="sprinkle"></div>
+    </section>
+
+    <section id="page1">
+        <div class="flex">
+            <div class="images">
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="texts">
+                <h1 class="minitext-colored">O NÁS&nbsp;&nbsp;&nbsp;<span>────</span></h1>
+                <h2 class="h">Jaké služby nabízíme?</h2>
+                <div class="sluzby">
+                    <div>Precizní střihy</div>
+                    <div>Barvení vlasů dle aktuálních trendů</div>
+                    <div>Melírování vlasů bez poškození vlasů</div>
+                    <div>Balayage, ombre a flamboage a podobné techniky</div>
+                    <div>Poradenství</div>
+                    <div>Blond odstíny šetrnou cestou od šedé a bílé, až po přírodní blond</div>
+                    <div>Horké nůžky</div>
+                    <div>Stahování a čištění barvy</div>
+                    <div>Společenské a svatební účesy</div>
+                    <div>Prodej vlasové kosmetiky</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("Footer")
+</div>
 </body>
+
+
+
 <script type="module">
-    import {vue} from "/scripts/home.js";
+    import { vue } from "/scripts/home.js";
 </script>
 @await Html.PartialAsync("PageTitle")
 <script type="text/javascript">
@@ -136,3 +139,10 @@
     });*/
 </script>
 </html>
+
+
+<!--
+
+S ♥ k mamince vytvořil Stanislav Škudrna v roce 2024 - stanislavskudrna.cz
+
+-->

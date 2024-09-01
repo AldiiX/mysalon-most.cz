@@ -105,7 +105,7 @@ body {
     width: 100%;
     height: 90vh;
     background-color: var(--text-color-secondary);
-    overflow-y: hidden;
+    overflow: hidden;
 
     .img1 {
         position: absolute;
@@ -257,7 +257,7 @@ body {
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
-                border: 20px solid white;
+                border: 1.2vw solid white;
             }
 
             div:nth-child(1) {
@@ -279,11 +279,12 @@ body {
 
                 >div {
                     flex-grow: 1;
-                    font-family: gilroy-medium;
-                    font-weight: lighter;
+                    font-family: gilroy;/*-medium;
+                    font-weight: lighter;*/
                     font-size: 16px;
                     color: var(--text-color-gray);
-                    border: 2px solid var(--text-color-secondary);
+                    //border: 2px solid var(--text-color-secondary);
+                    border: 2px solid var(--accent-color);
                     padding: 16px;
                     width: fit-content;
                     user-select: none;
@@ -292,6 +293,7 @@ body {
 
                     &:hover {
                         background-color: var(--text-color-secondary);
+                        border-color: var(--text-color-secondary);
                         color: white;
                         transition-duration: 0.1s;
                     }
@@ -306,16 +308,42 @@ body {
 
 /* Mobiles */
 @media screen and (max-width: 600px) {
+    #page1 {
+        .flex {
+            flex-direction: column-reverse;
 
+            >div {
+                width: 100%;
+            }
+        }
+    }
 }
 
 /* Tablets */
 @media screen and (min-width: 600px) and (max-width: 960px) {
+    #page1 {
+        .flex {
+            flex-direction: column-reverse;
 
+            >div {
+                width: 100%;
+            }
+        }
+    }
 }
 
 /* Laptops */
-@media screen and (min-width: 960px) and (max-width: 1264px) {}
+@media screen and (min-width: 960px) and (max-width: 1264px) {
+    #page1 {
+        .flex {
+            flex-direction: column-reverse;
+
+            >div {
+                width: 75%;
+            }
+        }
+    }
+}
 
 /* 4K */
 @media screen and (min-width: 1904px) {}
@@ -326,7 +354,19 @@ body {
         display: none;
     }
 
-    #badres {
-        display: grid;
+    body {
+        &::before {
+            content: 'Tato stránka není optimalizována pro zařízení s menším rozlišením než 300px.';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-family: gilroy;
+            font-weight: bolder;
+            color: var(--text);
+            text-align: center;
+            width: 100%;
+        }
     }
 }

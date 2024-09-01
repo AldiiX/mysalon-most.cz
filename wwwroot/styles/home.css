@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   color: var(--text);
   background-color: var(--bg);
@@ -86,7 +87,7 @@ body {
   width: 100%;
   height: 90vh;
   background-color: var(--text-color-secondary);
-  overflow-y: hidden;
+  overflow: hidden;
 }
 #TOP2 .img1 {
   position: absolute;
@@ -220,7 +221,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 20px solid white;
+  border: 1.2vw solid white;
 }
 #page1 > .flex > .images div:nth-child(1) {
   background-image: url("/images/hair/1.jpg");
@@ -237,11 +238,11 @@ body {
 }
 #page1 > .flex > .texts > .sluzby > div {
   flex-grow: 1;
-  font-family: gilroy-medium;
-  font-weight: lighter;
+  font-family: gilroy; /*-medium;
+font-weight: lighter;*/
   font-size: 16px;
   color: var(--text-color-gray);
-  border: 2px solid var(--text-color-secondary);
+  border: 2px solid var(--accent-color);
   padding: 16px;
   width: fit-content;
   user-select: none;
@@ -250,21 +251,56 @@ body {
 }
 #page1 > .flex > .texts > .sluzby > div:hover {
   background-color: var(--text-color-secondary);
+  border-color: var(--text-color-secondary);
   color: white;
   transition-duration: 0.1s;
 }
 
 /* Mobiles */
+@media screen and (max-width: 600px) {
+  #page1 .flex {
+    flex-direction: column-reverse;
+  }
+  #page1 .flex > div {
+    width: 100%;
+  }
+}
 /* Tablets */
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  #page1 .flex {
+    flex-direction: column-reverse;
+  }
+  #page1 .flex > div {
+    width: 100%;
+  }
+}
 /* Laptops */
+@media screen and (min-width: 960px) and (max-width: 1264px) {
+  #page1 .flex {
+    flex-direction: column-reverse;
+  }
+  #page1 .flex > div {
+    width: 75%;
+  }
+}
 /* 4K */
 /* ERR */
 @media screen and (max-width: 300px) {
   #vueApp {
     display: none;
   }
-  #badres {
-    display: grid;
+  body::before {
+    content: "Tato stránka není optimalizována pro zařízení s menším rozlišením než 300px.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-family: gilroy;
+    font-weight: bolder;
+    color: var(--text);
+    text-align: center;
+    width: 100%;
   }
 }
 

@@ -20,6 +20,9 @@
 }
 * {
   box-sizing: border-box;
+}
+
+body, html {
   overflow-x: hidden;
 }
 
@@ -29,13 +32,11 @@
 }
 
 :focus-visible {
-  border-radius: 2303px;
-  outline: 4px var(--accent-color) solid;
+  outline: 2px var(--accent-color) solid;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
-  border-radius: 23.03px;
   transition-duration: 0.3s;
 }
 
@@ -47,10 +48,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gray);
-  border-radius: 23.03px;
+  background: var(--text-color-secondary);
   border: 0;
   transition-duration: 0.3s;
+  border-left: 3px solid var(--color-gray);
 }
 
 .button-primary-colored, .button-primary {
@@ -198,6 +199,65 @@
 }
 #HEADER > .left > .links > a:hover::after {
   background-color: var(--text);
+}
+
+#FOOTER {
+  position: relative;
+  width: 100%;
+  background-color: var(--text-color-secondary);
+  padding: 40px 5vw;
+}
+#FOOTER .sprinkle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mask: url(/images/sprinkle2.svg) no-repeat center center;
+  mask-size: cover;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+#FOOTER .sprinkle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgb(0, 0, 0) 70%);
+}
+#FOOTER .copyright {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
+}
+#FOOTER .copyright img {
+  width: 200px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+#FOOTER .copyright p {
+  color: white;
+  margin: 5px;
+  text-align: center;
+  font-family: gilroy-medium;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+#FOOTER .copyright a {
+  color: white;
+  transition-duration: 0.3s;
+}
+#FOOTER .copyright a:hover {
+  transition-duration: 0.3s;
+  color: black;
 }
 
 /* 4K */

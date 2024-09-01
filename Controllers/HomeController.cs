@@ -13,7 +13,7 @@ public class HomeController : Controller {
     public IActionResult Index() {
 
         ViewBag.MobileNumber = "+420 476 108 686";
-        ViewBag.CacheVersion = "23-06-2024-1";
+        ViewBag.CacheVersion = "01-09-2024-1";
 
 
         return View("/Views/Index.cshtml");
