@@ -197,6 +197,7 @@ body {
 
 #page1 {
   padding: 80px 5vw;
+  background-color: var(--background-primary);
 }
 #page1 > .flex {
   display: flex;
@@ -221,7 +222,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 1.2vw solid white;
+  border: 1.2vw solid var(--background-primary);
 }
 #page1 > .flex > .images div:nth-child(1) {
   background-image: url("/images/hair/1.jpg");
@@ -254,6 +255,15 @@ font-weight: lighter;*/
   border-color: var(--text-color-secondary);
   color: white;
   transition-duration: 0.1s;
+}
+#page1 > .flex > .texts .pozn {
+  font-size: 16px;
+  font-family: gilroy-medium;
+  color: var(--text-color-gray);
+  margin-top: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  opacity: 0.7;
 }
 
 /* Mobiles */
