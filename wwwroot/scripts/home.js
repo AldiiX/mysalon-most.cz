@@ -5,7 +5,6 @@ export const vue = new Vue({
     el: "#vueApp",
     mounted: function () {
         this.main();
-        console.warn('Vue mounted');
     },
     data: {
         currentPage: null,

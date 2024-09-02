@@ -55,7 +55,7 @@
 
 
 
-        <section id="TOP">
+        <section id="TOP" class="preventdefault">
             <div class="img1"></div>
 
             <div class="center">
@@ -104,6 +104,21 @@
 
 
 
+        <section id="page2" style="padding-top: 40px">
+            <div class="flex">
+                <h1 class="minitext-colored"><span>────</span>&nbsp;&nbsp;&nbsp;LOKACE&nbsp;&nbsp;&nbsp;<span>────</span></h1>
+                <h2 class="h">Kde nás najdete?</h2>
+                <p class="p">Najdete nás v Mostě, na tř. Budovatelů 3068, naproti Centrálu, mezi Čedokem a Bilbem.</p>
+
+                <div class="imgs">
+                    <div></div>
+                    <iframe id="map" frameborder="0" loading="lazy">Načítání...</iframe>
+                </div>
+            </div>
+        </section>
+
+
+
         @await Html.PartialAsync("Footer")
     </div>
 </body>
@@ -115,6 +130,10 @@
 </script>
 @await Html.PartialAsync("PageTitle")
 <script type="text/javascript">
+    setTimeout(() => {
+        document.getElementById("map").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.2743118207901!2d13.638250493644948!3d50.502804903708515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a21cb4bbb95c3%3A0xd235e5d5acd7d809!2sMY%20SALON%20MOST!5e0!3m2!1scs!2scz!4v1652275223749!5m2!1scs!2scz";
+    }, 100);
+
     /*document.addEventListener("DOMContentLoaded", () => {
         const hairImage = document.getElementById("hairimage");
 

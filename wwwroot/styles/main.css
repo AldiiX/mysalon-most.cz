@@ -28,6 +28,37 @@
 
 body, html {
   overflow-x: hidden;
+  margin: 0;
+}
+
+body {
+  /*&:after {
+      content: '';
+      z-index: 10;
+      position: fixed;
+      top: 0;
+      left:  0;
+      width: 100%;
+      height: 100%;
+      animation: fadein 0.5s ease-out;
+      opacity: 0;
+      background-color: var(--text-color-secondary);
+      pointer-events: none;
+
+      @keyframes fadein {
+          0% {
+              opacity: 1;
+          }
+
+          30% {
+              opacity: 1;
+          }
+
+          to {
+              opacity: 0;
+          }
+      }
+  }*/
 }
 
 ::selection {
@@ -55,6 +86,49 @@ body, html {
   background: var(--text-color-secondary);
   transition-duration: 0.3s;
   border-left: 3px solid var(--color-gray);
+}
+
+#TOP:not(.preventdefault) {
+  width: 100%;
+  position: relative;
+  min-height: calc(50vh + 80px);
+}
+#TOP:not(.preventdefault) .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 40px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+#TOP:not(.preventdefault) .minitext, #TOP:not(.preventdefault) .minitext-colored {
+  font-size: 1vw;
+  margin: 0;
+}
+#TOP:not(.preventdefault) .h {
+  font-size: 2.5vw;
+  margin: 0;
+}
+#TOP:not(.preventdefault) .p {
+  font-size: 1vw;
+  margin: 0;
+}
+#TOP:not(.preventdefault):is(.colored) {
+  background-color: var(--text-color-secondary);
+}
+#TOP:not(.preventdefault):is(.colored) .minitext, #TOP:not(.preventdefault):is(.colored) .minitext-colored {
+  color: white !important;
+}
+#TOP:not(.preventdefault):is(.colored) .h, #TOP:not(.preventdefault):is(.colored) .p {
+  color: black;
+}
+
+#page1, #page2, #page3 {
+  padding: 80px 5vw;
 }
 
 .button-primary-colored, .button-primary {
@@ -100,6 +174,7 @@ body, html {
 }
 .minitext span, .minitext-colored span {
   font-weight: bolder;
+  letter-spacing: -1px;
 }
 
 .minitext-colored {

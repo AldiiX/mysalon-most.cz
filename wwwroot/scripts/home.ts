@@ -6,8 +6,6 @@ export const vue: Vue = new Vue({
     el: "#vueApp",
     mounted: function(){
         this.main();
-
-        console.warn('Vue mounted');
     },
 
 

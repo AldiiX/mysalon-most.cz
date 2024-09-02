@@ -1,0 +1,81 @@
+@using MySalonMostWeb
+@using MySalonMostWeb.Classes
+@{
+    ViewBag.PageTitleName = "Tým";
+    ViewBag.PageTitleId = "team";
+}
+<!DOCTYPE html>
+<!--suppress CssUnresolvedCustomProperty -->
+<html lang="cs">
+<head>
+    <meta name="author" content="MySalon Most - Jana Škudrnová">
+    <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna, my salon, my salon most, mysalon most, moderní kadeřnické studio, kadeřnictví most, kadeřnice, kadeřnice most, kadeřnictví mysalon, kadeřnictví my salon, kadeřnictví škudrnová, škudrnová jana, holičství most, holičství" />
+    <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu. V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni." />
+    <meta content="#00d30b" data-react-helmet="true" name="theme-color"/>
+    <link rel="stylesheet" type="text/css" href="/styles/team.css?ver=@ViewBag.CacheVersion"/>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css?ver=@ViewBag.CacheVersion"/>
+    <link rel="stylesheet" type="text/css" href="@Utilities.WebTheme.GetCSSFile()"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <script src="/lib/vue@(Program.DEVELOPMENT_MODE ? "_dev" : "").js"></script>
+    <title>Tým - MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="MySalon Most">
+    <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
+    <!-- <meta property="og:image" content="/img/webinar-css-grid.png"> -->
+    <meta property="og:site_name" content="MySalon Most">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:url" content="https://www.mysalon-most.cz/team">
+</head>
+
+
+
+
+
+
+
+
+<body>
+    <div id="vueApp">
+
+        @await Html.PartialAsync("Header")
+
+
+
+        <section id="TOP" class="colored">
+            <div class="bg"></div>
+
+            <div class="center">
+                <h1 class="minitext-colored"><span>────</span>&nbsp;&nbsp;&nbsp;MY SALON&nbsp;&nbsp;&nbsp;<span>────</span></h1>
+                <h2 class="h">Náš tým</h2>
+            </div>
+        </section>
+
+
+
+        <section id="page1">
+
+        </section>
+
+
+
+        @await Html.PartialAsync("Footer")
+    </div>
+</body>
+
+
+
+@*<script type="module">
+    import { vue } from "/scripts/team.js";
+</script>*@
+@await Html.PartialAsync("PageTitle")
+</html>
+
+
+<!--
+
+S ♥ k mamince vytvořil Stanislav Škudrna v roce 2024 - stanislavskudrna.cz
+
+-->

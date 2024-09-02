@@ -9,7 +9,7 @@ public class HomeController : Controller {
 
 
 
-    [Route("/")]
+    [HttpGet("/")]
     public IActionResult Index() {
 
         ViewBag.MobileNumber = "+420 476 108 686";
@@ -19,7 +19,7 @@ public class HomeController : Controller {
         return View("/Views/Index.cshtml");
     }
 
-    [Route("/index"), Route("/home")]
+    [HttpGet("/index"), HttpGet("/home")]
     public IActionResult RedirectToIndex() {
         return RedirectToAction("Index");
     }
