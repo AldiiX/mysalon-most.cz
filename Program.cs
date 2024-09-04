@@ -1,6 +1,9 @@
 global using HCS = MySalonMostWeb.Services.HttpContextService;
+using System.Net;
 using dotenv.net;
+using MySalonMostWeb.Classes;
 using MySalonMostWeb.Middlewares;
+using StackExchange.Redis;
 
 namespace MySalonMostWeb;
 
@@ -29,7 +32,13 @@ public static class Program {
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddControllersWithViews();
         builder.Services.AddStackExchangeRedisCache(options => {
-            options.Configuration = "localhost:6379";
+            if (DEVELOPMENT_MODE) {
+                options.ConfigurationOptions = new ConfigurationOptions {
+                    EndPoints = { $"{ENV["DATABASE_IP"]}:63790" },
+                    Password = ENV["REDIS_PUBLICACC_PASSWORD"],
+                };
+            } else options.Configuration = "localhost:6379";
+
             options.InstanceName = "MySalonMostSession";
         });
         builder.Services.AddSession(options => {
