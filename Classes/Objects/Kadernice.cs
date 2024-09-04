@@ -1,6 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace MySalonMostWeb.Objects;
+namespace MySalonMostWeb.Classes.Objects;
+
+
+
+
 
 public sealed class Kadernice {
     private Kadernice(string uuid, string name, string? description, List<string>? info, string? avatar) {
@@ -19,7 +23,7 @@ public sealed class Kadernice {
 
 
     public static Kadernice? Get(string uuid) {
-        using var conn = Database.Connection;
+        using var conn = Database.GetConnection();
         if (conn == null) return null;
 
         using var cmd = new MySqlCommand("SELECT * FROM kadernice WHERE uuid = @uuid", conn);

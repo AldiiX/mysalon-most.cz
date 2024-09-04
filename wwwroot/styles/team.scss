@@ -12,4 +12,86 @@
     }
 }
 
-#page1 {}
+#page1 {
+    position: relative;
+
+    .kadernice-parent {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2vw;
+        width: 100%;
+
+        .kadernice {
+            position: relative;
+            width: 400px;
+
+            .imagediv {
+                width: 100%;
+                aspect-ratio: 1/1;
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+
+                .info {
+                    position: absolute;
+                    max-height: 300px;
+                    width: 300px;
+                    overflow-y: auto;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    padding: 15px;
+                    background-color: rgba(255, 255, 255, 0.8);
+
+                    p {
+                        margin: 0;
+                        font-family: gilroy;
+                        text-align: justify;
+                    }
+                }
+            }
+
+            .textbox {
+                position: relative;
+                background-color: var(--background-primary);
+                margin-top: 16px;
+
+                h1, p {
+                    margin: 0;
+                    width: 80%;
+                    font-family: gilroy;
+                    margin: 8px 0;
+                }
+
+                h1 {
+                    font-family: gilroy-medium;
+                    font-weight: lighter;
+                    color: var(--accent-color);
+                }
+
+                p {
+                }
+
+                .showinfo {
+                    position: absolute;
+                    width: 30px;
+                    height: 30px;
+                    top: 0;
+                    right: 0;
+                    background-color: var(--accent-color);
+                    cursor: pointer;
+                    transition-duration: 0.3s;
+
+                    &:hover {
+                        background-color: var(--accent-color-darker);
+                        transition-duration: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}

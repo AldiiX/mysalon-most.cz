@@ -31,7 +31,7 @@ public static class Program {
         builder.Services.AddControllersWithViews();
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddControllersWithViews();
-        builder.Services.AddStackExchangeRedisCache(options => {
+        /*builder.Services.AddStackExchangeRedisCache(options => {
             if (DEVELOPMENT_MODE) {
                 options.ConfigurationOptions = new ConfigurationOptions {
                     EndPoints = { $"{ENV["DATABASE_IP"]}:63790" },
@@ -49,7 +49,7 @@ public static class Program {
             options.Cookie.MaxAge = TimeSpan.FromDays(365); // Trvání cookie na 365 dní
             //options.Cookie.Expiration = TimeSpan.FromDays(365);
             options.Cookie.Name = "mysalonmost_session";
-        });
+        });*/
 
         builder.Configuration
             .SetBasePath(Directory.GetCurrentDirectory())
@@ -85,7 +85,7 @@ public static class Program {
 
         App.UseHttpsRedirection();
         App.UseStaticFiles();
-        App.UseSession();
+        //App.UseSession();
         App.UseRouting();
         App.UseAuthorization();
         App.UseMiddleware<ErrorHandlingMiddleware>();

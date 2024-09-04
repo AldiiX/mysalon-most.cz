@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using MySalonMostWeb.Objects;
+using MySalonMostWeb.Classes.Objects;
 
 namespace MySalonMostWeb.Controllers;
 

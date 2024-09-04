@@ -10,4 +10,74 @@
   filter: blur(5px);
 }
 
+#page1 {
+  position: relative;
+}
+#page1 .kadernice-parent {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  width: 100%;
+}
+#page1 .kadernice-parent .kadernice {
+  position: relative;
+  width: 400px;
+}
+#page1 .kadernice-parent .kadernice .imagediv {
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+#page1 .kadernice-parent .kadernice .imagediv img {
+  width: 100%;
+}
+#page1 .kadernice-parent .kadernice .imagediv .info {
+  position: absolute;
+  max-height: 300px;
+  width: 300px;
+  overflow-y: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#page1 .kadernice-parent .kadernice .imagediv .info p {
+  margin: 0;
+  font-family: gilroy;
+  text-align: justify;
+}
+#page1 .kadernice-parent .kadernice .textbox {
+  position: relative;
+  background-color: var(--background-primary);
+  margin-top: 16px;
+}
+#page1 .kadernice-parent .kadernice .textbox h1, #page1 .kadernice-parent .kadernice .textbox p {
+  margin: 0;
+  width: 80%;
+  font-family: gilroy;
+  margin: 8px 0;
+}
+#page1 .kadernice-parent .kadernice .textbox h1 {
+  font-family: gilroy-medium;
+  font-weight: lighter;
+  color: var(--accent-color);
+}
+#page1 .kadernice-parent .kadernice .textbox .showinfo {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+#page1 .kadernice-parent .kadernice .textbox .showinfo:hover {
+  background-color: var(--accent-color-darker);
+  transition-duration: 0.3s;
+}
+
 /*# sourceMappingURL=team.css.map */

@@ -1,5 +1,6 @@
 @using MySalonMostWeb
 @using MySalonMostWeb.Classes
+@using MySalonMostWeb.Classes.Objects
 @{
     ViewBag.PageTitleName = "Tým";
     ViewBag.PageTitleId = "team";
@@ -56,7 +57,28 @@
 
 
         <section id="page1">
+            <div class="kadernice-parent">
+                @foreach (var kadernice in Kadernice.GetAll()) {
+                    <div class="kadernice">
+                        <div class="imagediv">
+                            <img src="@(kadernice.Avatar != null ? $"/images/team/{kadernice.Avatar}" : "/images/team/unknown.png") " alt="@kadernice.Name"/>
 
+                            <div class="info" v-show="kaderniceShowInfoIncludes('@kadernice.UUID')" v-cloak>
+                                @foreach (var row in kadernice.Info ?? new List<string>()) {
+                                    <p>@Html.Raw(row)</p>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="textbox">
+                            <h1>@kadernice.Name</h1>
+                            <p>@kadernice.Description</p>
+
+                            <div class="showinfo" v-on:click="kaderniceShowInfoToggle('@kadernice.UUID')"></div>
+                        </div>
+                    </div>
+                }
+            </div>
         </section>
 
 
@@ -67,9 +89,9 @@
 
 
 
-@*<script type="module">
-    import { vue } from "/scripts/team.js";
-</script>*@
+<script type="module">
+     import { vue } from "/scripts/team.js";
+</script>
 @await Html.PartialAsync("PageTitle")
 </html>
 
