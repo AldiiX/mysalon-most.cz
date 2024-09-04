@@ -30,7 +30,7 @@ public static class Program {
         builder.Services.AddControllersWithViews();
         builder.Services.AddStackExchangeRedisCache(options => {
             options.Configuration = "localhost:6379";
-            options.InstanceName = "EnterpriseManagerSoftwareSession";
+            options.InstanceName = "MySalonMostSession";
         });
         builder.Services.AddSession(options => {
             options.IdleTimeout = TimeSpan.FromDays(365);
