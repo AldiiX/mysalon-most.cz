@@ -32,6 +32,7 @@
 }
 #page1 .kadernice-parent .kadernice .imagediv img {
   width: 100%;
+  pointer-events: none;
 }
 #page1 .kadernice-parent .kadernice .imagediv .info {
   position: absolute;
