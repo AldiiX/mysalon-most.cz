@@ -46,7 +46,7 @@
 }
 #page1 .kadernice-parent .kadernice .imagediv .info p {
   margin: 0;
-  font-family: gilroy;
+  font-family: quicksand-light;
   text-align: justify;
 }
 #page1 .kadernice-parent .kadernice .textbox {
@@ -57,7 +57,7 @@
 #page1 .kadernice-parent .kadernice .textbox h1, #page1 .kadernice-parent .kadernice .textbox p {
   margin: 0;
   width: 80%;
-  font-family: gilroy;
+  font-family: quicksand-light;
   margin: 8px 0;
 }
 #page1 .kadernice-parent .kadernice .textbox h1 {

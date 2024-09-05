@@ -107,7 +107,7 @@ body {
         margin: 0;
         right: 0;
         font-size: 10vw;
-        font-family: gilroy;
+        font-family: quicksand-light;
         font-weight: bolder;
         color: black;
         text-align: center;
@@ -193,7 +193,7 @@ body {
 
                 >div {
                     flex-grow: 1;
-                    font-family: gilroy;/*-medium;
+                    font-family: quicksand-light;/*-medium;
                     font-weight: lighter;*/
                     font-size: 16px;
                     color: var(--text-color-gray);
@@ -331,7 +331,7 @@ body {
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 24px;
-            font-family: gilroy;
+            font-family: quicksand-light;
             font-weight: bolder;
             color: var(--text);
             text-align: center;
