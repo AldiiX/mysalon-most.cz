@@ -2,8 +2,8 @@
 @using MySalonMostWeb.Classes
 @using MySalonMostWeb.Classes.Objects
 @{
-    ViewBag.PageTitleName = "Tým";
-    ViewBag.PageTitleId = "team";
+    ViewBag.PageTitleName = "Rezervace";
+    ViewBag.PageTitleId = "reservations";
 }
 <!DOCTYPE html>
 <!--suppress CssUnresolvedCustomProperty -->
@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="/lib/vue@(Program.DEVELOPMENT_MODE ? "_dev" : "").js"></script>
-    <title>Tým - MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
+    <title>Rezervace - MY SALON MOST - Moderní kadeřnické studio pro celou rodinu</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="MySalon Most">
     <meta property="og:description" content="Moderní kadeřnické studio pro celou rodinu">
@@ -50,39 +50,14 @@
 
             <div class="center">
                 <h1 class="minitext-colored"><span>────</span>&nbsp;&nbsp;&nbsp;MY SALON&nbsp;&nbsp;&nbsp;<span>────</span></h1>
-                <h2 class="h">Náš tým</h2>
+                <h2 class="h">Rezervace</h2>
             </div>
         </section>
 
 
 
         <section id="page1">
-            <div class="kadernice-parent">
-                @foreach (var kadernice in Kadernice.GetAll()) {
-                    <div class="kadernice">
-                        <div class="imagediv">
-                            <img src="@(kadernice.Avatar != null ? $"/images/team/{kadernice.Avatar}" : "/images/team/unknown.png") " alt="@kadernice.Name"/>
-
-                            @* <div class="info"> *@
-                            @*     @foreach (var row in kadernice.Info ?? new List<string>()) { *@
-                            @*         <p>@Html.Raw(row)</p> *@
-                            @*     } *@
-                            @* </div> *@
-                        </div>
-
-                        <div class="textbox">
-                            <h1>@kadernice.Name</h1>
-                            <p>@kadernice.Description</p>
-
-                            <div class="info">
-                                @foreach (var row in kadernice.Info ?? new List<string>()) {
-                                    <p>@Html.Raw(row)</p>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
+            
         </section>
 
 

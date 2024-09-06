@@ -10,4 +10,23 @@
   filter: blur(5px);
 }
 
+#page1 > .images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  align-items: start;
+  gap: 20px;
+}
+#page1 > .images > img {
+  position: relative;
+  max-width: 500px;
+  aspect-ratio: initial;
+  pointer-events: none;
+}
+#page1 > .images:is(.smaller) > img {
+  max-width: 300px !important;
+}
+
 /*# sourceMappingURL=photos.css.map */

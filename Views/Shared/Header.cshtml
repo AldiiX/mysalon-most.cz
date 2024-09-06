@@ -1,5 +1,6 @@
 ﻿<header id="HEADER">
-    <div class="logo"></div>
+    @* <div class="logo"></div> *@
+    <img src="/images/logo_bricks_black.svg" alt="My Salon Most - Logo" class="logo-img">
 
     <nav>
         <a href="/" class="@(ViewBag.PageTitleId == "home" ? "selected" : "")">Domů</a>
@@ -11,6 +12,6 @@
         <div class="links">
             <a href="https://cs-cz.facebook.com/people/MY-SALON-MOST/100054547115459/" target="_blank" style="--mask: url('/images/logos/facebook_white_mini.svg');"></a>
         </div>
-        <button class="button-primary-colored">Rezervace</button>
+        <a class="button-primary-colored" href="/rezervace">Rezervace</a>
     </div>
 </header>

@@ -148,6 +148,7 @@ body {
   transition-duration: 0.3s;
   background-color: transparent;
   user-select: none;
+  text-decoration: none;
 }
 .button-primary-colored:hover, .button-primary:hover {
   background-color: var(--accent-color);
@@ -205,14 +206,21 @@ body {
   border-bottom: 3px solid var(--color-gray);
   box-shadow: 0 0 10px 0 var(--shadow);
   transition-duration: 0.3s;
+  /*>.logo {
+      position: absolute;
+      left: 5vw;
+      height: $header-height;
+      aspect-ratio: 1/1;
+      background: url(/images/logo_bricks_black.svg) no-repeat center center;
+      background-size: contain;
+  }*/
 }
-#HEADER > .logo {
+#HEADER > .logo-img {
   position: absolute;
   left: 5vw;
   height: 80px;
   aspect-ratio: 1/1;
-  background: url(/images/logo_bricks_black.svg) no-repeat center center;
-  background-size: contain;
+  pointer-events: none;
 }
 #HEADER > nav {
   position: absolute;

@@ -26,6 +26,7 @@
         .kadernice {
             position: relative;
             width: 400px;
+            background-color: var(--element-background);
 
             .imagediv {
                 width: 100%;
@@ -35,9 +36,10 @@
                 img {
                     width: 100%;
                     pointer-events: none;
+                    border-bottom: 2px solid var(--accent-color);
                 }
 
-                .info {
+                >.info {
                     position: absolute;
                     max-height: 300px;
                     width: 300px;
@@ -58,26 +60,39 @@
 
             .textbox {
                 position: relative;
-                background-color: var(--background-primary);
-                margin-top: 16px;
+                padding: 16px;
 
-                h1, p {
+                >h1, >p {
                     margin: 0;
-                    width: 80%;
                     font-family: quicksand-light;
                     margin: 8px 0;
                 }
 
-                h1 {
+                >h1 {
                     font-family: gilroy-medium;
                     font-weight: lighter;
+                    margin-top: 0;
                     color: var(--accent-color);
                 }
 
-                p {
+                >p {
+                    font-family: gilroy-medium;
+                    font-weight: lighter;
                 }
 
-                .showinfo {
+                >.info {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    margin-top: 24px;
+
+                    >p {
+                        margin: 0;
+                        font-family: quicksand-light;
+                    }
+                }
+
+                /*.showinfo {
                     position: absolute;
                     width: 30px;
                     height: 30px;
@@ -91,7 +106,7 @@
                         background-color: var(--accent-color-darker);
                         transition-duration: 0.3s;
                     }
-                }
+                }*/
             }
         }
     }

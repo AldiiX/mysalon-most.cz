@@ -12,4 +12,33 @@
     }
 }
 
-#page1 {}
+#page1 {
+    .minitext-colored {
+        //font-size: 24px;
+    }
+
+
+    >.images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 0;
+        align-items: start;
+        gap: 20px;
+
+        >img {
+            position: relative;
+            max-width: 500px;
+            aspect-ratio: initial;
+            pointer-events: none;
+            //border: 2px solid var(--accent-color);
+        }
+
+        &:is(.smaller) {
+            >img {
+                max-width: 300px !important;
+            }
+        }
+    }
+}

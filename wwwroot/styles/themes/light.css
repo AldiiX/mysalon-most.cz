@@ -6,5 +6,5 @@ html {
     --accent-color-darker: #006e06;
     --text-color-secondary: #438343;
     --text: black;
-    --element-background: rgba(0, 0, 0, 0.1);
+    --element-background: rgba(0, 0, 0, 0.05);
 }

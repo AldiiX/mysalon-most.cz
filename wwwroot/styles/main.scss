@@ -167,6 +167,7 @@ body {
     transition-duration: 0.3s;
     background-color: transparent;
     user-select: none;
+    text-decoration: none;
 
     &:hover {
         background-color: var(--accent-color);
@@ -235,13 +236,21 @@ body {
 
 
 
-    >.logo {
+    /*>.logo {
         position: absolute;
         left: 5vw;
         height: $header-height;
         aspect-ratio: 1/1;
         background: url(/images/logo_bricks_black.svg) no-repeat center center;
         background-size: contain;
+    }*/
+
+    >.logo-img {
+        position: absolute;
+        left: 5vw;
+        height: $header-height;
+        aspect-ratio: 1/1;
+        pointer-events: none;
     }
 
     >nav {

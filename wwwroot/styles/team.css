@@ -24,6 +24,7 @@
 #page1 .kadernice-parent .kadernice {
   position: relative;
   width: 400px;
+  background-color: var(--element-background);
 }
 #page1 .kadernice-parent .kadernice .imagediv {
   width: 100%;
@@ -33,8 +34,9 @@
 #page1 .kadernice-parent .kadernice .imagediv img {
   width: 100%;
   pointer-events: none;
+  border-bottom: 2px solid var(--accent-color);
 }
-#page1 .kadernice-parent .kadernice .imagediv .info {
+#page1 .kadernice-parent .kadernice .imagediv > .info {
   position: absolute;
   max-height: 300px;
   width: 300px;
@@ -45,40 +47,54 @@
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.8);
 }
-#page1 .kadernice-parent .kadernice .imagediv .info p {
+#page1 .kadernice-parent .kadernice .imagediv > .info p {
   margin: 0;
   font-family: quicksand-light;
   text-align: justify;
 }
 #page1 .kadernice-parent .kadernice .textbox {
   position: relative;
-  background-color: var(--background-primary);
-  margin-top: 16px;
+  padding: 16px;
+  /*.showinfo {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 0;
+      right: 0;
+      background-color: var(--accent-color);
+      cursor: pointer;
+      transition-duration: 0.3s;
+
+      &:hover {
+          background-color: var(--accent-color-darker);
+          transition-duration: 0.3s;
+      }
+  }*/
 }
-#page1 .kadernice-parent .kadernice .textbox h1, #page1 .kadernice-parent .kadernice .textbox p {
+#page1 .kadernice-parent .kadernice .textbox > h1, #page1 .kadernice-parent .kadernice .textbox > p {
   margin: 0;
-  width: 80%;
   font-family: quicksand-light;
   margin: 8px 0;
 }
-#page1 .kadernice-parent .kadernice .textbox h1 {
+#page1 .kadernice-parent .kadernice .textbox > h1 {
   font-family: gilroy-medium;
   font-weight: lighter;
+  margin-top: 0;
   color: var(--accent-color);
 }
-#page1 .kadernice-parent .kadernice .textbox .showinfo {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 0;
-  right: 0;
-  background-color: var(--accent-color);
-  cursor: pointer;
-  transition-duration: 0.3s;
+#page1 .kadernice-parent .kadernice .textbox > p {
+  font-family: gilroy-medium;
+  font-weight: lighter;
 }
-#page1 .kadernice-parent .kadernice .textbox .showinfo:hover {
-  background-color: var(--accent-color-darker);
-  transition-duration: 0.3s;
+#page1 .kadernice-parent .kadernice .textbox > .info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 24px;
+}
+#page1 .kadernice-parent .kadernice .textbox > .info > p {
+  margin: 0;
+  font-family: quicksand-light;
 }
 
 /*# sourceMappingURL=team.css.map */
