@@ -34,7 +34,7 @@ public static class Program {
         /*builder.Services.AddStackExchangeRedisCache(options => {
             if (DEVELOPMENT_MODE) {
                 options.ConfigurationOptions = new ConfigurationOptions {
-                    EndPoints = { $"{ENV["DATABASE_IP"]}:63790" },
+                    EndPoints = { $"{ENV["DATABASE_IP"]}:{ENV["REDIS_PORT"]}" },
                     Password = ENV["REDIS_PUBLICACC_PASSWORD"],
                 };
             } else options.Configuration = "localhost:6379";

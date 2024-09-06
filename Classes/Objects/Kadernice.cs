@@ -42,7 +42,7 @@ public sealed class Kadernice {
     }
 
     public static List<Kadernice> GetAll() {
-        using var conn = Database.Connection;
+        using var conn = Database.GetConnection();
         if (conn == null) return new List<Kadernice>();
 
         using var cmd = new MySqlCommand("SELECT * FROM kadernice", conn);
