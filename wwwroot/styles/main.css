@@ -36,6 +36,13 @@ body, html {
   margin: 0;
 }
 
+body, #vueApp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 body {
   /*&:after {
       content: '';
@@ -130,6 +137,10 @@ body {
 }
 #TOP:not(.preventdefault):is(.colored) .h, #TOP:not(.preventdefault):is(.colored) .p {
   color: black;
+}
+
+#TOP {
+  flex-grow: 1;
 }
 
 #page1, #page2, #page3 {

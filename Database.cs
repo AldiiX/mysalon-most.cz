@@ -29,7 +29,7 @@ public static class Database {
 
         try {
             conn = new MySqlConnection(
-                $"server={Program.ENV["DATABASE_IP"]};userid=mysalonmost;password={Program.ENV["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=true;Max Pool Size={MaxPoolSize};");
+                $"server={DatabaseIP};userid=mysalonmost;password={Program.ENV["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=true;Max Pool Size={MaxPoolSize};");
             conn.Open();
         } catch (Exception e) {
             conn?.Close();

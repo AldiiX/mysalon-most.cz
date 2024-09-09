@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Publish" type="DotNetFolderPublish" factoryName="Publish to folder">
+  <configuration default="false" name="Publish Release to Ubuntu" type="DotNetFolderPublish" factoryName="Publish to folder">
     <riderPublish configuration="Release" platform="Any CPU" runtime="linux-x64" target_folder="$PROJECT_DIR$/bin/Release/net8.0/linux-x64/publish" target_framework="net8.0" uuid_high="-6720477214501744671" uuid_low="-6402280682775564668" />
     <method v="2" />
   </configuration>
