@@ -236,6 +236,12 @@ font-weight: lighter;*/
   #page1 .flex > div {
     width: 100%;
   }
+  #page2 > .flex > .imgs {
+    flex-direction: column;
+  }
+  #page2 > .flex > .imgs > * {
+    width: 100%;
+  }
 }
 /* Tablets */
 @media screen and (min-width: 600px) and (max-width: 960px) {

@@ -286,6 +286,18 @@ body {
             }
         }
     }
+    
+    #page2 {
+        >.flex {
+            >.imgs {
+                flex-direction: column;
+                
+                >* {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
 /* Tablets */
