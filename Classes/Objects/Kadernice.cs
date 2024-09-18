@@ -14,6 +14,8 @@ public sealed class Kadernice {
         Info = info;
         Avatar = avatar;
     }
+    
+    
 
     public string UUID { get; private set; }
     public string Name { get; private set; }

@@ -4,9 +4,11 @@ using MySalonMostWeb.Models;
 
 namespace MySalonMostWeb.Controllers;
 
+
+
+
+
 public class HomeController : Controller {
-
-
 
     [HttpGet("/")]
     public IActionResult Index() {
