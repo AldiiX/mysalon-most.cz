@@ -1,3 +1,54 @@
+@mixin TopOnMobile {
+    #TOP {
+        .img1 {
+            display: none;
+        }
+
+        .sprinkle {
+            width: 100%;
+
+            &::before {
+                background: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .center {
+            bottom: auto;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin-top: 40px;
+
+            #hairimage {
+                display: none;
+            }
+
+            .texts {
+                width: 60vw;
+
+                .minitext {
+                    font-size: 16px !important;
+                }
+
+                .h {
+                    font-size: 32px !important;
+                }
+
+                .p {
+                    font-size: 16px !important;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
 body {
     color: var(--text);
     background-color: var(--bg);
@@ -39,6 +90,7 @@ body {
         left: 50%;
         transform: translateX(-50%);
         align-items: center;
+        align-content: center;
         gap: 3vw;
         z-index: 1;
 
@@ -277,6 +329,8 @@ body {
 
 /* Mobiles */
 @media screen and (max-width: 600px) {
+    @include TopOnMobile;
+
     #page1 {
         .flex {
             flex-direction: column-reverse;
@@ -302,6 +356,8 @@ body {
 
 /* Tablets */
 @media screen and (min-width: 600px) and (max-width: 960px) {
+    @include TopOnMobile;
+    
     #page1 {
         .flex {
             flex-direction: column-reverse;
@@ -315,6 +371,16 @@ body {
 
 /* Laptops */
 @media screen and (min-width: 960px) and (max-width: 1264px) {
+    
+    #TOP {
+        .center {
+            #hairimage {
+                aspect-ratio: auto;
+                width: 45vw;
+            }
+        }
+    }
+    
     #page1 {
         .flex {
             flex-direction: column-reverse;
