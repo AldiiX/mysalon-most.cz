@@ -362,6 +362,34 @@ body {
   color: black;
 }
 
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  #TOP .h {
+    font-size: 32px !important;
+  }
+  #TOP .minitext, #TOP .minitext-colored {
+    font-size: 16px !important;
+  }
+  #TOP .p {
+    font-size: 16px !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  #TOP .center {
+    width: 90vw;
+  }
+  #TOP .texts {
+    width: 100% !important;
+  }
+  #TOP .h {
+    font-size: 32px !important;
+  }
+  #TOP .minitext, #TOP .minitext-colored {
+    font-size: 16px !important;
+  }
+  #TOP .p {
+    font-size: 16px !important;
+  }
+}
 /* 4K */
 
 /*# sourceMappingURL=main.css.map */
