@@ -13,9 +13,9 @@
     <meta name="keywords" content="mysalon-most, mysalon, kadeřnické studio, kadernictvi, jana skudrnova, jana škudrnová, škudrnová, škudrna, my salon, my salon most, mysalon most, moderní kadeřnické studio, kadeřnictví most, kadeřnice, kadeřnice most, kadeřnictví mysalon, kadeřnictví my salon, kadeřnictví škudrnová, škudrnová jana, holičství most, holičství" />
     <meta name="description" content="MySalon Most - Moderní kadeřnické studio pro celou rodinu. V příjemném, klimatizovaném prostředí pracují kadeřnice, které se pravidelně vzdělávají. Samozřejmostí je individuální přístup a kadeřnické služby na vysoké úrovni." />
     <meta content="#00d30b" data-react-helmet="true" name="theme-color"/>
-    <link rel="stylesheet" type="text/css" href="/styles/team.css?ver=@ViewBag.CacheVersion"/>
-    <link rel="stylesheet" type="text/css" href="/styles/main.css?ver=@ViewBag.CacheVersion"/>
-    <link rel="stylesheet" type="text/css" href="@Utilities.WebTheme.GetCSSFile()"/>
+    <link rel="stylesheet" type="text/css" href="/styles/team.css?ver=@Program.CACHE_VERSION"/>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css?ver=@Program.CACHE_VERSION"/>
+    <link rel="stylesheet" type="text/css" href="@Utilities.WebTheme.GetCSSFile()?ver=@Program.CACHE_VERSION"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
@@ -94,7 +94,7 @@
 
 
 <script type="module">
-     import { vue } from "/scripts/team.js";
+     import { vue } from "/scripts/team.js?ver=@Program.CACHE_VERSION";
 </script>
 @await Html.PartialAsync("PageTitle")
 </html>

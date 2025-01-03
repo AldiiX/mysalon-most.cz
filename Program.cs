@@ -1,5 +1,6 @@
 global using HCS = MySalonMostWeb.Services.HttpContextService;
 using dotenv.net;
+using MySalonMostWeb.Classes;
 using MySalonMostWeb.Middlewares;
 
 namespace MySalonMostWeb;
@@ -11,6 +12,7 @@ public static class Program {
     public static WebApplication App { get; private set; } = null!;
     public static IDictionary<string, string> ENV { get; private set; } = null!;
     public static ILogger Logger => App.Logger;
+    public static string CACHE_VERSION => Program.ENV.GetValueOrNull("CACHE_VERSION") ?? "0";
 
 
     #if DEBUG || TESTING
