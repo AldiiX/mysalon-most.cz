@@ -145,6 +145,7 @@ body {
 
 #page1, #page2, #page3 {
   padding: 80px 5vw;
+  background-color: var(--background-primary);
 }
 
 .button-primary-colored, .button-primary {
@@ -180,6 +181,10 @@ body {
   letter-spacing: 1px;
   font-size: 16px;
   color: var(--text-color-gray);
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  color: var(--text);
 }
 
 .minitext, .minitext-colored {
@@ -232,6 +237,10 @@ body {
   height: 80px;
   aspect-ratio: 1/1;
   pointer-events: none;
+  background-image: var(--header-logo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 #HEADER > nav {
   position: absolute;

@@ -1,6 +1,4 @@
-﻿
-using dotenv.net;
-using MySalonMostWeb.Classes;
+﻿using MySalonMostWeb.Classes;
 using MySql.Data.MySqlClient;
 
 namespace MySalonMostWeb;

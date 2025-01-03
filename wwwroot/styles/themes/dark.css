@@ -1,0 +1,11 @@
+html {
+    --background-primary: rgb(28, 28, 28);
+    --color-gray: #262626;
+    --text-color-gray: #9a9a9a;
+    --accent-color: #00c80b;
+    --accent-color-darker: #006e06;
+    --text-color-secondary: #438343;
+    --text: #ffffff;
+    --element-background: rgba(255,255,255, 0.07);
+    --header-logo: url(/images/logo_bricks_white.svg);
+}

@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.WebUtilities;
-using Newtonsoft.Json;
+﻿using System.Text.Json;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace MySalonMostWeb.Middlewares;
 
@@ -23,7 +23,7 @@ public class ErrorHandlingMiddleware(RequestDelegate next/*, IHostingEnvironment
                 };
 
                 context.Response.ContentType = "application/json";
-                await context.Response.WriteAsync(JsonConvert.SerializeObject(errorResponse));
+                await context.Response.WriteAsync(JsonSerializer.Serialize(errorResponse));
                 return;
             }
 

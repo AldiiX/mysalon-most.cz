@@ -1,9 +1,6 @@
 global using HCS = MySalonMostWeb.Services.HttpContextService;
-using System.Net;
 using dotenv.net;
-using MySalonMostWeb.Classes;
 using MySalonMostWeb.Middlewares;
-using StackExchange.Redis;
 
 namespace MySalonMostWeb;
 
@@ -30,7 +27,6 @@ public static class Program {
 
         builder.Services.AddControllersWithViews();
         builder.Services.AddHttpContextAccessor();
-        builder.Services.AddControllersWithViews();
         /*builder.Services.AddStackExchangeRedisCache(options => {
             if (DEVELOPMENT_MODE) {
                 options.ConfigurationOptions = new ConfigurationOptions {
