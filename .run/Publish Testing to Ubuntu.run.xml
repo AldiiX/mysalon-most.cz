@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Publish Testing to Ubuntu" type="DotNetFolderPublish" factoryName="Publish to folder">
+    <riderPublish configuration="Testing" platform="Any CPU" runtime="linux-x64" target_folder="$PROJECT_DIR$/bin/Testing/net9.0/linux-x64/publish" target_framework="net9.0" uuid_high="-6720477214501744671" uuid_low="-6402280682775564668" />
+    <method v="2" />
+  </configuration>
+</component>
