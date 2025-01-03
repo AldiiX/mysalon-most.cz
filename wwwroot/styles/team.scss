@@ -1,15 +1,5 @@
 #TOP {
-    .bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-image: url("/images/interier/head11.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.05;
-        filter: blur(5px);
-    }
+
 }
 
 #page1 {
@@ -108,6 +98,17 @@
                     }
                 }*/
             }
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    #page1 .kadernice-parent {
+        gap: 72px;
+
+        > .kadernice {
+            width: 100%;
         }
     }
 }

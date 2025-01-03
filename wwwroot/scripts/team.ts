@@ -17,6 +17,7 @@ export const vue: Vue = new Vue({
         currentPage: null,
         vueLoaded: true,
         webTheme: 'light',
+        menuExpanded: false,
         temp: {
             kaderniceShowInfo: [],
         },

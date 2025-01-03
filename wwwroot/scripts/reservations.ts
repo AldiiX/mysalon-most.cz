@@ -14,13 +14,8 @@ export const vue: Vue = new Vue({
 
 
     data: {
-        currentPage: null,
-        vueLoaded: true,
         menuExpanded: false,
-        webTheme: 'light',
         temp: {},
-
-        team: [],
     },
 
 
@@ -30,7 +25,6 @@ export const vue: Vue = new Vue({
     methods: {
         main: function(): void {
             const _this = this as any;
-            fetch('/api/kadernice', { method: 'GET' }).then(response => response.json()).then(data => { _this.team = data; });
         },
 
         scrollToElement(elementId: string): void {

@@ -10,6 +10,7 @@ export const vue = new Vue({
         currentPage: null,
         vueLoaded: true,
         webTheme: 'light',
+        menuExpanded: false,
         temp: {
             kaderniceShowInfo: [],
         },

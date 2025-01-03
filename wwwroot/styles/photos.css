@@ -1,15 +1,3 @@
-#TOP .bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("/images/interier/IMG_20241025_161049.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.05;
-  filter: blur(5px);
-}
-
 #page1 > .images {
   display: flex;
   flex-wrap: wrap;
@@ -27,6 +15,33 @@
 }
 #page1 > .images:is(.smaller) > img {
   max-width: 300px !important;
+}
+
+@media screen and (max-width: 600px) {
+  #page1 > .images {
+    flex-direction: column;
+    position: relative;
+  }
+  #page1 > .images > img {
+    width: 100%;
+    max-width: none;
+  }
+  #page1 > .images:is(.smaller) > img {
+    max-width: none !important;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  #page1 > .images {
+    flex-direction: column;
+    position: relative;
+  }
+  #page1 > .images > img {
+    width: 100%;
+    max-width: none;
+  }
+  #page1 > .images:is(.smaller) > img {
+    max-width: none !important;
+  }
 }
 
 /*# sourceMappingURL=photos.css.map */

@@ -7,17 +7,12 @@ export const vue = new Vue({
         this.main();
     },
     data: {
-        currentPage: null,
-        vueLoaded: true,
         menuExpanded: false,
-        webTheme: 'light',
         temp: {},
-        team: [],
     },
     methods: {
         main: function () {
             const _this = this;
-            fetch('/api/kadernice', { method: 'GET' }).then(response => response.json()).then(data => { _this.team = data; });
         },
         scrollToElement(elementId) {
             scrollToElement(elementId);

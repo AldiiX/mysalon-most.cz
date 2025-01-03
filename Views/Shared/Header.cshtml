@@ -3,11 +3,28 @@
     @* <img src="/images/logo_bricks_black.svg" alt="My Salon Most - Logo" class="logo-img"> *@
     <div class="logo-img"></div>
 
-    <nav>
+    <nav class="pcdevice">
         <a href="/" class="@(ViewBag.PageTitleId == "home" ? "selected" : "")">Domů</a>
         <a href="/tym" class="@(ViewBag.PageTitleId == "team" ? "selected" : "")">Tým</a>
         <a href="/fotografie" class="@(ViewBag.PageTitleId == "photos" ? "selected" : "")">Fotografie</a>
     </nav>
+
+    <!-- Menu pro mobily a tablety -->
+    <nav class="smalldevice" v-on:click="menuExpanded = true"></nav>
+
+    <transition name="fade">
+        <div class="expandedmenu" v-if="menuExpanded" v-cloak>
+            <div class="logo-img"></div>
+            <div class="closeicon" v-on:click="menuExpanded = false"></div>
+
+            <div class="menu">
+                <a href="/" class="@(ViewBag.PageTitleId == "home" ? "selected" : "")">Domů</a>
+                <a href="/tym" class="@(ViewBag.PageTitleId == "team" ? "selected" : "")">Tým</a>
+                <a href="/fotografie" class="@(ViewBag.PageTitleId == "photos" ? "selected" : "")">Fotografie</a>
+                <button onclick="location.href='/rezervace'" class="button-primary-colored">Rezervace</button>
+            </div>
+        </div>
+    </transition>
 
     <div class="left">
         <div class="links">
