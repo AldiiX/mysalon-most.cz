@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Text.Json.Nodes;
 using Microsoft.AspNetCore.Mvc;
 using MySalonMostWeb.Classes.Objects;
 
@@ -18,5 +19,28 @@ public class ApiController : Controller {
         };
 
         return Json(kaderniceData, jsonSettings);
+    }
+
+    [HttpGet("reviews")]
+    public IActionResult Reviews() {
+        var reviews = Review.GetAll();
+        var array = new JsonArray();
+
+        foreach (Review review in reviews) {
+            var obj = new JsonObject() {
+                ["id"] = review.Id,
+                ["author"] = new JsonObject() {
+                    ["name"] = review.Author.Name,
+                    ["avatar"] = review.Author.Avatar,
+                },
+                ["text"] = review.Text,
+                ["stars"] = review.Stars,
+                ["created_at"] = review.CreatedAt
+            };
+
+            array.Add(obj);
+        }
+
+        return new JsonResult(array);
     }
 }

@@ -191,42 +191,154 @@ font-weight: lighter;*/
   opacity: 0.7;
 }
 
-#page2 {
+#page2, #page3 {
   padding: 80px 5vw;
   background-color: var(--background-primary);
 }
-#page2 > .flex {
+#page2 > .flex, #page3 > .flex {
   display: flex;
   position: relative;
   align-items: center;
   flex-direction: column;
 }
-#page2 > .flex h2 {
+#page2 > .flex h2, #page3 > .flex h2 {
   margin: 0;
 }
-#page2 > .flex .imgs {
+#page2 > .flex .imgs, #page3 > .flex .imgs {
   margin-top: 32px;
   display: flex;
   gap: 6vw;
   width: 100%;
   justify-content: center;
 }
-#page2 > .flex .imgs > * {
+#page2 > .flex .imgs > *, #page3 > .flex .imgs > * {
   width: calc(50% - 3vw);
   max-width: 500px;
   height: 100%;
   border: 2px solid var(--accent-color);
   aspect-ratio: 16/9;
 }
-#page2 > .flex .imgs > div {
+#page2 > .flex .imgs > div, #page3 > .flex .imgs > div {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("/images/photo_front.png");
 }
-#page2 > .flex .imgs iframe {
+#page2 > .flex .imgs iframe, #page3 > .flex .imgs iframe {
   user-select: none;
+}
+
+#page3 .recenze-parent {
+  display: grid;
+  gap: 24px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+#page3 .recenze-parent > .recenze-child {
+  background-color: var(--element-background);
+}
+#page3 .recenze-parent > .recenze-child > .top {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  align-items: center;
+}
+#page3 .recenze-parent > .recenze-child > .top > .avatar {
+  width: 64px;
+  height: 64px;
+  background-color: var(--text-color-secondary);
+  border-radius: 100%;
+  position: relative;
+}
+#page3 .recenze-parent > .recenze-child > .top > .avatar::before {
+  content: var(--letter);
+  position: absolute;
+  font-size: 32px;
+  font-family: gilroy-medium;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#page3 .recenze-parent > .recenze-child > .top > .avatar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: var(--avatar);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > h1 {
+  margin: 0;
+  font-family: gilroy-medium;
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars {
+  display: flex;
+  gap: 2px;
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars1) > div:nth-child(1) {
+  background-color: red;
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars2) > div:nth-child(1),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars2) > div:nth-child(2) {
+  background-color: red;
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars3) > div:nth-child(1),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars3) > div:nth-child(2),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars3) > div:nth-child(3) {
+  background-color: orange;
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars4) > div:nth-child(1),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars4) > div:nth-child(2),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars4) > div:nth-child(3),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars4) > div:nth-child(4) {
+  background-color: var(--text-color-secondary);
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars5) > div:nth-child(1),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars5) > div:nth-child(2),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars5) > div:nth-child(3),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars5) > div:nth-child(4),
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars:is(.stars5) > div:nth-child(5) {
+  background-color: var(--text-color-secondary);
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars > div {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-gray);
+  position: relative;
+}
+#page3 .recenze-parent > .recenze-child > .top > .texts > .stars > div::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  mask-image: url("/images/icons/star.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+#page3 .recenze-parent > .recenze-child > .bottom {
+  padding: 24px;
+  padding-top: 0;
+  font-family: quicksand-light;
+  font-size: 16px;
+  color: var(--text-color-gray);
+}
+#page3 .recenze-parent > .recenze-child > .bottom > article {
+  margin: 0;
+  text-align: justify;
 }
 
 /* Mobiles */

@@ -38,4 +38,21 @@ public static class Database {
 
         return conn;
     }
+
+    public static async Task<MySqlConnection?> GetConnectionAsync() {
+        MySqlConnection? conn = null;
+
+        try {
+            conn = new MySqlConnection(
+                $"server={DatabaseIP};userid=mysalonmost;password={Program.ENV["DATABASE_MYSALONMOST_PASSWORD"]};database=mysalonmost;pooling=true;Max Pool Size={MaxPoolSize};");
+            await conn.OpenAsync();
+        } catch (Exception e) {
+            conn?.CloseAsync();
+
+            Program.Logger.Log(LogLevel.Error, e, "Database connection error.");
+            return null;
+        }
+
+        return conn;
+    }
 }

@@ -119,6 +119,36 @@
 
 
 
+        <section id="page3" style="padding-top: 40px">
+            <div class="flex">
+                <h1 class="minitext-colored"><span>────</span>&nbsp;&nbsp;&nbsp;RECENZE&nbsp;&nbsp;&nbsp;<span>────</span></h1>
+                <h2 class="h">Podívejte se, co o nás lidé napsali.</h2>
+                @* <p class="p" style="text-align: center">Najdete nás v Mostě, na tř. Budovatelů 3068, naproti Centrálu, mezi Čedokem a Bilbem.</p> *@
+
+                <div class="recenze-parent" v-cloak>
+                    <div class="recenze-child" v-for="review in displayedReviews" :key="review.id">
+                        <div class="top">
+                            <div class="avatar" v-bind:style="{ '--letter': `'${String(review.author.name[0]).toUpperCase()}'`, '--avatar': `url(${review.author.avatar})` }"></div>
+
+                            <div class="texts">
+                                <h1>{{ review.author.name }}</h1>
+                                <div v-bind:class="{ stars: true, [`stars${review.stars}`]: true }">
+                                    <div v-for="star in 5"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom">
+                            <article v-html="String(review.text).replace(/\n/g, '<br>')"></article>
+                            <p>{{ review.createdAt }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
         @await Html.PartialAsync("Footer")
     </div>
 </body>

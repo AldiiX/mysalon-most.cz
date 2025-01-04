@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="w-6 h-6 text-gray-800 dark:text-white"
+   aria-hidden="true"
+   width="24"
+   height="24"
+   fill="currentColor"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="star.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="16.749592"
+     inkscape:cx="15.522766"
+     inkscape:cy="17.164597"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="m 14.185985,2.210425 c -0.808661,-1.92234194 -3.563309,-1.92234194 -4.3719691,0 L 7.7403456,7.1368697 2.3587339,7.5636627 C 0.2602365,7.729178 -0.59098504,10.319493 1.0086021,11.674353 l 4.1000503,3.472274 -1.2531872,5.192452 c -0.4882702,2.025198 1.7402752,3.625967 3.5372983,2.54066 l 4.6072355,-2.78184 4.607237,2.783022 c 1.797024,1.085307 4.025569,-0.515462 3.537299,-2.541842 l -1.253187,-5.190087 4.10005,-3.473456 C 24.590985,10.320674 23.739763,7.7315425 21.641266,7.564845 L 16.259654,7.1392342 14.185985,2.2092428 Z"
+     id="path1"
+     style="stroke-width:1.18225" />
+</svg>
