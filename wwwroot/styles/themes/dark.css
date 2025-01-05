@@ -8,4 +8,5 @@ html {
     --text: #ffffff;
     --element-background: rgba(255,255,255, 0.07);
     --header-logo: url(/images/logo_bricks_white.svg);
+    --review-star-background-color: #434343;
 }

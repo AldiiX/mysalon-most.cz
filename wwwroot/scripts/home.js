@@ -30,7 +30,7 @@ export const vue = new Vue({
             const _this = this;
             if (_this.reviews == null)
                 return [];
-            return _this.reviews; // _this.reviews.slice(0, 5);
+            return _this.reviews.slice(0, 6);
         }
     },
 });

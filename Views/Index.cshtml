@@ -139,7 +139,11 @@
                         </div>
 
                         <div class="bottom">
-                            <article v-html="String(review.text).replace(/\n/g, '<br>')"></article>
+                            <article v-if="review.text?.length < 256" v-html="String(review.text).replace(/\n/g, '<br>')"></article>
+                            <article v-if="review.text?.length >= 256">
+                                <span v-html="String(review.text).replace(/\n/g, '<br>').slice(0, 196) + '...'"></span>
+                                <a v-on:click="">Zobrazit více</a>
+                            </article>
                             <p>{{ review.createdAt }}</p>
                         </div>
                     </div>
